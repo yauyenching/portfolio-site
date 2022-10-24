@@ -1,0 +1,22 @@
+$title-font: 'Made Tommy Soft Medium';
+$header-link-font: 'Made Tommy Soft';
+$bg: #11132C;
+$content-width: 1000px;
+
+/* Fonts */
+@font-face {
+  font-family: 'MADE Tommy Soft';
+  src: url("/fonts/made_tommy_soft/MADE Tommy Soft Regular PERSONAL USE.otf");
+}
+
+@font-face {
+  font-family: 'MADE Tommy Soft Medium';
+  src: url("/fonts/made_tommy_soft/MADE Tommy Soft Medium PERSONAL USE.otf");
+}
+
+:export {
+  titleFont: $title-font;
+  headerLinkFont: $header-link-font;
+  bg: $bg;
+  contentWidth: $content-width;
+}

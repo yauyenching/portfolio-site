@@ -1,0 +1,119 @@
+// dark-mode
+$dark-bg: #1D282C;
+$moon-color: #C8D8D7;
+$moon-shadow: #87A3AD;
+$moon-dimple: #9DB5C1;
+
+// light mode
+$light-bg: #1FA1C1;
+$sun-color: #F4C014;
+
+.toggle {
+  width: 70px;
+  height: 35px;
+  border-radius: 50px;
+  display: flex;
+  position: relative;
+  transition: all 350ms ease-in !important;
+  background-color: $dark-bg;
+  margin-top: 2.5px;
+  cursor: pointer;
+}
+
+.dark {
+  background-color: $dark-bg;
+}
+
+.light {
+  background-color: $light-bg;
+}
+
+.toggleCircle {
+  transition: all 850ms ease !important;
+  width: 26px;
+  height: 26px;
+  position: absolute;
+  border-radius: 26px;
+}
+
+.dark .toggleCircle {
+  animation-name: switch;
+  animation-duration: 350ms;
+  animation-fill-mode: forwards;
+  top: 4.5px;
+  right: 4.5px;
+  background: $moon-color;
+  box-shadow: inset 1px -1.5px 0px $moon-shadow;
+  transition: all 350ms ease-in;
+}
+
+@keyframes reverse {
+  0% {
+    right: 4px;
+  }
+  60% {
+    right: 30px;
+    width: 35px;
+  }
+  100% {
+    left: 4px;
+  }
+}
+
+.light .toggleCircle {
+  animation-name: reverse;
+  animation-duration: 350ms;
+  animation-fill-mode: forwards;
+  background-color: $sun-color;
+  transition: all 350ms ease-in;
+  top: 4.5px;
+  right: 4.5px;
+}
+
+@keyframes switch {
+  0% {
+    left: 4px;
+  }
+  60% {
+    left: 30px;
+    width: 35px;
+  }
+  100% {
+    right: 4px;
+  }
+}
+
+.dark .toggleCircle:after {
+  transition-delay: 0ms;
+  transition: all 250ms ease-in;
+  position: absolute;
+  content: '';
+  box-shadow: -20px 0 0 -2px $moon-dimple, -14px 6px 0 -3px $moon-dimple, -9px -1px 0 -3.7px $moon-dimple;
+  left: 22px;
+  top: 5px;
+  width: 10px;
+  height: 10px;
+  background: transparent;
+  border-radius: 50%;
+  opacity: 1;
+}
+
+.toggleBackground {
+  width: 10px;
+  height: 5px;
+  border-radius: 5px;
+  position: relative;
+  background: #fff;
+  left: 135px;
+  top: 45px;
+  transition: all 150ms ease-in;
+}
+
+.toggleCheckbox:checked + .toggle {
+  background: var(--light-toggle);
+}
+
+:export {
+  lightBg: $light-bg;
+  darkBg: $dark-bg
+}

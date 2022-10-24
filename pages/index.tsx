@@ -2,8 +2,12 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import Header from '../components/Header'
+import { useColorMode, useColorModeValue, Button, Box } from '@chakra-ui/react'
 
 const Home: NextPage = () => {
+  const { colorMode, toggleColorMode } = useColorMode()
+  const test = useColorModeValue('#000', '#fff')
   return (
     <div className={styles.container}>
       <Head>
@@ -13,6 +17,14 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
+        {/* <Button size='sm' onClick={toggleColorMode}>
+          Toggle Mode
+        </Button>
+        <Box w='500px' h='250px' background={test} transition='background 350ms ease-in'>test</Box> */}
+        <Header 
+          colorMode={colorMode}
+          toggleColorMode={toggleColorMode}
+        />
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
