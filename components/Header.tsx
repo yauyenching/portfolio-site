@@ -9,13 +9,13 @@ export default function Header({ colorMode, toggleColorMode }: colorModeProps) {
   const toggleBackground = useColorModeValue(styles.lightBg, styles.darkBg)
   return (
     <Flex
-      bg="red"
+      // bg="red"
       color="white"
       w="100%" h="50px"
       position="fixed"
       top="0" left="0"
       align="center" justify="center"
-      background={variables.bg}
+      background={variables.darkBg}
     >
       <Flex w='100%' maxW={variables.contentWidth} justifyContent='space-between'>
         <Box className={styles.logo} position='relative'>

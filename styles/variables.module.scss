@@ -1,7 +1,16 @@
 $title-font: 'Made Tommy Soft Medium';
 $header-link-font: 'Made Tommy Soft';
-$bg: #11132C;
 $content-width: 1000px;
+
+/* dark mode */
+$dark-bg: #11132C;
+$dark-title: #E7EBF6;
+$dark-body: #C4C8D5;
+
+/* light mode */
+$light-bg: #F7F0E2;
+$light-title: #353B81;
+$light-body: #565A91;
 
 /* Fonts */
 @font-face {
@@ -17,6 +26,11 @@ $content-width: 1000px;
 :export {
   titleFont: $title-font;
   headerLinkFont: $header-link-font;
-  bg: $bg;
   contentWidth: $content-width;
+  darkBg: $dark-bg;
+  darkTitle: $dark-title;
+  darkBody: $dark-body;
+  lightBg: $light-bg;
+  lightTitle: $light-title;
+  lightBody: $light-body;
 }
