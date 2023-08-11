@@ -1,22 +1,21 @@
 import React from "react"
-import { Flex, Stack, Box, Text, Link, Checkbox, useColorModeValue } from "@chakra-ui/react"
+import { Flex, Stack, Box, Text, Link, Checkbox, useColorModeValue, forwardRef, useStyleConfig, StyleFunctionProps, defineStyleConfig, LinkProps } from "@chakra-ui/react"
 import styles from './Header.module.scss'
 import variables from '../styles/variables.module.scss'
 import { colorModeProps } from "./props"
 import DayNightToggle from "./DayNightToggle"
+import { NavBarProps } from "../pages/theme"
+
+const NavBar = forwardRef<NavBarProps, 'div'>((props, ref) => {
+  const { size, variant, ...rest } = props;
+  const styles = useStyleConfig("NavBar", { size, variant });
+
+  return <Flex ref={ref} __css={styles} {...rest} />;
+});
 
 export default function Header({ colorMode, toggleColorMode }: colorModeProps) {
-  const toggleBackground = useColorModeValue(styles.lightBg, styles.darkBg)
   return (
-    <Flex
-      // bg="red"
-      color="white"
-      w="100%" h="50px"
-      position="fixed"
-      top="0" left="0"
-      align="center" justify="center"
-      background={variables.darkBg}
-    >
+    <NavBar>
       <Flex w='100%' maxW={variables.contentWidth} justifyContent='space-between'>
         <Box className={styles.logo} position='relative'>
           <div className={styles.logoText}>
@@ -24,12 +23,14 @@ export default function Header({ colorMode, toggleColorMode }: colorModeProps) {
             <Text as="span" color='#FFA68A'>.</Text>
           </div>
         </Box>
-        <Flex w='100%' maxW='662px' justifyContent='space-between'>
-          <a className={styles.link}>Projects</a>
-          <a className={styles.link}>Designs</a>
-          <a className={styles.link}>Experience</a>
-          <a className={styles.link}>Features</a>
-          <a className={styles.link}>Contact</a>
+        <Flex 
+          w='100%' maxW='662px' justifyContent='space-between'
+        >
+          <Link>Experience</Link>
+          <Link>Projects</Link>
+          <Link>Designs</Link>
+          <Link>Features</Link>
+          <Link>Contact</Link>
         </Flex>
         {/* https://daily-dev-tips.com/posts/creating-day-night-css-only-toggle-switch/ */}
         <DayNightToggle
@@ -40,7 +41,7 @@ export default function Header({ colorMode, toggleColorMode }: colorModeProps) {
         <label htmlFor="toggle" className={styles.toggle}>
           <span className={styles.toggleBackground}/>
         </label> */}
-      </Flex>
-    </Flex>
+        </Flex>
+    </NavBar>
   )
 }

@@ -26,7 +26,7 @@ $cloud2: 49px;
   border-radius: 50px;
   display: flex;
   position: relative;
-  transition: all 350ms ease-in !important;
+  transition: all 350ms ease-in;
   background-color: $dark-bg;
   margin-top: 2.5px;
   cursor: pointer;
@@ -41,7 +41,7 @@ $cloud2: 49px;
 }
 
 .toggleCircle {
-  transition: all 850ms ease !important;
+  transition: all 850ms ease;
   width: 26px;
   height: 26px;
   position: absolute;
@@ -52,6 +52,7 @@ $cloud2: 49px;
   animation-name: switch;
   animation-duration: 350ms;
   animation-fill-mode: forwards;
+  animation-timing-function: ease;
   top: 4.5px;
   right: 4.5px;
   background: $moon-color;
@@ -63,7 +64,7 @@ $cloud2: 49px;
   0% {
     right: 4px;
   }
-  60% {
+  40% {
     left: 30px;
     width: 35px;
   }
@@ -75,6 +76,7 @@ $cloud2: 49px;
 .light .toggleCircle {
   animation-name: reverse;
   animation-duration: 350ms;
+  animation-timing-function: ease;
   animation-fill-mode: forwards;
   background-color: $sun-color;
   transition: all 350ms ease-in;
@@ -86,12 +88,12 @@ $cloud2: 49px;
   0% {
     left: 4px;
   }
-  60% {
+  40% {
     left: 4px;
     width: 35px;
   }
   100% {
-    right: 4px;
+    left: calc(70px - 4px - 26px);
   }
 }
 
