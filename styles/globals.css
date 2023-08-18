@@ -1,3 +1,29 @@
+:root {
+  --background: red;
+  --text-primary: black;
+  --box-primary: #edf2f7;
+  /*--box-primary: #F9FAFB;*/
+  --icon: black;
+  --icon-background: lightgray;
+  --card-timeline: #dbf2ff;
+  --line-timeline: black;
+  --border: 2px solid black;
+  --shadow-color: rgb(33 33 33 / 20%);
+}
+[data-theme='dark'] {
+  --background: yellow;
+  --text-primary: white;
+  /*--box-primary: #232323;*/
+  --box-primary: RGBA(0, 0, 0, 0.24);
+  --icon: #C47105;
+  --icon-background:#1A202C;
+  /*--icon-background:white;*/
+  --card-timeline: #F45B69;
+  --line-timeline: white;
+  --border: 2px solid white;
+  --shadow-color: #00ffffa8;
+}
+
 html,
 body {
   padding: 0;
@@ -13,14 +39,4 @@ a {
 
 * {
   box-sizing: border-box;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
 }
