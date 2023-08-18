@@ -1,21 +1,48 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { Flex, Stack, Box, Text, Link, Checkbox, useColorModeValue, forwardRef, useStyleConfig, StyleFunctionProps, defineStyleConfig, LinkProps } from "@chakra-ui/react"
 import styles from './Header.module.scss'
 import variables from '../styles/variables.module.scss'
 import { colorModeProps } from "./props"
 import DayNightToggle from "./DayNightToggle"
-import { NavBarProps } from "../pages/theme"
-
-const NavBar = forwardRef<NavBarProps, 'div'>((props, ref) => {
-  const { size, variant, ...rest } = props;
-  const styles = useStyleConfig("NavBar", { size, variant });
-
-  return <Flex ref={ref} __css={styles} {...rest} />;
-});
+import dynamic from "next/dynamic"
 
 export default function Header({ colorMode, toggleColorMode }: colorModeProps) {
+  type HeaderLinkProps = {
+    linkText: String
+  }
+
+  function HeaderLink({ linkText }: HeaderLinkProps) {
+    const changeOverlayPos = (elem: HTMLAnchorElement) => {
+      const overlay = document.getElementById('overlay');
+      const position = elem.getBoundingClientRect();
+      overlay!.style.left = elem.offsetLeft + 'px';
+      overlay!.style.width = position.width + 'px';
+    }
+
+    const addOverlay = (elem: HTMLAnchorElement) => {
+      const overlay = document.getElementById('overlay');
+      changeOverlayPos(elem);
+      overlay?.classList.add('active');
+    }
+
+    const removeOverlay = (elem: HTMLAnchorElement) => {
+      const overlay = document.getElementById('overlay');
+      overlay?.classList.remove('active');
+    } 
+    
+    return (
+      <Link 
+        className={styles.link}
+        onMouseOver={(e) => addOverlay(e.target as HTMLAnchorElement)} 
+        onMouseLeave={(e) => removeOverlay(e.target as HTMLAnchorElement)}
+      >
+        {linkText}
+      </Link>
+    )
+  }
+  
   return (
-    <NavBar>
+    <Flex className={styles.navbar}>
       <Flex w='100%' maxW={variables.contentWidth} justifyContent='space-between'>
         <Box className={styles.logo} position='relative'>
           <div className={styles.logoText}>
@@ -24,13 +51,14 @@ export default function Header({ colorMode, toggleColorMode }: colorModeProps) {
           </div>
         </Box>
         <Flex 
-          w='100%' maxW='662px' justifyContent='space-between'
+          w='100%' maxW='662px' justifyContent='space-between' position={'relative'}
         >
-          <Link>Experience</Link>
-          <Link>Projects</Link>
-          <Link>Designs</Link>
-          <Link>Features</Link>
-          <Link>Contact</Link>
+          <div id="overlay"/>
+          <HeaderLink linkText={"Experience"}/>
+          <HeaderLink linkText={"Projects"}/>
+          <HeaderLink linkText={"Designs"}/>
+          <HeaderLink linkText={"Features"}/>
+          <HeaderLink linkText={"Contact"}/>
         </Flex>
         {/* https://daily-dev-tips.com/posts/creating-day-night-css-only-toggle-switch/ */}
         <DayNightToggle
@@ -42,6 +70,6 @@ export default function Header({ colorMode, toggleColorMode }: colorModeProps) {
           <span className={styles.toggleBackground}/>
         </label> */}
         </Flex>
-    </NavBar>
+      </Flex>
   )
 }
