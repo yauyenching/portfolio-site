@@ -1,9 +1,9 @@
 import React from 'react'
 import { Flex } from '@chakra-ui/react'
-import { colorModeProps } from './props'
+import { colorModeProps } from '../props'
 import styles from './DayNightToggle.module.scss'
-import NightSparkle from '../assets/night_sparkle'
-import DayCloud from '../assets/cloud'
+import NightSparkle from 'assets/night_sparkle'
+import DayCloud from 'assets/cloud'
 
 
 export default function DayNightToggle({ colorMode, toggleColorMode }: colorModeProps) {

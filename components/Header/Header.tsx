@@ -1,8 +1,8 @@
 import React, { useEffect } from "react"
 import { Flex, Stack, Box, Text, Link, Checkbox, useColorModeValue, forwardRef, useStyleConfig, StyleFunctionProps, defineStyleConfig, LinkProps } from "@chakra-ui/react"
 import styles from './Header.module.scss'
-import variables from '../styles/variables.module.scss'
-import { colorModeProps } from "./props"
+import variables from '/styles/variables.module.scss'
+import { colorModeProps } from "../props"
 import DayNightToggle from "./DayNightToggle"
 import dynamic from "next/dynamic"
 
@@ -41,6 +41,7 @@ export default function Header({ colorMode, toggleColorMode }: colorModeProps) {
     )
   }
   
+  // TODO: add persistent hover color and overlay position for active section
   return (
     <Flex className={styles.navbar}>
       <Flex w='100%' maxW={variables.contentWidth} justifyContent='space-between'>

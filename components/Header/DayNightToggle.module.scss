@@ -20,6 +20,10 @@ $cloud-duration: 500ms;
 $cloud1: 33px;
 $cloud2: 49px;
 
+.invisible {
+  opacity: 0;
+}
+
 .toggle {
   width: 70px;
   height: 35px;
@@ -32,14 +36,6 @@ $cloud2: 49px;
   cursor: pointer;
 }
 
-.dark {
-  background-color: $dark-bg;
-}
-
-.light {
-  background-color: $light-bg;
-}
-
 .toggleCircle {
   transition: all 850ms ease;
   width: 26px;
@@ -48,16 +44,50 @@ $cloud2: 49px;
   border-radius: 26px;
 }
 
-.dark .toggleCircle {
-  animation-name: switch;
-  animation-duration: 350ms;
-  animation-fill-mode: forwards;
-  animation-timing-function: ease;
-  top: 4.5px;
-  right: 4.5px;
-  background: $moon-color;
-  box-shadow: inset 1px -1.5px 0px $moon-shadow;
-  transition: all 350ms ease-in;
+.dark {
+  background-color: $dark-bg;
+
+  .toggleCircle {
+    animation-name: switch;
+    animation-duration: 350ms;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
+    top: 4.5px;
+    right: 4.5px;
+    background: $moon-color;
+    box-shadow: inset 1px -1.5px 0px $moon-shadow;
+    transition: all 350ms ease-in;
+  }
+}
+
+.light {
+  background-color: $light-bg;
+
+  .toggleCircle {
+    animation-name: reverse;
+    animation-duration: 350ms;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+    background-color: $sun-color;
+    transition: all 350ms ease-in;
+    top: 4.5px;
+    right: 4.5px;
+  }
+
+  .toggleCircle:after {
+    transition-delay: 0ms;
+    transition: all 250ms ease-in;
+    position: absolute;
+    content: '';
+    box-shadow: -20px 0 0 -2px $moon-dimple, -14px 6px 0 -3px $moon-dimple, -9px -1px 0 -3.7px $moon-dimple;
+    left: 22px;
+    top: 5px;
+    width: 10px;
+    height: 10px;
+    background: transparent;
+    border-radius: 50%;
+    opacity: 1;
+  }
 }
 
 @keyframes reverse {
@@ -73,17 +103,6 @@ $cloud2: 49px;
   }
 }
 
-.light .toggleCircle {
-  animation-name: reverse;
-  animation-duration: 350ms;
-  animation-timing-function: ease;
-  animation-fill-mode: forwards;
-  background-color: $sun-color;
-  transition: all 350ms ease-in;
-  top: 4.5px;
-  right: 4.5px;
-}
-
 @keyframes switch {
   0% {
     left: 4px;
@@ -95,25 +114,6 @@ $cloud2: 49px;
   100% {
     left: calc(70px - 4px - 26px);
   }
-}
-
-.dark .toggleCircle:after {
-  transition-delay: 0ms;
-  transition: all 250ms ease-in;
-  position: absolute;
-  content: '';
-  box-shadow: -20px 0 0 -2px $moon-dimple, -14px 6px 0 -3px $moon-dimple, -9px -1px 0 -3.7px $moon-dimple;
-  left: 22px;
-  top: 5px;
-  width: 10px;
-  height: 10px;
-  background: transparent;
-  border-radius: 50%;
-  opacity: 1;
-}
-
-.invisible {
-  opacity: 0;
 }
 
 .starVisible1 {
