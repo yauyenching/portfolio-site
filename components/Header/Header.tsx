@@ -1,7 +1,7 @@
 import React, { useEffect } from "react"
 import { Flex, Stack, Box, Text, Link, Checkbox, useColorModeValue, forwardRef, useStyleConfig, StyleFunctionProps, defineStyleConfig, LinkProps } from "@chakra-ui/react"
 import styles from './Header.module.scss'
-import variables from '/styles/variables.module.scss'
+import base from 'styles/base.module.scss'
 import { colorModeProps } from "../props"
 import DayNightToggle from "./DayNightToggle"
 import dynamic from "next/dynamic"
@@ -44,7 +44,7 @@ export default function Header({ colorMode, toggleColorMode }: colorModeProps) {
   // TODO: add persistent hover color and overlay position for active section
   return (
     <Flex className={styles.navbar}>
-      <Flex w='100%' maxW={variables.contentWidth} justifyContent='space-between'>
+      <Flex w='100%' maxW={base.contentWidth} justifyContent='space-between'>
         <Box className={styles.logo} position='relative'>
           <div className={styles.logoText}>
             <Text as="span" color='#fff'>yc</Text>
@@ -55,6 +55,7 @@ export default function Header({ colorMode, toggleColorMode }: colorModeProps) {
           w='100%' maxW='662px' justifyContent='space-between' position={'relative'}
         >
           <div id="overlay"/>
+          {/* TODO: Find how use inner text for params */}
           <HeaderLink linkText={"Experience"}/>
           <HeaderLink linkText={"Projects"}/>
           <HeaderLink linkText={"Designs"}/>

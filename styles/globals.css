@@ -1,25 +1,43 @@
+@import url('https://rsms.me/inter/inter.css');
+@import url('/public/fonts/webfont-iosevka-26.2.0/iosevka.css');
+@import url('/public/fonts/made_tommy_soft/made_tommy_soft.css');
+
 [data-theme='dark'] {
   --background: #12142C;
-  --text-primary: #C4C8D5;
+  --text-primary: hsl(226, 17%, 75%);
   --text-title: #E7EBF6;
   --header-link: #474A6B;
-  --accent: #FFA68A;
+  --accent: #ff9d80;
+  --gradient: linear-gradient(90deg, #ffb199 0%, #C96969 100%);
 }
 [data-theme='light'] {
   --background: #F7F0E2;
   --text-primary: #565A91;
   --text-title: #353B81;
   --header-link: #A9ACD6;
-  --accent: #C96969;
+  --accent: #cc6666;
+  --gradient: linear-gradient(270deg, hsl(14, 80%, 72%) 0%, #cc6666 100%);
 }
+
+/* Fonts */
+/* @font-face {
+  font-family: 'MADE Tommy Soft';
+  src: url("/fonts/made_tommy_soft/otf/MADE Tommy Soft Regular PERSONAL USE.otf");
+}
+
+@font-face {
+  font-family: 'MADE Tommy Soft Medium';
+  src: url("/fonts/made_tommy_soft/otf/MADE Tommy Soft Medium PERSONAL USE.otf");
+} */
 
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  /* font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, */
+    /* Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif; */
   color: var(--text-primary);
+  font-feature-settings: "ss01", "cv11";
 }
 
 a {

@@ -57,6 +57,21 @@ $cloud2: 49px;
     background: $moon-color;
     box-shadow: inset 1px -1.5px 0px $moon-shadow;
     transition: all 350ms ease-in;
+
+    &::after {
+      transition-delay: 0ms;
+      transition: all 250ms ease-in;
+      position: absolute;
+      content: '';
+      box-shadow: -20px 0 0 -2px $moon-dimple, -14px 6px 0 -3px $moon-dimple, -9px -1px 0 -3.7px $moon-dimple;
+      left: 22px;
+      top: 5px;
+      width: 10px;
+      height: 10px;
+      background: transparent;
+      border-radius: 50%;
+      opacity: 1;
+    }
   }
 }
 
@@ -72,21 +87,6 @@ $cloud2: 49px;
     transition: all 350ms ease-in;
     top: 4.5px;
     right: 4.5px;
-  }
-
-  .toggleCircle:after {
-    transition-delay: 0ms;
-    transition: all 250ms ease-in;
-    position: absolute;
-    content: '';
-    box-shadow: -20px 0 0 -2px $moon-dimple, -14px 6px 0 -3px $moon-dimple, -9px -1px 0 -3.7px $moon-dimple;
-    left: 22px;
-    top: 5px;
-    width: 10px;
-    height: 10px;
-    background: transparent;
-    border-radius: 50%;
-    opacity: 1;
   }
 }
 

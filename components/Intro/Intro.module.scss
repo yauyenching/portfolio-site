@@ -1,0 +1,56 @@
+@import '/styles/base.module.scss';
+
+.title {
+  @extend %bold-title;
+  text-transform: lowercase;
+  color: var(--text-title);
+  font-size: 60px;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 1.2px;
+}
+
+.accent {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.gradient {
+  background: var(--gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bio {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 2rem;
+  text-align: justify;
+}
+
+ul.skills {
+  padding: 0;
+  columns: 2;
+  width: 85%;
+
+  li {
+    font-family: $font-title;
+    list-style-type: none;
+    font-size: 14px;
+    font-style: normal;
+    line-height: 2.25em;
+    letter-spacing: 0.35px;
+
+    &::before {
+      content: '▹';
+      margin-right: 0.5em;
+      color: var(--accent);
+    }
+  }
+}
+
+.profilePic {
+  border-radius: 50%;
+  box-shadow: 0px 6px 30px 0px rgba(0, 0, 0, 0.08);
+}

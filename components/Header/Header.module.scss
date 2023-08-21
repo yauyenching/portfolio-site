@@ -1,12 +1,12 @@
-@import '/styles/variables.module.scss';
+@import '/styles/base.module.scss';
 
 .logo {
+  @extend %bold-title;
   height: 40px;
   width: 40px;
   border-radius: 8px;
   background-color: #222;
   color: #000;
-  font-family: $font-title;
   font-size: 20px;
 }
 
@@ -20,11 +20,12 @@
   font-size: 16px;
   text-transform: uppercase;
   padding: 7.5px 0px 0px;
-  font-family: $font-subtitle;
+  font-family: $font-title;
   color: var(--header-link);
-
+  
   &:hover {
     color: var(--text-title);
+    text-decoration: none !important;
     transition: ease-out 300ms;
   }
 }

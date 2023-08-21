@@ -1,0 +1,17 @@
+$font-title: 'MADE Tommy Soft';
+$font-mono: 'Iosevka', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
+$content-width: 1000px;
+
+%bold-title {
+  font-family: $font-title;
+  font-weight: 500;
+}
+
+%light-title {
+  font-family: $font-title;
+  font-weight: 300;
+}
+
+:export {
+  contentWidth: $content-width;
+}
