@@ -1,0 +1,13 @@
+@import '/styles/base.module.scss';
+
+.title {
+  font-family: $font-mono;
+  text-transform: lowercase;
+  font-size: 32px;
+  letter-spacing: 0.025em;
+  color: var(--text-color-title);
+}
+
+.id {
+  color: var(--accent);
+}

@@ -1,0 +1,62 @@
+@import '/styles/base.module.scss';
+
+.tab {
+  font-family: $font-title;
+  background: none;
+  border: none;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+  text-align: left;
+}
+
+.tab[aria-selected="true"] {
+  color: var(--accent);
+}
+
+.roleTitle {
+  @extend %bold-title;
+  // font-size: 20px;
+  color: var(--text-color-title);
+  margin: 0;
+}
+
+.companyName {
+  color: var(--accent);
+}
+
+.employmentDateRange {
+  margin-top: 5px;
+  text-transform: uppercase;
+  font-family: $font-title;
+  font-weight: 400;
+  letter-spacing: 0.025em;
+}
+
+.description {
+  ul {
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    // font-family: $font-title;
+    list-style-type: none;
+    text-indent: -25px;
+    padding-left: 25px;
+    text-align: justify;
+    // font-size: 14px;
+    // font-style: normal;
+    line-height: 1.6em;
+    // letter-spacing: 0.025em;
+
+    &::before {
+      content: '▹';
+      margin-right: 10px;
+      color: var(--accent);
+    }
+
+    &:not(:last-child) { 
+      margin-bottom: 15px;  
+   }
+  }
+}

@@ -2,16 +2,13 @@ import React, { useEffect } from "react"
 import { Flex, Stack, Box, Text, Link, Checkbox, useColorModeValue, forwardRef, useStyleConfig, StyleFunctionProps, defineStyleConfig, LinkProps } from "@chakra-ui/react"
 import styles from './Header.module.scss'
 import base from 'styles/base.module.scss'
-import { colorModeProps } from "../props"
-import DayNightToggle from "./DayNightToggle"
+import { colorModeProps } from "components/props"
+import DayNightToggle from "components/DayNightToggle"
+import { PropsWithChildren } from "react"
 import dynamic from "next/dynamic"
 
 export default function Header({ colorMode, toggleColorMode }: colorModeProps) {
-  type HeaderLinkProps = {
-    linkText: String
-  }
-
-  function HeaderLink({ linkText }: HeaderLinkProps) {
+  function HeaderLink({ children }: PropsWithChildren) {
     const changeOverlayPos = (elem: HTMLAnchorElement) => {
       const overlay = document.getElementById('overlay');
       const position = elem.getBoundingClientRect();
@@ -36,14 +33,14 @@ export default function Header({ colorMode, toggleColorMode }: colorModeProps) {
         onMouseOver={(e) => addOverlay(e.target as HTMLAnchorElement)} 
         onMouseLeave={(e) => removeOverlay(e.target as HTMLAnchorElement)}
       >
-        {linkText}
+        {children}
       </Link>
     )
   }
   
   // TODO: add persistent hover color and overlay position for active section
   return (
-    <Flex className={styles.navbar}>
+    <Flex className={styles.navBar}>
       <Flex w='100%' maxW={base.contentWidth} justifyContent='space-between'>
         <Box className={styles.logo} position='relative'>
           <div className={styles.logoText}>
@@ -55,12 +52,13 @@ export default function Header({ colorMode, toggleColorMode }: colorModeProps) {
           w='100%' maxW='662px' justifyContent='space-between' position={'relative'}
         >
           <div id="overlay"/>
-          {/* TODO: Find how use inner text for params */}
-          <HeaderLink linkText={"Experience"}/>
-          <HeaderLink linkText={"Projects"}/>
-          <HeaderLink linkText={"Designs"}/>
-          <HeaderLink linkText={"Features"}/>
-          <HeaderLink linkText={"Contact"}/>
+          {/* DONE: Find how use inner text for params */}
+          {/* https://stackoverflow.com/questions/32248427/this-props-children-selecting-innerhtml */}
+          <HeaderLink>Experience</HeaderLink>
+          <HeaderLink>Projects</HeaderLink>
+          <HeaderLink>Designs</HeaderLink>
+          <HeaderLink>Features</HeaderLink>
+          <HeaderLink>Contact</HeaderLink>
         </Flex>
         {/* https://daily-dev-tips.com/posts/creating-day-night-css-only-toggle-switch/ */}
         <DayNightToggle
