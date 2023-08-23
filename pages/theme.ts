@@ -27,8 +27,37 @@ const theme = extendTheme({
   fonts: {
     body: `'Inter', sans-serif`
   },
+  colors: {
+    brand: {
+      bg: 'var(--background)',
+      body: 'var(--text-color-primary)',
+      title: 'var(--text-color-title)',
+      accent: 'var(--accent)',
+    }
+  },
   components: {
-    Tabs: tabsTheme
+    Tabs: tabsTheme,
+    Link: {
+      baseStyle: {
+        textDecoration: 'none',
+      }
+    },
+    Heading: {
+      baseStyle: {
+        fontFamily: 'MADE Tommy Soft',
+        fontWeight: 500,
+        color: 'brand.title',
+      },
+      variants: {
+        subtitle: {
+          color: 'brand.subtitle',
+          textTransform: 'uppercase',
+          marginTop: '5px',
+          fontWeight: 400,
+          letterSpacing: '0.025em',
+        }
+      }
+    }
   }
 })
 

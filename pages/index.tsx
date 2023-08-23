@@ -1,11 +1,12 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
+import { useColorMode, useColorModeValue, Button, Box, Stack } from '@chakra-ui/react'
 import styles from 'styles/Home.module.css'
 import Header from './sections/Header'
 import Intro from './sections/Intro'
 import Experience from './sections/Experience'
-import { useColorMode, useColorModeValue, Button, Box, Stack } from '@chakra-ui/react'
+import Projects from './sections/Projects'
 
 const Home: NextPage = () => {
   const { colorMode, toggleColorMode } = useColorMode()
@@ -29,6 +30,7 @@ const Home: NextPage = () => {
           />
           <Intro/>
           <Experience/>
+          <Projects/>
           
         </Stack>
         {/* <Button size='sm' onClick={toggleColorMode}>

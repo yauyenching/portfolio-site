@@ -1,4 +1,4 @@
-import { Tabs, TabList, TabPanels, Tab, TabPanel, TabIndicator, Box } from '@chakra-ui/react'
+import { Tabs, TabList, TabPanels, Tab, TabPanel, TabIndicator, Box, Heading } from '@chakra-ui/react'
 import styles from './Experience.module.scss'
 import SectionHeading from 'components/SectionHeading'
 import { PropsWithChildren } from 'react'
@@ -13,8 +13,8 @@ export default function Experience() {
   function JobExperienceItem({ jobTitle, company, employmentDateRange, children }: PropsWithChildren<JobExperienceItemProps>) {
     return (
       <Box>
-        <h3 className={styles.roleTitle}>{jobTitle} <span style={{'fontWeight': 'normal'}}>@ </span><span>{company}</span></h3>
-        <h4 className={styles.employmentDateRange}>{employmentDateRange}</h4>
+        <Heading as='h3' fontSize='lg' m={0}>{jobTitle} <span style={{'fontWeight': 'normal'}}>@ </span>{company}</Heading>
+        <Heading as='h4' variant='subtitle' fontSize='md'>{employmentDateRange}</Heading>
         <Box className={styles.description}>{children}</Box>
       </Box>
     )

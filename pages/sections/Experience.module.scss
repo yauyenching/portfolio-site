@@ -13,23 +13,8 @@
   color: var(--accent);
 }
 
-.roleTitle {
-  @extend %bold-title;
-  // font-size: 20px;
-  color: var(--text-color-title);
-  margin: 0;
-}
-
 .companyName {
   color: var(--accent);
-}
-
-.employmentDateRange {
-  margin-top: 5px;
-  text-transform: uppercase;
-  font-family: $font-title;
-  font-weight: 400;
-  letter-spacing: 0.025em;
 }
 
 .description {
