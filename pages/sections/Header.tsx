@@ -29,6 +29,7 @@ export default function Header({ colorMode, toggleColorMode }: colorModeProps) {
     
     return (
       <Link 
+        variant='header'
         className={styles.link}
         onMouseOver={(e) => addOverlay(e.target as HTMLAnchorElement)} 
         onMouseLeave={(e) => removeOverlay(e.target as HTMLAnchorElement)}

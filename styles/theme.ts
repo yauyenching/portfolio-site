@@ -1,5 +1,5 @@
 // 1. import `extendTheme` function
-import { extendTheme } from '@chakra-ui/react'
+import { extendTheme, textDecoration } from '@chakra-ui/react'
 import tabsTheme from './tabsTheme'
 import cardTheme from './cardTheme'
 
@@ -36,13 +36,31 @@ const theme = extendTheme({
     Card: cardTheme,
     Link: {
       baseStyle: {
-        textDecoration: 'none',
+        textDecoration: 'underline',
+        _hover: {
+          color: 'brand.accent',
+          transition: 'ease-out 300ms'
+        }
+      },
+      variants: {
+        header: {
+          textDecoration: 'none',
+          _hover: {
+            color: 'brand.title',
+            textDecoration: 'none'
+          }
+        }
       }
     },
     Text: {
       baseStyle: {
         color: 'brand.body',
       },
+      variants: {
+        noSpacing: {
+          margin: '0.35em 0'
+        }
+      }
     },
     Heading: {
       baseStyle: {

@@ -9,6 +9,7 @@ import Intro from './sections/Intro'
 import Experience from './sections/Experience'
 import Projects from './sections/Projects'
 import Designs from './sections/Designs'
+import Features from './sections/Features'
 
 const Home: NextPage = () => {
   const { colorMode, toggleColorMode } = useColorMode()
@@ -36,6 +37,7 @@ const Home: NextPage = () => {
             <Experience />
             <Projects />
             <Designs />
+            <Features />
           </Stack>
         </Flex>
         {/* <Button size='sm' onClick={toggleColorMode}>
