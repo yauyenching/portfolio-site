@@ -7,10 +7,10 @@ interface sectionHeadingProps {
 
 export default function SectionHeading({ sectionId, sectionTitle }: sectionHeadingProps) {
   return (
-    <h2>
+    <h1>
       <span className={styles.title}>
         <span className={styles.id}>0{sectionId}.</span> {sectionTitle}
       </span>
-    </h2>
+    </h1>
   )
 }

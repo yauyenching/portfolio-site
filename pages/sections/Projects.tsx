@@ -48,7 +48,7 @@ export default function Projects() {
       <Grid
         justifyContent='space-between'
         gridTemplateColumns='repeat(3, 1fr)'
-        rowGap='15px'
+        rowGap={15}
       >
         <ProjectsCard
           imageFileName='dorm_temp_dashboard.png'
