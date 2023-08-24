@@ -13,8 +13,8 @@ export default function Experience() {
   function JobExperienceItem({ jobTitle, company, employmentDateRange, children }: PropsWithChildren<JobExperienceItemProps>) {
     return (
       <Box>
-        <Heading as='h3' fontSize='lg' m={0}>{jobTitle} <span style={{'fontWeight': 'normal'}}>@ </span>{company}</Heading>
-        <Heading as='h4' variant='subtitle' fontSize='md'>{employmentDateRange}</Heading>
+        <Heading as='h2' fontSize='lg' m={0}>{jobTitle} <span style={{'fontWeight': 'normal'}}>@ </span>{company}</Heading>
+        <Heading as='h3' variant='subtitle' fontSize='md'>{employmentDateRange}</Heading>
         <Box className={styles.description}>{children}</Box>
       </Box>
     )

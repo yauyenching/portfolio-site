@@ -1,4 +1,4 @@
-import { SVGProps } from "../components/props"
+import { SVGProps } from "../../components/props"
 
 const DayCloud = ({ className, left, top }: Partial<SVGProps>) => {
   return (

@@ -8,6 +8,7 @@
   --text-color-title: #E7EBF6;
   --text-color-header-link: #474A6B;
   --accent: #ff9d80;
+  --card-bg: #070B28;
   --gradient: linear-gradient(90deg, #ffb199 0%, #C96969 100%);
 }
 [data-theme='light'] {
@@ -16,6 +17,7 @@
   --text-color-title: #353B81;
   --text-color-header-link: #A9ACD6;
   --accent: #cc6666;
+  --card-bg: #FDF7EB;
   --gradient: linear-gradient(270deg, hsl(14, 80%, 72%) 0%, #cc6666 100%);
 }
 

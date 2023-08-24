@@ -1,4 +1,4 @@
-import { SVGProps } from "../components/props"
+import { SVGProps } from "../../components/props"
 
 const NightSparkle = ({ className, width, height, left, top }: SVGProps) => {
   return (
