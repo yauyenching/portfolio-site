@@ -19,7 +19,7 @@ export default function Features() {
         padding={25}
         boxShadow="0px 6px 30px 0px rgba(0, 0, 0, 0.08)"
       >
-        <Heading fontSize="md" mt={0} mb={2.5}>“{featureTitle}”</Heading>
+        <Heading fontSize="lg" mt={0} mb={2.5}>“{featureTitle}”</Heading>
         <Text variant='noSpacing' fontSize="sm">{publishDate} <Text as="span" color="brand.accent">•</Text> {publishDescription}</Text>
         {children}
       </Box>

@@ -1,6 +1,6 @@
 import styles from './Intro.module.scss'
 import base from 'styles/base.module.scss'
-import { Box, Flex } from '@chakra-ui/react'
+import { Box, Flex, Text } from '@chakra-ui/react'
 import Image from 'next/image'
 
 export default function Intro() {
@@ -20,20 +20,20 @@ export default function Intro() {
         <Box textAlign={{ base: 'center', md: 'left' }}>
           <h1 className={styles.title}>
             {/* TODO: Add name gradient hover and startup animation */}
-            Hello, I'm <span style={{ 'display': 'inline-block' }}>
-              <span className={styles.name}>Yen Ching</span>.
+            Hi, I'm <span style={{ 'display': 'inline-block' }}>
+              <span className={styles.name}>Yau Yen Ching</span>.
             </span>
           </h1>
         </Box>
         <div className={styles.bio}>
-          <p>I am a Software Engineer and aspiring Product Manager based in Singapore. 🇸🇬</p>
+          <Text>I am a Software Engineer and aspiring Product Manager based in Singapore. 🇸🇬</Text>
 
-          <p>As a proud <span className={styles.accent}>Computer Science</span> graduate of <b>Yale-NUS College</b>,
-            I love exploring the intersection of technology, design, and human interaction! I possess a diverse array of interests and skills, such as: <b>full-stack development</b>, <b>UX/UI design</b>, and <b>data analytics</b>.</p>
+          <Text>As a proud <span className={styles.accent}>Computer Science</span> graduate of <b>Yale-NUS College</b>,
+            I love exploring the intersection of technology, design, and human interaction! I possess a diverse array of interests and skills, such as: <b>full-stack development</b>, <b>UX/UI design</b>, and <b>data analytics</b>.</Text>
 
-          <p>Drawing upon my multifaceted background, I enjoy building user-first products that solve real user needs through empathy, thoughtful design, and data-driven insights.</p>
+          <Text>Drawing upon my multifaceted background, I enjoy building user-first products that solve real user needs through empathy, thoughtful design, and data-driven insights.</Text>
           
-          <p>Here are some technologies I have been working with:</p>
+          <Text>Here are some technologies I have been working with:</Text>
         </div>
         <ul className={styles.skills}>
           <li>TypeScript/JavaScript</li>

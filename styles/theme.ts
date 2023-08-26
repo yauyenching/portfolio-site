@@ -9,7 +9,8 @@ const colors = {
       body: 'var(--text-color-primary)',
       title: 'var(--text-color-title)',
       accent: 'var(--accent)',
-      card: 'var(--card-bg)'
+      card: 'var(--card-bg)',
+      gradient: 'var(--gradient)'
     }
 }
 
@@ -62,6 +63,24 @@ const theme = extendTheme({
         }
       }
     },
+    Button: {
+      variants: {
+        gradient: {
+          fontFamily: 'MADE Tommy Soft',
+          fontWeight: 500,
+          border: '3px solid',
+          borderRadius: '10px',
+          borderColor: 'transparent',
+          background: `linear-gradient(var(--background), var(--background)) padding-box,
+          var(--gradient) border-box`,
+          '> *': {
+            background: 'brand.gradient',
+            backgroundClip: 'text',
+            textFillColor: 'transparent'
+          }
+        }
+      }
+    },
     Heading: {
       baseStyle: {
         fontFamily: 'MADE Tommy Soft',
@@ -75,6 +94,11 @@ const theme = extendTheme({
           marginTop: '5px',
           fontWeight: 400,
           letterSpacing: '0.025em',
+        },
+        gradient: {
+          background: 'brand.gradient',
+          backgroundClip: 'text',
+          lineHeight: 1.2
         }
       }
     }
