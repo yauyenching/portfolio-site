@@ -59,7 +59,7 @@ export default function Projects() {
         </ProjectsCard>
         <ProjectsCard
           imageFileName='wordle_tele_bot.png'
-          projectTitle='Wordle Leaderboard Telegran Bot'
+          projectTitle='Wordle Leaderboard Telegram Bot'
           techStack={['python', 'mongodb']}
         >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu ligula sit amet nulla tempus condimentum. 

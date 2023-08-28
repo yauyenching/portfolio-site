@@ -8,15 +8,19 @@
   --text-color-title: #E7EBF6;
   --text-color-header-link: #474A6B;
   --accent: #ff9d80;
+  /* --accent-fade: hsla(14, 100%, 75%, 0.75); */
+  --accent-fade: linear-gradient(0, hsla(14, 100%, 75%, 0.65) 0%, hsla(0, 50%, 60%, 0.2) 100%);
   --card-bg: #070B28;
   --gradient: linear-gradient(90deg, #ffb199 0%, #C96969 100%);
 }
 [data-theme='light'] {
-  --background: #F7F0E2;
+  --background: rgb(247, 241, 227);
   --text-color-primary: #565A91;
   --text-color-title: #353B81;
   --text-color-header-link: #A9ACD6;
   --accent: #cc6666;
+  /* --accent-fade: hsla(0, 50%, 60%, 0.75); */
+  --accent-fade: linear-gradient(0, hsla(0, 50%, 60%, 0.65) 0%, hsla(14, 100%, 75%, 0.2) 100%);
   --card-bg: #FDF7EB;
   --gradient: linear-gradient(270deg, hsl(14, 80%, 72%) 0%, #cc6666 100%);
 }

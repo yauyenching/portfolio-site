@@ -8,19 +8,27 @@ export default function Designs() {
   }
 
   function DesignsCard({ designTitle, imageFileName }: DesignsCardProp){
-    const designOverlay = useColorModeValue('rgba(51, 51, 51, 0.50)', 'rgba(0, 0, 0, 0.50)')
+    const designOverlay = useColorModeValue('rgba(0, 0, 0, 0.35)', 'rgba(0, 0, 0, 0.50)')
     return (
       <Flex
         w={450} h={275}
-        background={`linear-gradient(0deg, ${designOverlay} 0%, ${designOverlay} 100%), url(previews/${imageFileName})`}
+        // background={`linear-gradient(0deg, ${designOverlay} 0%, ${designOverlay} 100%), url(previews/${imageFileName})`}
         backgroundSize='cover'
         backgroundPosition='center'
         borderRadius={20}
         alignItems='center'
         justifyContent='center'
         boxShadow='0px 6px 30px 0px rgba(0, 0, 0, 0.08)'
+        overflow='hidden'
       >
-        <Heading as="h2" fontSize="lg" position='absolute' m='auto' color='white'>{designTitle}</Heading>
+        <Box 
+          w='100%' h='100%'
+          background={`url(previews/${imageFileName})`}
+          backgroundSize='cover'
+          backgroundPosition='center'
+          opacity={0.45}
+        />
+        <Heading as="h2" fontSize="lg" position='absolute' m='auto' color='brand.title'>{designTitle}</Heading>
       </Flex>
     )
   }

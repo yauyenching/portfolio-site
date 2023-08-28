@@ -46,7 +46,7 @@ export default function Header({ colorMode, toggleColorMode }: colorModeProps) {
         <Box className={styles.logo} position='relative'>
           <div className={styles.logoText}>
             <Text as="span" color='#fff'>yc</Text>
-            <Text as="span" color='#FFA68A'>.</Text>
+            <Text as="span" color='brand.accent'>.</Text>
           </div>
         </Box>
         <Flex 

@@ -15,7 +15,7 @@ export default function Contact() {
       <Heading m={0} fontSize="6xl" variant="gradient">get in touch</Heading>
       <Box textAlign="center">
         <Text variant="noSpacing">I am currently open to Software Engineering opportunities.</Text>
-        <Text variant="noSpacing">Whether you want to work together, or say hi, my inbox is always open! :-)</Text>
+        <Text variant="noSpacing">Whether you want to work together, or say hi, my inbox is always open! 👋🏻</Text>
       </Box>
       <Button
         variant="gradient"
