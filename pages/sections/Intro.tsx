@@ -14,9 +14,9 @@ export default function Intro() {
       <Flex
         justifyContent={{ base: 'center', md: 'right' }}
       >
-        <Image
+        {/* <Image
             className={styles.profilePic}
-            src="/profile_pic.jpg"
+            src="/profile_pic2.jpg"
             alt="test"
             width={0} height={0}
             sizes="100vw"
@@ -26,8 +26,8 @@ export default function Intro() {
               position: 'relative',
               zIndex: 2,
             }}
-        />
-        {/* <Flex
+        /> */}
+        <Flex
           justifyContent='center'
           w={225} h={225}
           position='relative'
@@ -76,7 +76,7 @@ export default function Intro() {
               opacity: '0.6'
             }}
           />
-        </Flex> */}
+        </Flex>
       </Flex>
       <Box w={{ base: '100%', md: '80%' }}>
         <Box textAlign={{ base: 'center', md: 'left' }}>
