@@ -1,5 +1,4 @@
-import { Tabs, TabList, TabPanels, Tab, TabPanel, TabIndicator, Box, Heading } from '@chakra-ui/react'
-import styles from './Experience.module.scss'
+import { Tabs, TabList, TabPanels, Tab, TabPanel, Box, Heading, UnorderedList, ListItem, useBreakpointValue } from '@chakra-ui/react'
 import SectionHeading from 'components/SectionHeading'
 import { PropsWithChildren } from 'react'
 
@@ -15,7 +14,7 @@ export default function Experience() {
       <Box>
         <Heading as='h2' fontSize='lg' m={0}>{jobTitle} <span style={{'fontWeight': 'normal'}}>@ </span>{company}</Heading>
         <Heading as='h3' variant='subtitle' fontSize='md'>{employmentDateRange}</Heading>
-        <Box className={styles.description}>{children}</Box>
+        <Box>{children}</Box>
       </Box>
     )
   }
@@ -26,11 +25,11 @@ export default function Experience() {
         sectionId={1}
         sectionTitle='Experience'
       />
-      <Tabs orientation="vertical" w={680}>
+      <Tabs orientation={useBreakpointValue({ base: 'horizontal', sm: 'vertical' })} maxW={680}>
         <TabList>
-          <Tab className={styles.tab}>Koru Partners</Tab>
-          <Tab className={styles.tab}>AirAsia</Tab>
-          <Tab className={styles.tab}>Yale-NUS</Tab>
+          <Tab>Koru Partners</Tab>
+          <Tab>AirAsia</Tab>
+          <Tab>Yale-NUS</Tab>
         </TabList>
 
         <TabPanels>
@@ -40,11 +39,11 @@ export default function Experience() {
               company='Koru Partners'
               employmentDateRange='Feb 2023 - Jul 2023'
             >
-              <ul>
-                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu ligula sit amet nulla tempus condimentum. </li>
-                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu ligula sit amet nulla tempus condimentum. </li>
-                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu ligula sit amet nulla tempus condimentum. </li>
-              </ul>
+              <UnorderedList>
+                <ListItem>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu ligula sit amet nulla tempus condimentum. </ListItem>
+                <ListItem>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu ligula sit amet nulla tempus condimentum. </ListItem>
+                <ListItem>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu ligula sit amet nulla tempus condimentum. </ListItem>
+              </UnorderedList>
             </JobExperienceItem>
           </TabPanel>
           <TabPanel>
@@ -53,10 +52,10 @@ export default function Experience() {
               company='AirAsia'
               employmentDateRange='Jun 2021 - Sep 2021'
             >
-              <ul>
-                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu ligula sit amet nulla tempus condimentum. </li>
-                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu ligula sit amet nulla tempus condimentum. </li>
-              </ul>
+              <UnorderedList>
+                <ListItem>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu ligula sit amet nulla tempus condimentum. </ListItem>
+                <ListItem>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu ligula sit amet nulla tempus condimentum. </ListItem>
+              </UnorderedList>
             </JobExperienceItem>
           </TabPanel>
           <TabPanel>
@@ -65,12 +64,12 @@ export default function Experience() {
               company='Yale-NUS College'
               employmentDateRange='May 2020 - Apr 2021'
             >
-              <ul>
-                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu ligula sit amet nulla tempus condimentum. </li>
-                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu ligula sit amet nulla tempus condimentum. </li>
-                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu ligula sit amet nulla tempus condimentum. </li>
-                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu ligula sit amet nulla tempus condimentum. </li>
-              </ul>
+              <UnorderedList>
+                <ListItem>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu ligula sit amet nulla tempus condimentum. </ListItem>
+                <ListItem>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu ligula sit amet nulla tempus condimentum. </ListItem>
+                <ListItem>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu ligula sit amet nulla tempus condimentum. </ListItem>
+                <ListItem>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu ligula sit amet nulla tempus condimentum. </ListItem>
+              </UnorderedList>
             </JobExperienceItem>
           </TabPanel>
         </TabPanels>

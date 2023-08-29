@@ -9,6 +9,15 @@ const baseStyle = definePartsStyle({
   // define the part you're going to style
   tab: {
     justifyContent: 'left', // change the font weight
+    fontFamily: 'heading',
+    background: 'none',
+    border: 'none',
+    textTransform: 'uppercase',
+    letterSpacing: '0.025em',
+    textAlign: 'left',
+    _selected: {
+      color: 'brand.accent'
+    }
   },
   tabpanel: {
     padding: '10px 25px'

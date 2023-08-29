@@ -1,17 +1,23 @@
 // 1. import `extendTheme` function
-import { extendTheme, textDecoration } from '@chakra-ui/react'
+import { extendTheme } from '@chakra-ui/react'
 import tabsTheme from './tabsTheme'
 import cardTheme from './cardTheme'
+import listTheme from './listTheme'
 
 const colors = {
-    brand: {
-      bg: 'var(--background)',
-      body: 'var(--text-color-primary)',
-      title: 'var(--text-color-title)',
-      accent: 'var(--accent)',
-      card: 'var(--card-bg)',
-      gradient: 'var(--gradient)'
-    }
+  brand: {
+    bg: 'var(--background)',
+    body: 'var(--text-color-primary)',
+    title: 'var(--text-color-title)',
+    accent: 'var(--accent)',
+    card: 'var(--card-bg)',
+    gradient: 'var(--gradient)',
+    headerLink: 'var(--text-color-header-link)'
+  }
+}
+
+const sizes = {
+  contentW: '1000px'
 }
 
 const styles = {
@@ -22,19 +28,25 @@ const styles = {
   }
 }
 
+const fonts = {
+  heading: `'MADE Tommy Soft', "Trebuchet MS", Helvetica, sans-serif`,
+  body: `'Inter', Arial, Helvetica, sans-serif`,
+  mono: `'Iosevka', 'Fira Code', 'Fira Mono', 'Roboto Mono', "Courier New", Courier, monospace`
+}
+
 const theme = extendTheme({
   config: {
     initialColorMode: 'dark',
     useSystemColorMode: true,
   },
-  fonts: {
-    body: `'Inter', sans-serif`
-  },
+  fonts: fonts,
   colors: colors,
+  sizes: sizes,
   styles: styles,
   components: {
     Tabs: tabsTheme,
     Card: cardTheme,
+    List: listTheme,
     Link: {
       baseStyle: {
         textDecoration: 'underline',
@@ -46,6 +58,10 @@ const theme = extendTheme({
       variants: {
         header: {
           textDecoration: 'none',
+          textTransform: 'uppercase',
+          fontFamily: 'heading',
+          padding: '7.5px 0 0',
+          color: 'brand.headerLink',
           _hover: {
             color: 'brand.title',
             textDecoration: 'none'
@@ -83,7 +99,6 @@ const theme = extendTheme({
     },
     Heading: {
       baseStyle: {
-        fontFamily: 'MADE Tommy Soft',
         fontWeight: 500,
         color: 'brand.title',
       },
@@ -93,12 +108,17 @@ const theme = extendTheme({
           textTransform: 'uppercase',
           marginTop: '5px',
           fontWeight: 400,
-          letterSpacing: '0.025em',
+          letterSpacing: '0.025rem',
         },
         gradient: {
           background: 'brand.gradient',
           backgroundClip: 'text',
-          lineHeight: 1.2
+          letterSpacing: '0.065rem'
+        },
+        mono: {
+          fontFamily: 'mono',
+          textTransform: 'lowercase',
+          letterSpacing: '0.025rem',
         }
       }
     }

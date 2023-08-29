@@ -40,7 +40,7 @@ export default function Projects() {
 
 
   return (
-    <Box w='100%'>
+    <Box w='100%' maxW='contentW'>
       <SectionHeading
         sectionId={2}
         sectionTitle='Projects'

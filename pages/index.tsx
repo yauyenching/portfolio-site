@@ -14,7 +14,6 @@ import Contact from './sections/Contact'
 
 const Home: NextPage = () => {
   const { colorMode, toggleColorMode } = useColorMode()
-  const test = useColorModeValue('#000', '#fff')
 
   // TODO: Add smooth scrolling animation
 
@@ -29,7 +28,7 @@ const Home: NextPage = () => {
 
       <main>
         <Flex justifyContent='center' bg='brand.bg'>
-          <Stack w={styles.contentWidth} h='100%' className={styles.main} spacing={100}>
+          <Stack w='100%' h='100%' className={styles.main} spacing={100}>
             <Header
               colorMode={colorMode}
               toggleColorMode={toggleColorMode}

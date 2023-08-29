@@ -1,11 +1,7 @@
-import React, { useEffect } from "react"
-import { Flex, Stack, Box, Text, Link, Checkbox, useColorModeValue, forwardRef, useStyleConfig, StyleFunctionProps, defineStyleConfig, LinkProps } from "@chakra-ui/react"
-import styles from './Header.module.scss'
-import base from 'styles/base.module.scss'
+import { Flex, Box, Text, Link } from "@chakra-ui/react"
 import { colorModeProps } from "components/props"
 import DayNightToggle from "components/DayNightToggle"
 import { PropsWithChildren } from "react"
-import dynamic from "next/dynamic"
 
 export default function Header({ colorMode, toggleColorMode }: colorModeProps) {
   function HeaderLink({ children }: PropsWithChildren) {
@@ -25,34 +21,50 @@ export default function Header({ colorMode, toggleColorMode }: colorModeProps) {
     const removeOverlay = (elem: HTMLAnchorElement) => {
       const overlay = document.getElementById('overlay');
       overlay?.classList.remove('active');
-    } 
-    
+    }
+
     return (
-      <Link 
+      <Link
         variant='header'
-        className={styles.link}
-        onMouseOver={(e) => addOverlay(e.target as HTMLAnchorElement)} 
+        onMouseOver={(e) => addOverlay(e.target as HTMLAnchorElement)}
         onMouseLeave={(e) => removeOverlay(e.target as HTMLAnchorElement)}
       >
         {children}
       </Link>
     )
   }
-  
+
   // TODO: add persistent hover color and overlay position for active section
   return (
-    <Flex className={styles.navBar}>
-      <Flex w='100%' maxW={base.contentWidth} justifyContent='space-between'>
-        <Box className={styles.logo} position='relative'>
-          <div className={styles.logoText}>
-            <Text as="span" color='#fff'>yc</Text>
+    <Flex
+      w='100%' h={50}
+      bg='brand.bg'
+      position='fixed'
+      top={0} left={0}
+      zIndex={5}
+      letterSpacing='0.05em'
+      alignItems='center'
+      justifyContent='center'
+    >
+      <Flex w='100%' maxW='contentW' justifyContent='space-between'
+      >
+        <Box
+          h='40px' w='40px'
+          borderRadius={8}
+          bg='#222' color='black'
+          position='relative'
+          fontFamily='heading' fontWeight={500}
+          fontSize='lg'
+        >
+          <Box position='absolute' left='6px' top='4px'>
+            <Text as="span" color='white'>yc</Text>
             <Text as="span" color='#FFA68A'>.</Text>
-          </div>
+          </Box>
         </Box>
-        <Flex 
+        <Flex
           w='100%' maxW='662px' justifyContent='space-between' position={'relative'}
         >
-          <div id="overlay"/>
+          <Box id="overlay" />
           {/* DONE: Find how use inner text for params */}
           {/* https://stackoverflow.com/questions/32248427/this-props-children-selecting-innerhtml */}
           <HeaderLink>Experience</HeaderLink>
@@ -66,11 +78,7 @@ export default function Header({ colorMode, toggleColorMode }: colorModeProps) {
           colorMode={colorMode}
           toggleColorMode={toggleColorMode}
         />
-        {/* <input id="toggle" className={styles.toggleCheckbox} />
-        <label htmlFor="toggle" className={styles.toggle}>
-          <span className={styles.toggleBackground}/>
-        </label> */}
-        </Flex>
       </Flex>
+    </Flex>
   )
 }
