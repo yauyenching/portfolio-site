@@ -1,4 +1,4 @@
-import { Box, Heading, Flex, Grid, useColorModeValue } from "@chakra-ui/react"
+import { Box, Heading, Flex, Grid, GridItem, useBreakpointValue } from "@chakra-ui/react"
 import SectionHeading from "components/SectionHeading"
 
 export default function Designs() {
@@ -9,25 +9,26 @@ export default function Designs() {
 
   function DesignsCard({ designTitle, imageFileName }: DesignsCardProp){
     return (
-      <Flex
-        w={450} h={275}
+      <GridItem
+        maxW="100%" h={275}
         backgroundSize='cover'
         backgroundPosition='center'
         borderRadius={20}
-        alignItems='center'
-        justifyContent='center'
+        display="flex"
+        alignItems='center' justifyContent='center'
         boxShadow='0px 6px 30px 0px rgba(0, 0, 0, 0.08)'
         overflow='hidden'
       >
-        <Box 
-          w='100%' h='100%'
+        <Flex 
+          // w={475} h={275}
+          w="100%" h="100%"
           background={`url(previews/${imageFileName})`}
           backgroundSize='cover'
           backgroundPosition='center'
           opacity={0.55}
         />
         <Heading as="h2" fontSize="lg" position='absolute' m='auto' color='brand.title'>{designTitle}</Heading>
-      </Flex>
+      </GridItem>
     )
   }
 
@@ -38,9 +39,10 @@ export default function Designs() {
         sectionTitle='Designs'
       />
       <Grid
+        w="100%"
         justifyContent='space-between'
-        gridTemplateColumns='repeat(2, 1fr)'
-        rowGap={15}
+        gridTemplateColumns={{base: 'repeat(auto-fill, minmax(275px, 1fr))', md: 'repeat(2, 1fr)'}}
+        rowGap={15} columnGap={15}
       >
         <DesignsCard
           designTitle="Homemates"

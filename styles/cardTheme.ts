@@ -29,8 +29,8 @@ const sizes = {
   sm: definePartsStyle({
     container: {
       borderRadius: '20px',
-      width: '300px',
-      height: '425px'
+      maxWidth: '100%',
+      height: { base:'fit-content', sm: '425px'}
     },
   }),
 }

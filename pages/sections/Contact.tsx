@@ -12,10 +12,16 @@ export default function Contact() {
         sectionId={5}
         sectionTitle='Contact'
       />
-      <Heading m={0} fontSize="6xl" variant="gradient">get in touch</Heading>
+      <Heading
+        m={0} variant="gradient"
+        fontSize={{ base: '5xl', md: '6xl' }}
+        textAlign="center" pb={5}
+      >
+        get in touch
+      </Heading>
       <Box textAlign="center">
-        <Text variant="noSpacing">I am currently open to Software Engineering opportunities.</Text>
-        <Text variant="noSpacing">Whether you want to work together, or say hi, my inbox is always open! :-)</Text>
+        <Text>I am currently <b>open</b> to full-time work opportunities in Singapore.</Text>
+        <Text>Whether you want to work together, or say hi, my inbox is always open! ☺️👋🏻</Text>
       </Box>
       <Button
         variant="gradient"

@@ -17,7 +17,7 @@ export default function Intro() {
           width={225} height={225}
           style={{
             borderRadius: '50%',
-            boxShadow: '0px 6px 30px 0px rgba(0, 0, 0, 0.08)',
+            // boxShadow: '0px 6px 30px 0px rgba(0, 0, 0, 0.08)',
             marginBottom: 5,
           }}
         />
@@ -46,16 +46,16 @@ export default function Intro() {
 
           </Heading>
         </Box>
-        <Text lineHeight="2em" textAlign="justify">
+        <Box lineHeight="2em" textAlign="justify">
           <Text>I am a Software Engineer and aspiring Product Manager based in Singapore. 🇸🇬</Text>
 
-          <Text>As a proud <Text as="span" color="brand.accent">Computer Science</Text> graduate of <b>Yale-NUS College</b>,
+          <Text>As a proud <b>Computer Science</b> graduate of <b>Yale-NUS College</b>,
             I love exploring the intersection of technology, design, and human interaction! I possess a diverse array of interests and skills, such as: <b>full-stack development</b>, <b>UX/UI design</b>, and <b>data analytics</b>.</Text>
 
           <Text>Drawing upon my multifaceted background, I enjoy building user-first products that solve real user needs through empathy, thoughtful design, and data-driven insights.</Text>
 
           <Text>Here are some technologies I have been working with:</Text>
-        </Text>
+        </Box>
         <UnorderedList
           w='85%'
           fontFamily='heading' fontSize="sm"

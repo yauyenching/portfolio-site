@@ -13,7 +13,10 @@ export default function Projects() {
   function ProjectsCard({imageFileName, projectTitle, techStack, children}: PropsWithChildren<ProjectsCardProp>) {
     return (
       <GridItem>
-        <Card size='sm' overflow='hidden'>
+        <Card 
+          size='sm' overflow='hidden'
+        
+        >
           <CardHeader>
             <Image
               src={`/previews/${imageFileName}`}
@@ -27,7 +30,15 @@ export default function Projects() {
           </CardHeader>
           <CardBody textAlign='justify' position='relative'>
             <Text as="span" fontSize="sm">{children}</Text>
-            <Heading variant='subtitle' fontSize="xs" color="brand.accent" textAlign='center' position='absolute' bottom={0} left={0} right={0}>{techStack.join(', ')}</Heading>
+            <Heading 
+              variant='subtitle'
+              fontSize="xs" color="brand.accent"
+              textAlign='center'
+              position={{base: 'static', sm: 'absolute'}}
+              left={0} right={0} bottom={0}
+            >
+              {techStack.join(', ')}
+            </Heading>
           </CardBody>
           <CardFooter>
             <i className="fa-brands fa-github"></i>
@@ -46,9 +57,10 @@ export default function Projects() {
         sectionTitle='Projects'
       />
       <Grid
+        w="100%"
         justifyContent='space-between'
-        gridTemplateColumns='repeat(3, 1fr)'
-        rowGap={15}
+        gridTemplateColumns='repeat(auto-fill, minmax(250px, 1fr))'
+        rowGap={15} columnGap={15}
       >
         <ProjectsCard
           imageFileName='dorm_temp_dashboard.png'
@@ -59,7 +71,7 @@ export default function Projects() {
         </ProjectsCard>
         <ProjectsCard
           imageFileName='wordle_tele_bot.png'
-          projectTitle='Wordle Leaderboard Telegran Bot'
+          projectTitle='Wordle Leaderboard Telegram Bot'
           techStack={['python', 'mongodb']}
         >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu ligula sit amet nulla tempus condimentum. 

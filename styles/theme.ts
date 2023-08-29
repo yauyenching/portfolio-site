@@ -113,7 +113,8 @@ const theme = extendTheme({
         gradient: {
           background: 'brand.gradient',
           backgroundClip: 'text',
-          letterSpacing: '0.065rem'
+          letterSpacing: '0.065rem',
+          lineHeight: '1em',
         },
         mono: {
           fontFamily: 'mono',
