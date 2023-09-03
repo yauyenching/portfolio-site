@@ -10,7 +10,6 @@ const baseStyle = definePartsStyle((props) => ({
     padding: 0,
   },
   item: {
-    textAlign: 'justify',
     lineHeight: '1.6em',
     marginInlineStart: '-0.5ch',
     paddingInlineStart: '1ch',

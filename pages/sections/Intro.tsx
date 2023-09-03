@@ -1,7 +1,10 @@
-import { Box, Flex, Text, Heading, UnorderedList, ListItem, SimpleGrid } from '@chakra-ui/react'
+import { Box, Flex, Text, Heading, UnorderedList, ListItem, SimpleGrid, useBreakpointValue } from '@chakra-ui/react'
 import Image from 'next/image'
 
 export default function Intro() {
+  const profilePicSize = useBreakpointValue({base: 175, sm: 200, md: 225})
+  const headingSize = useBreakpointValue({ base: '2.5rem', sm: '5xl', md: '6xl' })
+
   return (
     <Flex
       w='100%'
@@ -14,7 +17,7 @@ export default function Intro() {
       >
         <Image
           src="/profile_pic.jpg" alt="test"
-          width={225} height={225}
+          width={profilePicSize} height={profilePicSize}
           style={{
             borderRadius: '50%',
             // boxShadow: '0px 6px 30px 0px rgba(0, 0, 0, 0.08)',
@@ -27,7 +30,7 @@ export default function Intro() {
           <Heading
             as="h1"
             textTransform='lowercase'
-            fontSize={{ base: '5xl', md: '6xl' }}
+            fontSize={headingSize}
             verticalAlign='bottom'
             letterSpacing='0.065rem' lineHeight='1em'
             m={0}
@@ -37,7 +40,7 @@ export default function Intro() {
             <Box display="inline-block">
               <Heading
                 as="span" variant="gradient"
-                fontSize={{ base: '5xl', md: '6xl' }} lineHeight='1em'
+                fontSize={headingSize} lineHeight='1em'
               >
                 Yau Yen Ching
               </Heading>
@@ -57,12 +60,12 @@ export default function Intro() {
           <Text>Here are some technologies I have been working with:</Text>
         </Box>
         <UnorderedList
-          w='85%'
+          w={{ base: '100%', sm: '85%' }}
           fontFamily='heading' fontSize="sm"
           lineHeight="2.25em" letterSpacing="0.025em"
         >
           <SimpleGrid columns={2}>
-            <ListItem>TypeScript/JavaScript</ListItem>
+            <ListItem>TypeScript / JavaScript</ListItem>
             <ListItem>React.js</ListItem>
             <ListItem>Python</ListItem>
             <ListItem>Django</ListItem>

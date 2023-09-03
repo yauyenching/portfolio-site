@@ -6,38 +6,25 @@
   --background: hsl(235, 42%, 12%);
   --text-color-primary: #b4b9ca;
   --text-color-title: #E7EBF6;
-  --text-color-header-link: #474A6B;
-  --accent: #ff9d80;
+  --text-color-header-link: hsl(235, 20%, 35%);
+  --accent: hsl(14, 100%, 75%);
   --card-bg: #070B28;
-  --gradient: linear-gradient(90deg, #ffb199 0%, #C96969 100%);
+  --gradient: linear-gradient(90deg, hsl(14, 100%, 80%) 0%, hsl(0, 47%, 60%) 100%);
 }
 [data-theme='light'] {
   --background: #F7F0E2;
   --text-color-primary: #565A91;
   --text-color-title: #353B81;
-  --text-color-header-link: #A9ACD6;
-  --accent: #cc6666;
+  --text-color-header-link: hsl(236, 35%, 75%);
+  --accent: hsl(0, 50%, 58%);
   --card-bg: #FDF7EB;
-  --gradient: linear-gradient(270deg, hsl(14, 80%, 72%) 0%, #cc6666 100%);
+  --gradient: linear-gradient(270deg, hsl(14, 75%, 73%) 0%, hsl(0, 50%, 56%) 100%);
 }
-
-/* Fonts */
-/* @font-face {
-  font-family: 'MADE Tommy Soft';
-  src: url("/fonts/made_tommy_soft/otf/MADE Tommy Soft Regular PERSONAL USE.otf");
-}
-
-@font-face {
-  font-family: 'MADE Tommy Soft Medium';
-  src: url("/fonts/made_tommy_soft/otf/MADE Tommy Soft Medium PERSONAL USE.otf");
-} */
 
 html,
 body {
   padding: 0;
   margin: 0;
-  /* font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, */
-    /* Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif; */
   color: var(--text-color-primary);
   font-feature-settings: "ss01", "cv11";
 }
@@ -51,9 +38,9 @@ a {
   box-sizing: border-box;
 }
 
+/* moving hover overlay for header links */
 #overlay {
   position: absolute;
-  /* border-radius: 7px; */
   background-color: var(--accent);
   width: 50px;
   height: 3px;
@@ -65,4 +52,57 @@ a {
 
 #overlay.active {
   opacity: 1;
+}
+
+/* hamburger menu for header mobile navigation */
+.ham {
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 400ms;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.hamRotate.active {
+  transform: rotate(45deg);
+}
+
+.hamRotate180.active {
+  transform: rotate(180deg);
+}
+
+.line {
+  fill:none;
+  transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+  stroke-width:5.5;
+  stroke-linecap:round;
+}
+
+.ham8 .top {
+  stroke-dasharray: 40 160;
+}
+
+.ham8 .middle {
+  stroke-dasharray: 40 142;
+  transform-origin: 50%;
+  transition: transform 400ms;
+}
+
+.ham8 .bottom {
+  stroke-dasharray: 40 85;
+  transform-origin: 50%;
+  transition: transform 400ms, stroke-dashoffset 400ms;
+}
+
+.ham8.active .top {
+  stroke-dashoffset: -64px;
+}
+
+.ham8.active .middle {
+  /* stroke-dashoffset: -20px; */
+  transform: rotate(90deg);
+}
+.ham8.active .bottom {
+  stroke-dashoffset: -64px;
 }

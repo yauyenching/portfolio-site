@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import { useColorMode, Flex, Stack, Text } from '@chakra-ui/react'
+import { useColorMode, Flex, Stack, Text, Box } from '@chakra-ui/react'
 import styles from 'styles/Home.module.css'
 import Header from './sections/Header'
 import Intro from './sections/Intro'
@@ -24,18 +24,19 @@ const Home: NextPage = () => {
       </Head>
 
       <main>
-        <Flex justifyContent='center' bg='brand.bg'>
+        <Flex justifyContent='center' bg='brand.bg' flexDir="column">
+          <Box w="100%" h="50px" bg="yellow" zIndex={-1}></Box>
+          <Header
+            colorMode={colorMode}
+            toggleColorMode={toggleColorMode}
+          />
           <Stack 
             w='100%'
             display='flex'
             alignItems='center' justifyContent="center"
-            padding="10em 25px 7.5em"
+            padding={{base: "1.5em 27.5px 5em", md: "7.5em 27.5px"}}
             spacing={100}
           >
-            <Header
-              colorMode={colorMode}
-              toggleColorMode={toggleColorMode}
-            />
             <Intro />
             <Experience />
             <Projects />

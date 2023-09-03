@@ -14,7 +14,7 @@ export default function Experience() {
       <Box>
         <Heading as='h2' fontSize='lg' m={0}>{jobTitle} <span style={{'fontWeight': 'normal'}}>@ </span>{company}</Heading>
         <Heading as='h3' variant='subtitle' fontSize='md'>{employmentDateRange}</Heading>
-        <Box>{children}</Box>
+        <Box textAlign="justify">{children}</Box>
       </Box>
     )
   }
@@ -40,7 +40,7 @@ export default function Experience() {
               employmentDateRange='Feb 2023 - Jul 2023'
             >
               <UnorderedList>
-                <ListItem>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu ligula sit amet nulla tempus condimentum. </ListItem>
+                <ListItem>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu ligula sit amet nulla tempus condimentum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu ligula sit amet nulla tempus condimentum.</ListItem>
                 <ListItem>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu ligula sit amet nulla tempus condimentum. </ListItem>
                 <ListItem>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu ligula sit amet nulla tempus condimentum. </ListItem>
               </UnorderedList>

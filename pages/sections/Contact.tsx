@@ -1,7 +1,8 @@
-import { Flex, Heading, Text, Button, Box } from "@chakra-ui/react"
+import { Flex, Heading, Text, Button, Box, useBreakpointValue } from "@chakra-ui/react"
 import SectionHeading from "components/SectionHeading"
 
 export default function Contact() {
+  const headingSize = useBreakpointValue({ base: '2.5rem', sm: '5xl', md: '6xl' })
   return (
     <Flex
       alignItems="center"
@@ -14,7 +15,7 @@ export default function Contact() {
       />
       <Heading
         m={0} variant="gradient"
-        fontSize={{ base: '5xl', md: '6xl' }}
+        fontSize={headingSize}
         textAlign="center" pb={5}
       >
         get in touch

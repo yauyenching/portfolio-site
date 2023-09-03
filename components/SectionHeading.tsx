@@ -1,4 +1,4 @@
-import { Text, Heading } from '@chakra-ui/react'
+import { Text, Heading, useBreakpointValue } from '@chakra-ui/react'
 
 interface sectionHeadingProps {
   sectionId: number,
@@ -6,8 +6,9 @@ interface sectionHeadingProps {
 }
 
 export default function SectionHeading({ sectionId, sectionTitle }: sectionHeadingProps) {
+  const sectionHeadingSize = useBreakpointValue({ base: '2xl', sm: '3xl' })
   return (
-    <Heading variant="mono" as="h1">
+    <Heading variant="mono" as="h1" fontSize={sectionHeadingSize}>
       <Text as="span" color="brand.accent">0{sectionId}.</Text> {sectionTitle}
     </Heading>
   )

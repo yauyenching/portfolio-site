@@ -87,8 +87,8 @@ const theme = extendTheme({
           border: '3px solid',
           borderRadius: '10px',
           borderColor: 'transparent',
-          background: `linear-gradient(var(--background), var(--background)) padding-box,
-          var(--gradient) border-box`,
+          background: `linear-gradient(var(--chakra-colors-brand-bg), var(--chakra-colors-brand-bg)) padding-box,
+          var(--chakra-colors-brand-gradient) border-box`,
           '> *': {
             background: 'brand.gradient',
             backgroundClip: 'text',
