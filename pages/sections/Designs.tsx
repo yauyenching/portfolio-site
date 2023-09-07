@@ -33,7 +33,7 @@ export default function Designs() {
   }
 
   return (
-    <Box w='100%' maxW='contentW'>
+    <Box>
       <SectionHeading
         sectionId={3}
         sectionTitle='Designs'

@@ -28,7 +28,7 @@ export default function Projects() {
             />
             <Heading as="h2" size='sm' m='0 25px' textAlign='center'>{projectTitle}</Heading>
           </CardHeader>
-          <CardBody textAlign='justify' position="relative">
+          <CardBody textAlign="left" position="relative">
             <Text as="span" fontSize="sm">{children}</Text>
             <Heading
               variant='subtitle'
@@ -52,7 +52,7 @@ export default function Projects() {
 
 
   return (
-    <Box w='100%' maxW='contentW'>
+    <Box>
       <SectionHeading
         sectionId={2}
         sectionTitle='Projects'

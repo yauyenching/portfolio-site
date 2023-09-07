@@ -3,7 +3,7 @@
 @import url('/public/fonts/made_tommy_soft/made_tommy_soft.css');
 
 [data-theme='dark'] {
-  --background: hsl(235, 42%, 12%);
+  --background: #12142b;
   --text-color-primary: #b4b9ca;
   --text-color-title: #E7EBF6;
   --text-color-header-link: hsl(235, 20%, 35%);
@@ -44,7 +44,7 @@ a {
   background-color: var(--accent);
   width: 50px;
   height: 3px;
-  bottom: 1px;
+  bottom: -1px;
   z-index: 5;
   transition: left .3s ease, width .3s, opacity .3s;
   opacity: 1;

@@ -1,5 +1,6 @@
 // 1. import `extendTheme` function
-import { extendTheme } from '@chakra-ui/react'
+import { extendTheme, useColorModeValue } from '@chakra-ui/react'
+import { mode, StyleFunctionProps } from '@chakra-ui/theme-tools'
 import tabsTheme from './tabsTheme'
 import cardTheme from './cardTheme'
 import listTheme from './listTheme'
@@ -24,6 +25,7 @@ const styles = {
   global: {
     body: {
       color: 'brand.body',
+      background: 'brand.bg'
     }
   }
 }

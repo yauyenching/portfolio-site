@@ -1,4 +1,4 @@
-import { Flex, Box, Text, Link, Show, HStack, VStack, useDisclosure, Slide, Hide } from "@chakra-ui/react"
+import { Flex, Box, Text, Link, Show, HStack, VStack, Slide, Hide, SimpleGrid, useDisclosure } from "@chakra-ui/react"
 import { colorModeProps } from "components/props"
 import DayNightToggle from "components/DayNightToggle"
 import HamburgerMenu from "components/HamburgerMenu"
@@ -6,7 +6,6 @@ import { PropsWithChildren } from "react"
 
 export default function Header({ colorMode, toggleColorMode }: colorModeProps) {
   const SECTIONS: string[] = ["Experience", "Projects", "Designs", "Features", "Contact"]
-
   const { isOpen, onToggle } = useDisclosure()
 
   function HeaderLink({ children }: PropsWithChildren) {
@@ -91,8 +90,8 @@ export default function Header({ colorMode, toggleColorMode }: colorModeProps) {
               <Box id="overlay" />
               {/* DONE: Find how use inner text for params */}
               {/* https://stackoverflow.com/questions/32248427/this-props-children-selecting-innerhtml */}
-              {SECTIONS.map((s) => (
-                <HeaderLink>{s}</HeaderLink>
+              {SECTIONS.map((s, i) => (
+                <HeaderLink key={i}>{s}</HeaderLink>
               ))}
             </Flex>
           </Show>
@@ -103,15 +102,23 @@ export default function Header({ colorMode, toggleColorMode }: colorModeProps) {
           />
         </HStack>
       </Flex>
-      <Slide direction="top" in={isOpen} style={{marginTop: 50, zIndex: 3}}>
+      <Slide direction="top" in={isOpen} style={{zIndex: 3}}>
         <Hide above="md">
-        <VStack background="brand.bg" py="12.5px">
-          {SECTIONS.map((s) => (
-            <Link variant="header">{s}</Link>
+        <Flex
+          background="brand.bg"
+          py="12.5px" h="95px"
+          mt={50}
+          justifyContent="center"
+        > 
+          <SimpleGrid columns={3} w="100%" maxW="650px" px={{base: 25, sm: 75}}>
+          {SECTIONS.map((s, i) => (
+            <Link variant="header" key={i}>{s}</Link>
           ))}
-        </VStack>
+          </SimpleGrid>
+        </Flex>
         </Hide>
       </Slide>
+      <Box mb={isOpen ? 95 : 0} h="50px" transition="margin-bottom 300ms ease-out"/>
     </>
   )
 }

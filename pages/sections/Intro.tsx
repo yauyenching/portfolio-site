@@ -7,8 +7,6 @@ export default function Intro() {
 
   return (
     <Flex
-      w='100%'
-      maxW='contentW'
       direction={{ base: 'column', md: 'row-reverse' }}
       columnGap={50}
     >
@@ -49,7 +47,7 @@ export default function Intro() {
 
           </Heading>
         </Box>
-        <Box lineHeight="2em" textAlign="justify">
+        <Box lineHeight="2em" textAlign="left">
           <Text>I am a Software Engineer and aspiring Product Manager based in Singapore. 🇸🇬</Text>
 
           <Text>As a proud <b>Computer Science</b> graduate of <b>Yale-NUS College</b>,

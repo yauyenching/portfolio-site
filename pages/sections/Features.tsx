@@ -27,7 +27,7 @@ export default function Features() {
   }
 
   return (
-    <Box w='100%' maxW='contentW'>
+    <Box>
       <SectionHeading
         sectionId={4}
         sectionTitle='Articles & Features'
