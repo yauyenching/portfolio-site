@@ -67,7 +67,7 @@ const theme = extendTheme({
           _hover: {
             color: 'brand.title',
             textDecoration: 'none'
-          }
+          },
         }
       }
     },

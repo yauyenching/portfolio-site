@@ -44,14 +44,18 @@ a {
   background-color: var(--accent);
   width: 50px;
   height: 3px;
-  bottom: -1px;
+  bottom: 0px;
   z-index: 5;
   transition: left .3s ease, width .3s, opacity .3s;
-  opacity: 1;
+  opacity: 0;
 }
 
 #overlay.active {
   opacity: 1;
+}
+
+a.active {
+  color: var(--text-color-title);
 }
 
 /* hamburger menu for header mobile navigation */

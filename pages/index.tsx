@@ -9,9 +9,54 @@ import Projects from './sections/Projects'
 import Designs from './sections/Designs'
 import Features from './sections/Features'
 import Contact from './sections/Contact'
+import { useRef, useState, useEffect } from 'react'
 
 const Home: NextPage = () => {
   const { colorMode, toggleColorMode } = useColorMode()
+  const observerRef = useRef<IntersectionObserver | null>(null)
+  const [activeSection, setActiveSection] = useState<number>(1)
+
+  const SECTION_COMPONENTS = [
+    <Intro />,
+    <Experience />,
+    <Projects />,
+    <Designs />,
+    <Features />,
+    <Contact />
+  ]
+
+
+  useEffect(() => {
+    observerRef.current = new IntersectionObserver(
+      ([entry]) => {
+        const entryId = Number(entry.target.id);
+        if (entry.isIntersecting && entry.intersectionRatio <= 0.45) {
+          setActiveSection(entryId);
+          console.log('active: ' + entry.target.id + ', intersectionRatio: ' + entry.intersectionRatio)
+        }
+      },
+      {
+        threshold: 0.25,
+      }
+    );
+
+
+    const sections = document.querySelectorAll('section');
+    sections.forEach((section) => {
+      observerRef.current?.observe(section);
+    })
+
+    return () => {
+      sections.forEach((section) => {
+        observerRef.current?.unobserve(section);
+      })
+    }
+  }, [activeSection])
+
+  // useEffect(() => {
+  //   const activeLink = document.getElementById(`header-link-${activeSection}`);
+  //   activeLink?.classList.add('active');
+  // }, [activeSection])
 
   // TODO: Add smooth scrolling animation
 
@@ -25,24 +70,33 @@ const Home: NextPage = () => {
 
       <main>
         <Flex justifyContent='center' bg='brand.bg' flexDir="column">
-          <Box w="100%" h="50px" bg="yellow" zIndex={-1}></Box>
           <Header
             colorMode={colorMode}
             toggleColorMode={toggleColorMode}
+            activeSection={activeSection}
           />
-          <Stack 
+          <Stack
             w='100%'
             display='flex'
             alignItems='center' justifyContent="center"
-            padding={{base: "1.5em 27.5px 5em", md: "7.5em 27.5px"}}
-            spacing={100}
+            padding={{ base: "1.5em 27.5px 5em", md: "7.5em 27.5px" }}
+            spacing={125}
           >
-            <Intro />
-            <Experience />
-            <Projects />
-            <Designs />
-            <Features />
-            <Contact />
+            {SECTION_COMPONENTS.map(((sectionComponent, i) => {
+              const elem =
+                <section key={i} id={String(i)} style={
+                  {
+                    width: '100%',
+                    maxWidth: 'var(--chakra-sizes-contentW)',
+                    minHeight: '65vh',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center'
+                  }}>
+                  {sectionComponent}
+                </section>;
+              return elem;
+            }))}
           </Stack>
         </Flex>
       </main>

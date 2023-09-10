@@ -33,13 +33,12 @@ export default function Designs() {
   }
 
   return (
-    <Box>
+    <Box w="100%">
       <SectionHeading
         sectionId={3}
         sectionTitle='Designs'
       />
       <Grid
-        w="100%"
         justifyContent='space-between'
         gridTemplateColumns={{base: 'repeat(auto-fill, minmax(275px, 1fr))', md: 'repeat(2, 1fr)'}}
         rowGap={15} columnGap={15}

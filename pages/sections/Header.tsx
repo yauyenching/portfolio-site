@@ -2,33 +2,62 @@ import { Flex, Box, Text, Link, Show, HStack, VStack, Slide, Hide, SimpleGrid, u
 import { colorModeProps } from "components/props"
 import DayNightToggle from "components/DayNightToggle"
 import HamburgerMenu from "components/HamburgerMenu"
-import { PropsWithChildren } from "react"
+import { PropsWithChildren, useEffect, useState } from "react"
 
-export default function Header({ colorMode, toggleColorMode }: colorModeProps) {
+interface HeaderProps extends colorModeProps {
+  activeSection: number
+}
+
+interface HeaderLinkProps {
+  id: string
+}
+
+export default function Header({ colorMode, toggleColorMode, activeSection }: HeaderProps) {
   const SECTIONS: string[] = ["Experience", "Projects", "Designs", "Features", "Contact"]
   const { isOpen, onToggle } = useDisclosure()
+  const [hovering, setHovering] = useState<boolean>(false)
 
-  function HeaderLink({ children }: PropsWithChildren) {
-    const changeOverlayPos = (elem: HTMLAnchorElement) => {
+  function HeaderLink({ id, children }: PropsWithChildren<HeaderLinkProps>) {
+    const changeOverlayPos = (elem: HTMLElement) => {
       const overlay = document.getElementById('overlay');
       const position = elem.getBoundingClientRect();
       overlay!.style.left = elem.offsetLeft + 'px';
       overlay!.style.width = position.width + 'px';
     }
 
-    const addOverlay = (elem: HTMLAnchorElement) => {
+    const addOverlay = (elem: HTMLElement) => {
       const overlay = document.getElementById('overlay');
       changeOverlayPos(elem);
       overlay?.classList.add('active');
     }
 
-    const removeOverlay = (elem: HTMLAnchorElement) => {
+    const removeOverlay = (elem: HTMLElement) => {
       const overlay = document.getElementById('overlay');
       overlay?.classList.remove('active');
+      const activeLink = document.getElementById(`header-link-${activeSection}`);
+      if (activeLink) {
+        changeOverlayPos(activeLink);
+      }
     }
+
+    useEffect(() => {
+      if (!hovering) {
+        const activeLink = document.getElementById(`header-link-${activeSection}`);
+        const overlay = document.getElementById('overlay');
+        if (activeLink) {
+          activeLink?.classList.add('active');
+          changeOverlayPos(activeLink);
+          overlay?.classList.add('active');
+        }
+        if (activeSection === 0) {
+          overlay?.classList.remove('active');
+        }
+      }
+    }, [hovering, activeSection])
 
     return (
       <Link
+        id={id}
         variant='header'
         onMouseOver={(e) => addOverlay(e.target as HTMLAnchorElement)}
         onMouseLeave={(e) => removeOverlay(e.target as HTMLAnchorElement)}
@@ -86,12 +115,14 @@ export default function Header({ colorMode, toggleColorMode }: colorModeProps) {
               w='100%' maxW='67.5%'
               justifyContent='space-between' position='relative'
               gap="10px"
+              onMouseOver={(_) => setHovering(true)}
+              onMouseLeave={(_) => setHovering(false)}
             >
               <Box id="overlay" />
               {/* DONE: Find how use inner text for params */}
               {/* https://stackoverflow.com/questions/32248427/this-props-children-selecting-innerhtml */}
               {SECTIONS.map((s, i) => (
-                <HeaderLink key={i}>{s}</HeaderLink>
+                <HeaderLink key={i} id={`header-link-${i+1}`}>{s}</HeaderLink>
               ))}
             </Flex>
           </Show>
