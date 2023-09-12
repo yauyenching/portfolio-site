@@ -1,66 +1,80 @@
-import { Flex, Box, Text, Link, Show, HStack, VStack, Slide, Hide, SimpleGrid, useDisclosure } from "@chakra-ui/react"
+import { Flex, Box, Text, Link, Show, HStack, Slide, Hide, SimpleGrid, useDisclosure, useBreakpointValue } from "@chakra-ui/react"
 import { colorModeProps } from "components/props"
 import DayNightToggle from "components/DayNightToggle"
 import HamburgerMenu from "components/HamburgerMenu"
-import { PropsWithChildren, useEffect, useState } from "react"
+import { PropsWithChildren, useEffect, useRef } from "react"
 
 interface HeaderProps extends colorModeProps {
-  activeSection: number
+  activeSection: number,
+  setActiveSection: (_: number) => void,
+  hovering: boolean,
+  setHovering: (_: boolean) => void
 }
 
 interface HeaderLinkProps {
-  id: string
+  mobile: boolean,
+  id: number
 }
 
-export default function Header({ colorMode, toggleColorMode, activeSection }: HeaderProps) {
+export default function Header(
+  { colorMode, toggleColorMode,
+    activeSection, setActiveSection,
+    hovering, setHovering }: HeaderProps
+) {
   const SECTIONS: string[] = ["Experience", "Projects", "Designs", "Features", "Contact"]
   const { isOpen, onToggle } = useDisclosure()
-  const [hovering, setHovering] = useState<boolean>(false)
+  const overlayRef = useRef<HTMLDivElement | null>(null);
+  const scrollIntoViewBreakpointVals = useBreakpointValue<ScrollLogicalPosition>({ base: "start", md: "center" })
 
-  function HeaderLink({ id, children }: PropsWithChildren<HeaderLinkProps>) {
+  // https://codefrontend.com/scroll-to-element-in-react/
+  const scrollToSection = (id: number) => {
+    const sectionElem = document.getElementById(`section-${id}`);
+    if (sectionElem) {
+      sectionElem.scrollIntoView({ behavior: "smooth", block: scrollIntoViewBreakpointVals });
+      setActiveSection(id)
+    }
+  }
+
+  function HeaderLink({ id, mobile, children }: PropsWithChildren<HeaderLinkProps>) {
     const changeOverlayPos = (elem: HTMLElement) => {
-      const overlay = document.getElementById('overlay');
       const position = elem.getBoundingClientRect();
-      overlay!.style.left = elem.offsetLeft + 'px';
-      overlay!.style.width = position.width + 'px';
+      overlayRef.current!.style.left = elem.offsetLeft + 'px';
+      overlayRef.current!.style.width = position.width + 'px';
     }
 
     const addOverlay = (elem: HTMLElement) => {
-      const overlay = document.getElementById('overlay');
+      overlayRef.current!.classList.add('active');
       changeOverlayPos(elem);
-      overlay?.classList.add('active');
     }
 
     const removeOverlay = (elem: HTMLElement) => {
-      const overlay = document.getElementById('overlay');
-      overlay?.classList.remove('active');
-      const activeLink = document.getElementById(`header-link-${activeSection}`);
-      if (activeLink) {
-        changeOverlayPos(activeLink);
-      }
+      overlayRef.current!.classList.remove('active');
     }
 
     useEffect(() => {
       if (!hovering) {
         const activeLink = document.getElementById(`header-link-${activeSection}`);
-        const overlay = document.getElementById('overlay');
         if (activeLink) {
           activeLink?.classList.add('active');
-          changeOverlayPos(activeLink);
-          overlay?.classList.add('active');
+          if (!mobile) {
+            changeOverlayPos(activeLink);
+            overlayRef.current!.classList.add('active');
+          }
         }
-        if (activeSection === 0) {
-          overlay?.classList.remove('active');
+        if (!mobile && activeSection === 0) {
+          overlayRef.current!.classList.remove('active');
         }
       }
-    }, [hovering, activeSection])
+    }, [activeSection])
 
     return (
       <Link
-        id={id}
+        id={`header-link-${id}`}
         variant='header'
-        onMouseOver={(e) => addOverlay(e.target as HTMLAnchorElement)}
-        onMouseLeave={(e) => removeOverlay(e.target as HTMLAnchorElement)}
+        onClick={(_) => scrollToSection(id)}
+        onMouseOver={(e) => !mobile ? addOverlay(e.target as HTMLAnchorElement) : null}
+        onMouseLeave={(e) => !mobile ? removeOverlay(e.target as HTMLAnchorElement) : null}
+        position="relative" bottom="3px"
       >
         {children}
       </Link>
@@ -89,7 +103,7 @@ export default function Header({ colorMode, toggleColorMode, activeSection }: He
             {/* hamburger menu */}
             <Box color='brand.body'>
               <Show below="md">
-                <HamburgerMenu 
+                <HamburgerMenu
                   onOpen={onToggle}
                   isOpen={isOpen}
                 />
@@ -97,6 +111,8 @@ export default function Header({ colorMode, toggleColorMode, activeSection }: He
             </Box>
             {/* logo */}
             <Box
+              onClick={(_) => scrollToSection(0)}
+              cursor="pointer"
               h='40px' w='40px'
               borderRadius={8}
               bg='#222' color='black'
@@ -118,11 +134,11 @@ export default function Header({ colorMode, toggleColorMode, activeSection }: He
               onMouseOver={(_) => setHovering(true)}
               onMouseLeave={(_) => setHovering(false)}
             >
-              <Box id="overlay" />
+              <Box id="overlay" ref={overlayRef} />
               {/* DONE: Find how use inner text for params */}
               {/* https://stackoverflow.com/questions/32248427/this-props-children-selecting-innerhtml */}
               {SECTIONS.map((s, i) => (
-                <HeaderLink key={i} id={`header-link-${i+1}`}>{s}</HeaderLink>
+                <HeaderLink key={i} id={i + 1} mobile={false}>{s}</HeaderLink>
               ))}
             </Flex>
           </Show>
@@ -133,23 +149,23 @@ export default function Header({ colorMode, toggleColorMode, activeSection }: He
           />
         </HStack>
       </Flex>
-      <Slide direction="top" in={isOpen} style={{zIndex: 3}}>
+      <Slide direction="top" in={isOpen} style={{ zIndex: 3 }}>
         <Hide above="md">
-        <Flex
-          background="brand.bg"
-          py="12.5px" h="95px"
-          mt={50}
-          justifyContent="center"
-        > 
-          <SimpleGrid columns={3} w="100%" maxW="650px" px={{base: 25, sm: 75}}>
-          {SECTIONS.map((s, i) => (
-            <Link variant="header" key={i}>{s}</Link>
-          ))}
-          </SimpleGrid>
-        </Flex>
+          <Flex
+            background="brand.bg"
+            py="12.5px" h="95px"
+            mt={50}
+            justifyContent="center"
+          >
+            <SimpleGrid columns={3} w="100%" maxW="650px" px={{ base: 25, sm: 75 }}>
+              {SECTIONS.map((s, i) => (
+                <HeaderLink key={i} id={i + 1} mobile={true}>{s}</HeaderLink>
+              ))}
+            </SimpleGrid>
+          </Flex>
         </Hide>
       </Slide>
-      <Box mb={isOpen ? 95 : 0} h="50px" transition="margin-bottom 300ms ease-out"/>
+      <Box mb={isOpen ? 95 : 0} h="50px" transition="margin-bottom 300ms ease-out" />
     </>
   )
 }

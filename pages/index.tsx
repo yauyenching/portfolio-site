@@ -1,7 +1,6 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import { useColorMode, Flex, Stack, Text, Box } from '@chakra-ui/react'
-import styles from 'styles/Home.module.css'
+import { useColorMode, Flex, Stack, Text, Box, useBreakpointValue } from '@chakra-ui/react'
 import Header from './sections/Header'
 import Intro from './sections/Intro'
 import Experience from './sections/Experience'
@@ -14,7 +13,8 @@ import { useRef, useState, useEffect } from 'react'
 const Home: NextPage = () => {
   const { colorMode, toggleColorMode } = useColorMode()
   const observerRef = useRef<IntersectionObserver | null>(null)
-  const [activeSection, setActiveSection] = useState<number>(1)
+  const [activeSection, setActiveSection] = useState<number>(0)
+  const [hovering, setHovering] = useState<boolean>(false)
 
   const SECTION_COMPONENTS = [
     <Intro />,
@@ -25,14 +25,15 @@ const Home: NextPage = () => {
     <Contact />
   ]
 
-
   useEffect(() => {
     observerRef.current = new IntersectionObserver(
       ([entry]) => {
-        const entryId = Number(entry.target.id);
+        const entryId = Number(entry.target.id.slice(8));
         if (entry.isIntersecting && entry.intersectionRatio <= 0.45) {
-          setActiveSection(entryId);
-          console.log('active: ' + entry.target.id + ', intersectionRatio: ' + entry.intersectionRatio)
+          if (!hovering) {
+            setActiveSection(entryId);
+            console.log('active: ' + entryId + ', intersectionRatio: ' + entry.intersectionRatio)
+          }
         }
       },
       {
@@ -51,7 +52,7 @@ const Home: NextPage = () => {
         observerRef.current?.unobserve(section);
       })
     }
-  }, [activeSection])
+  }, [activeSection, hovering])
 
   // useEffect(() => {
   //   const activeLink = document.getElementById(`header-link-${activeSection}`);
@@ -74,23 +75,27 @@ const Home: NextPage = () => {
             colorMode={colorMode}
             toggleColorMode={toggleColorMode}
             activeSection={activeSection}
+            setActiveSection={setActiveSection}
+            hovering={hovering}
+            setHovering={setHovering}
           />
           <Stack
             w='100%'
             display='flex'
             alignItems='center' justifyContent="center"
             padding={{ base: "1.5em 27.5px 5em", md: "7.5em 27.5px" }}
-            spacing={125}
+            spacing={{ base: 0, md: 125 }}
           >
             {SECTION_COMPONENTS.map(((sectionComponent, i) => {
               const elem =
-                <section key={i} id={String(i)} style={
+                <section key={i} id={`section-${i}`} style={
                   {
                     width: '100%',
                     maxWidth: 'var(--chakra-sizes-contentW)',
                     minHeight: '65vh',
+                    paddingTop: i !== 0 ? useBreakpointValue({base: "125px", md: "0px"}) : "0px",
                     display: 'flex',
-                    alignItems: 'center',
+                    // alignItems: 'center',
                     justifyContent: 'center'
                   }}>
                   {sectionComponent}

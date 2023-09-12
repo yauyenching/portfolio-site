@@ -44,7 +44,7 @@ a {
   background-color: var(--accent);
   width: 50px;
   height: 3px;
-  bottom: 0px;
+  bottom: 1px;
   z-index: 5;
   transition: left .3s ease, width .3s, opacity .3s;
   opacity: 0;
