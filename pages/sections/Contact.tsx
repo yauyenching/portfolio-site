@@ -2,7 +2,7 @@ import { Flex, Heading, Text, Button, Box, useBreakpointValue } from "@chakra-ui
 import SectionHeading from "components/SectionHeading"
 
 export default function Contact() {
-  const headingSize = useBreakpointValue({ base: '2.5rem', sm: '5xl', md: '6xl' })
+  const headingSize = useBreakpointValue({ base: '4xl', sm: '5xl', md: '6xl' })
   return (
     <Flex
       alignItems="center"

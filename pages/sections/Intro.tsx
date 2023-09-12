@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 export default function Intro() {
   const profilePicSize = useBreakpointValue({base: 175, sm: 200, md: 225})
-  const headingSize = useBreakpointValue({ base: '2.5rem', sm: '5xl', md: '6xl' })
+  const headingSize = useBreakpointValue({ base: '4xl', sm: '5xl', md: '6xl' })
 
   return (
     <Flex
