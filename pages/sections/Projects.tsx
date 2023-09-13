@@ -1,5 +1,6 @@
 import { Box, Card, CardHeader, CardBody, Heading, Text, Flex, CardFooter, Grid, GridItem } from '@chakra-ui/react'
 import SectionHeading from 'components/SectionHeading'
+import SkillTag from 'components/SkillTag'
 import Image from 'next/image'
 import { PropsWithChildren } from 'react'
 
@@ -30,16 +31,16 @@ export default function Projects() {
           </CardHeader>
           <CardBody textAlign="left" position="relative">
             <Text as="span" fontSize="sm">{children}</Text>
-            <Heading
-              variant='subtitle'
-              fontSize="xs" color="brand.accent"
+            <Box
               textAlign='center'
               position={{ base: 'static', sm: 'absolute' }}
-              px={25}
+              px="25px"
               left={0} right={0} bottom={0}
             >
-              {techStack.join(', ')}
-            </Heading>
+              {techStack.map((skill) => (
+                <SkillTag>{skill}</SkillTag>
+              ))}
+            </Box>
           </CardBody>
           <CardFooter>
             <i className="fa-brands fa-github"></i>
@@ -52,13 +53,13 @@ export default function Projects() {
 
 
   return (
-    <Box>
+    <Box w="100%">
       <SectionHeading
         sectionId={2}
         sectionTitle='Projects'
       />
       <Grid
-        w="100%"
+        // w="100%"
         justifyContent='space-between'
         gridTemplateColumns='repeat(auto-fill, minmax(250px, 1fr))'
         rowGap={15} columnGap={15}
@@ -66,21 +67,21 @@ export default function Projects() {
         <ProjectsCard
           imageFileName='dorm_temp_dashboard.png'
           projectTitle='Dorm Temperature Monitoring Dashboard'
-          techStack={['typescript', 'react.js', 'sass', 'meteor']}
+          techStack={['Typescript', 'React.js', 'SASS', 'Meteor']}
         >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu ligula sit amet nulla tempus condimentum.
         </ProjectsCard>
         <ProjectsCard
           imageFileName='wordle_tele_bot.png'
           projectTitle='Wordle Leaderboard Telegram Bot'
-          techStack={['python', 'mongodb']}
+          techStack={['Python', 'MongoDB']}
         >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu ligula sit amet nulla tempus condimentum.
         </ProjectsCard>
         <ProjectsCard
           imageFileName='s3_pattern_recategorizer.png'
           projectTitle='Sims 3 Pattern Recategorizer Tool'
-          techStack={['python']}
+          techStack={['Python']}
         >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu ligula sit amet nulla tempus condimentum.
         </ProjectsCard>

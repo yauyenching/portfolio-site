@@ -30,7 +30,7 @@ const sizes = {
     container: {
       borderRadius: '20px',
       maxWidth: '100%',
-      height: { base:'fit-content', sm: '425px'}
+      height: { base:'fit-content', sm: '450px'}
     },
   }),
 }
