@@ -8,29 +8,29 @@ const baseStyle = definePartsStyle({
   // define the part you're going to style
   container: {
     backgroundColor: 'brand.card',
-    padding: '0 0 25px',
-    boxShadow: '0px 6px 30px 0px rgba(0, 0, 0, 0.08)'
+    padding: '0 0 20px',
+    boxShadow: '0px 6px 30px 0px rgba(0, 0, 0, 0.08)',
   },
   header: {
     padding: '0 0 2px',
   },
   body: {
-    padding: '2px 25px 0',
+    padding: '2px 20px 0',
+    marginBottom: '15px'
   },
   footer: {
-    padding: '2px 25px 0',
-    justifyContent: "center",
-    display: 'flex',
-    columnGap: '5px'
+    padding: '2px 20px 0',
+    textAlign: 'center',
+    display: 'inline-block',
   },
-})
+});
 
 const sizes = {
   sm: definePartsStyle({
     container: {
       borderRadius: '20px',
       maxWidth: '100%',
-      height: { base:'fit-content', sm: '450px'}
+      minHeight: { base:'fit-content', sm: '450px', md: '500px' }
     },
   }),
 }
