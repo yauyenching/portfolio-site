@@ -8,7 +8,7 @@ export default function SkillTag({ children }: PropsWithChildren) {
     fontFamily="heading" fontSize="xs" 
     whiteSpace="break-spaces"
     letterSpacing="0.025em"
-    bg="hsla(14, 100%, 75%, 8%)"
+    bg="brand.accentFade"
     borderRadius="25px"
     p="5px 10px" mr="5px" my="2.5px"
     opacity={0.85}>

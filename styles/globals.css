@@ -8,6 +8,7 @@
   --text-color-title: #E7EBF6;
   --text-color-header-link: hsl(235, 20%, 35%);
   --accent: hsl(14, 100%, 75%);
+  --accent-fade: hsla(14, 100%, 75%, 8%);
   --card-bg: #070B28;
   --gradient: linear-gradient(90deg, hsl(14, 100%, 80%) 0%, hsl(0, 47%, 60%) 100%);
 }
@@ -17,6 +18,7 @@
   --text-color-title: #353B81;
   --text-color-header-link: hsl(236, 35%, 75%);
   --accent: hsl(0, 50%, 58%);
+  --accent-fade: hsla(0, 50%, 58%, 8%);
   --card-bg: #FDF7EB;
   --gradient: linear-gradient(270deg, hsl(14, 75%, 73%) 0%, hsl(0, 50%, 56%) 100%);
 }
