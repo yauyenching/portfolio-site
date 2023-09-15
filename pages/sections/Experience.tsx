@@ -1,5 +1,6 @@
-import { Tabs, TabList, TabPanels, Tab, TabPanel, Box, Heading, UnorderedList, ListItem, useBreakpointValue, Flex } from '@chakra-ui/react'
+import { Tabs, TabList, TabPanels, Tab, TabPanel, Box, Heading, UnorderedList, ListItem, useBreakpointValue, Flex, Text, Link } from '@chakra-ui/react'
 import SectionHeading from 'components/SectionHeading'
+import SkillTag from 'components/SkillTag'
 import { PropsWithChildren } from 'react'
 
 export default function Experience() {
@@ -26,7 +27,7 @@ export default function Experience() {
           sectionId={1}
           sectionTitle='Experience'
         />
-        <Tabs orientation={useBreakpointValue({ base: 'horizontal', sm: 'vertical' })} maxW={680}>
+        <Tabs orientation={useBreakpointValue({ base: 'horizontal', sm: 'vertical' })} maxW={825}>
           <TabList>
             <Tab>Koru Partners</Tab>
             <Tab>AirAsia</Tab>
@@ -38,39 +39,85 @@ export default function Experience() {
               <JobExperienceItem
                 jobTitle='Junior Software Developer'
                 company='Koru Partners'
-                employmentDateRange='Feb 2023 - Jul 2023'
+                employmentDateRange='Feb 2023 - July 2023'
               >
                 <UnorderedList>
-                  <ListItem>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu ligula sit amet nulla tempus condimentum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu ligula sit amet nulla tempus condimentum.</ListItem>
-                  <ListItem>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu ligula sit amet nulla tempus condimentum. </ListItem>
-                  <ListItem>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu ligula sit amet nulla tempus condimentum. </ListItem>
+                  <ListItem>
+                    Designed and developed internal superapp with user authentication, CRUD (Create, Read, Update,
+                    Delete) operations for company data, and a dashboard for monitoring and summarizing daily operational logs.
+                  </ListItem>
+                  <ListItem>
+                    Engineered Python bots automating tedious internal processes such as sending of recruitment emails
+                    and creation of Asana tasks, resulting in weekly time savings of 8-10 hours for the HR team.
+                  </ListItem>
+                  <ListItem>
+                    Collaborated with cross-functional teams to gather product requirements and user feedback.
+                  </ListItem>
+                  <ListItem>
+                    Maintained codebase by investigating and solving user-reported bugs.
+                  </ListItem>
                 </UnorderedList>
+                {["Django", "Python", "MySQL", "AWS", "TypeScript/JavaScript", "HTML/CSS", "PHP", "Git", "Figma", "WordPress"].map(
+                  (skill) => <SkillTag>{skill}</SkillTag>
+                )}
               </JobExperienceItem>
             </TabPanel>
             <TabPanel>
               <JobExperienceItem
                 jobTitle='Product Analyst Intern'
                 company='AirAsia'
-                employmentDateRange='Jun 2021 - Sep 2021'
+                employmentDateRange='June 2021 - Sep 2021'
               >
                 <UnorderedList>
-                  <ListItem>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu ligula sit amet nulla tempus condimentum. </ListItem>
-                  <ListItem>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu ligula sit amet nulla tempus condimentum. </ListItem>
+                  <ListItem>
+                    Analyzed user data in Python to identify key insights for demographics and behavior on newly
+                    launched EdTech platform.
+                  </ListItem>
+                  <ListItem>
+                    Designed and executed user testing survey on 680 users to gather feedback and identify bottlenecks in low
+                    purchase conversion of 20%.
+                  </ListItem>
+                  <ListItem>
+                    Conducted in-depth competitor research, gathering and analyzing market intelligence to
+                    identify key strengths, weaknesses, opportunities, and threats (SWOT analysis) and presented to
+                    senior management.
+                  </ListItem>
+                  <ListItem>
+                    Identified market opportunity to target key customer segment of 1000+ university students
+                    and led business pitch and communications with external stakeholders.
+                  </ListItem>
                 </UnorderedList>
+                {["Python", "Data Analysis", "Data Visualization", "User Research", "Competitor Analysis", "Survey Design", "Market Research"].map(
+                  (skill) => <SkillTag>{skill}</SkillTag>
+                )}
               </JobExperienceItem>
             </TabPanel>
             <TabPanel>
               <JobExperienceItem
-                jobTitle='Computational and Data Sciences Research Assistant'
+                jobTitle='Computational Research Assistant'
                 company='Yale-NUS College'
                 employmentDateRange='May 2020 - Apr 2021'
               >
                 <UnorderedList>
-                  <ListItem>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu ligula sit amet nulla tempus condimentum. </ListItem>
-                  <ListItem>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu ligula sit amet nulla tempus condimentum. </ListItem>
-                  <ListItem>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu ligula sit amet nulla tempus condimentum. </ListItem>
-                  <ListItem>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu ligula sit amet nulla tempus condimentum. </ListItem>
+                  <ListItem>
+                    Implemented world map visualization feature on cartogram-generating website <Link href="https://go-cart.io">
+                      go-cart.io</Link>.
+                  </ListItem>
+                  <ListItem>
+                    Utilized D3.js to smooth website cartogram transformation animations by 20%.
+                  </ListItem>
+                  <ListItem>
+                    Wrote and published a topical <Link href="https://journals.sagepub.com/doi/10.1177/0308518X21998356">
+                      research article</Link> and <Link
+                        href="https://perspectivesblog.sagepub.com/blog/research/everybody-is-talking-about-vaccines-but-who-on-earth-gets-them">
+                      blog post</Link> about global vaccination distribution inequality in 2021
+                    with <Link href="https://sage.altmetric.com/details/105472330#score">3 citations and top 11% of
+                      research attention to date</Link>.
+                  </ListItem>
                 </UnorderedList>
+                {["R", "JavaScript", "D3.js", "Docker", "Linux"].map(
+                  (skill) => <SkillTag>{skill}</SkillTag>
+                )}
               </JobExperienceItem>
             </TabPanel>
           </TabPanels>

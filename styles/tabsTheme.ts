@@ -15,8 +15,10 @@ const baseStyle = definePartsStyle({
     textTransform: 'uppercase',
     letterSpacing: '0.025em',
     textAlign: 'left',
+    opacity: 0.5,
     _selected: {
-      color: 'brand.accent'
+      color: 'brand.title',
+      opacity: 1,
     }
   },
   tabpanel: {
