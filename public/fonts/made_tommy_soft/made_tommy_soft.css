@@ -2,19 +2,19 @@
   font-family: 'MADE Tommy Soft';
   font-weight: normal;
   font-style: normal;
-  src: url("./otf/MADE Tommy Soft Regular PERSONAL USE.otf") format("opentype");
+  src: url('./otf/MADE Tommy Soft Regular PERSONAL USE.otf') format('opentype');
 }
 
 @font-face {
   font-family: 'MADE Tommy Soft';
   font-weight: 500;
   font-style: normal;
-  src: url("./otf/MADE Tommy Soft Medium PERSONAL USE.otf") format("opentype");
+  src: url('./otf/MADE Tommy Soft Medium PERSONAL USE.otf') format('opentype');
 }
 
 @font-face {
   font-family: 'MADE Tommy Soft';
   font-weight: 400;
   font-style: normal;
-  src: url("./otf/MADE Tommy Soft Light PERSONAL USE.otf") format("opentype");
+  src: url('./otf/MADE Tommy Soft Light PERSONAL USE.otf') format('opentype');
 }

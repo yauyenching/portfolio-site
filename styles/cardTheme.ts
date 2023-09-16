@@ -1,8 +1,7 @@
 import { cardAnatomy } from '@chakra-ui/anatomy'
 import { createMultiStyleConfigHelpers } from '@chakra-ui/react'
 
-const { definePartsStyle, defineMultiStyleConfig } =
-  createMultiStyleConfigHelpers(cardAnatomy.keys)
+const { definePartsStyle, defineMultiStyleConfig } = createMultiStyleConfigHelpers(cardAnatomy.keys)
 
 const baseStyle = definePartsStyle({
   // define the part you're going to style
@@ -16,21 +15,21 @@ const baseStyle = definePartsStyle({
   },
   body: {
     padding: '2px 20px 0',
-    marginBottom: '15px'
+    marginBottom: '15px',
   },
   footer: {
     padding: '2px 20px 0',
     textAlign: 'center',
     display: 'inline-block',
   },
-});
+})
 
 const sizes = {
   sm: definePartsStyle({
     container: {
       borderRadius: '20px',
       maxWidth: '100%',
-      minHeight: { base:'fit-content', sm: '450px', md: '500px' }
+      minHeight: { base: 'fit-content', sm: '450px', md: '500px' },
     },
   }),
 }

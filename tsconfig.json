@@ -16,6 +16,13 @@
     "incremental": true,
     "baseUrl": "."
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "custom.d.ts", "public/assets/night_sparkle.tsx", "components/HamburgerMenu.tsx"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "custom.d.ts",
+    "public/assets/night_sparkle.tsx",
+    "components/HamburgerMenu.tsx"
+  ],
   "exclude": ["node_modules"]
 }

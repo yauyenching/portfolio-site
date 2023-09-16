@@ -10,22 +10,22 @@ import {
   Grid,
   GridItem,
   Link,
-} from '@chakra-ui/react';
-import SectionHeading from 'components/SectionHeading';
-import SkillTag from 'components/SkillTag';
-import Image from 'next/image';
-import { PropsWithChildren } from 'react';
+} from '@chakra-ui/react'
+import SectionHeading from 'components/SectionHeading'
+import SkillTag from 'components/SkillTag'
+import Image from 'next/image'
+import { PropsWithChildren } from 'react'
 
 export default function Projects() {
   interface ProjectsCardProp {
-    imageFileName: string;
-    projectTitle: string;
-    techStack: string[];
-    githubLink: string;
-    externalLink?: string;
-    downloads?: string;
-    downloadLink?: string;
-    githubStars?: string;
+    imageFileName: string
+    projectTitle: string
+    techStack: string[]
+    githubLink: string
+    externalLink?: string
+    downloads?: string
+    downloadLink?: string
+    githubStars?: string
   }
 
   function ProjectsCard({
@@ -77,7 +77,10 @@ export default function Projects() {
                   <>
                     <i
                       className='fa-solid fa-star'
-                      style={{ marginRight: '5px', marginLeft: downloads ? 15 : 0 }}
+                      style={{
+                        marginRight: '5px',
+                        marginLeft: downloads ? 15 : 0,
+                      }}
                     />
                     {githubStars}
                   </>
@@ -102,7 +105,7 @@ export default function Projects() {
           </CardFooter>
         </Card>
       </GridItem>
-    );
+    )
   }
 
   return (
@@ -142,9 +145,9 @@ export default function Projects() {
           techStack={['Python', 'MongoDB']}
           githubLink='https://github.com/yauyenching/wordle-tele-bot'
         >
-          Telegram bot that parses Wordle results, calculates user statistics (average #
-          of guesses, total games, streak), and stores the aggregated data using MongoDB. Designed
-          to track and display leaderboards in group chats for social play.
+          Telegram bot that parses Wordle results, calculates user statistics (average # of guesses,
+          total games, streak), and stores the aggregated data using MongoDB. Designed to track and
+          display leaderboards in group chats for social play.
         </ProjectsCard>
         <ProjectsCard
           imageFileName='bandung_word_cloud.png'
@@ -169,5 +172,5 @@ export default function Projects() {
         </ProjectsCard>
       </Grid>
     </Box>
-  );
+  )
 }

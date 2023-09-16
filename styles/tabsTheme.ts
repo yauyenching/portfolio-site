@@ -1,8 +1,7 @@
 import { tabsAnatomy } from '@chakra-ui/anatomy'
 import { createMultiStyleConfigHelpers } from '@chakra-ui/react'
 
-let { definePartsStyle, defineMultiStyleConfig } =
-  createMultiStyleConfigHelpers(tabsAnatomy.keys)
+let { definePartsStyle, defineMultiStyleConfig } = createMultiStyleConfigHelpers(tabsAnatomy.keys)
 
 // define the base component styles
 const baseStyle = definePartsStyle({
@@ -19,11 +18,11 @@ const baseStyle = definePartsStyle({
     _selected: {
       color: 'brand.title',
       opacity: 1,
-    }
+    },
   },
   tabpanel: {
-    padding: '10px 25px'
-  }
+    padding: '10px 25px',
+  },
 })
 
 const tabsTheme = defineMultiStyleConfig({ baseStyle })

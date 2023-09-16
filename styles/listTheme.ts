@@ -1,8 +1,7 @@
 import { listAnatomy } from '@chakra-ui/anatomy'
 import { createMultiStyleConfigHelpers } from '@chakra-ui/react'
 
-const { definePartsStyle, defineMultiStyleConfig } =
-  createMultiStyleConfigHelpers(listAnatomy.keys)
+const { definePartsStyle, defineMultiStyleConfig } = createMultiStyleConfigHelpers(listAnatomy.keys)
 
 const baseStyle = definePartsStyle((props) => ({
   // define the part you're going to style
@@ -19,8 +18,8 @@ const baseStyle = definePartsStyle((props) => ({
       color: 'brand.accent',
     },
     '&:not(:last-child)': {
-      marginBottom: 15, 
-    }
+      marginBottom: 15,
+    },
   },
 }))
 

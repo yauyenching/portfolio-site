@@ -1,32 +1,53 @@
-import { Tabs, TabList, TabPanels, Tab, TabPanel, Box, Heading, UnorderedList, ListItem, useBreakpointValue, Flex, Text, Link } from '@chakra-ui/react'
+import {
+  Tabs,
+  TabList,
+  TabPanels,
+  Tab,
+  TabPanel,
+  Box,
+  Heading,
+  UnorderedList,
+  ListItem,
+  useBreakpointValue,
+  Flex,
+  Text,
+  Link,
+} from '@chakra-ui/react'
 import SectionHeading from 'components/SectionHeading'
 import SkillTag from 'components/SkillTag'
 import { PropsWithChildren } from 'react'
 
 export default function Experience() {
   interface JobExperienceItemProps {
-    jobTitle: string,
-    company: string,
-    employmentDateRange: string,
+    jobTitle: string
+    company: string
+    employmentDateRange: string
   }
 
-  function JobExperienceItem({ jobTitle, company, employmentDateRange, children }: PropsWithChildren<JobExperienceItemProps>) {
+  function JobExperienceItem({
+    jobTitle,
+    company,
+    employmentDateRange,
+    children,
+  }: PropsWithChildren<JobExperienceItemProps>) {
     return (
       <Box>
-        <Heading as='h2' fontSize='lg' m={0}>{jobTitle} <span style={{ 'fontWeight': 'normal' }}>@ </span>{company}</Heading>
-        <Heading as='h3' variant='subtitle' fontSize='md'>{employmentDateRange}</Heading>
-        <Box textAlign="left">{children}</Box>
+        <Heading as='h2' fontSize='lg' m={0}>
+          {jobTitle} <span style={{ fontWeight: 'normal' }}>@ </span>
+          {company}
+        </Heading>
+        <Heading as='h3' variant='subtitle' fontSize='md'>
+          {employmentDateRange}
+        </Heading>
+        <Box textAlign='left'>{children}</Box>
       </Box>
     )
   }
 
   return (
-    <Flex alignItems="center" flexDir="column">
+    <Flex alignItems='center' flexDir='column'>
       <Box>
-        <SectionHeading
-          sectionId={1}
-          sectionTitle='Experience'
-        />
+        <SectionHeading sectionId={1} sectionTitle='Experience' />
         <Tabs orientation={useBreakpointValue({ base: 'horizontal', sm: 'vertical' })} maxW={825}>
           <TabList>
             <Tab>Koru Partners</Tab>
@@ -43,23 +64,37 @@ export default function Experience() {
               >
                 <UnorderedList>
                   <ListItem>
-                    Designed and developed internal superapp with user authentication, CRUD (Create, Read, Update,
-                    Delete) operations for company data, and a dashboard for monitoring and summarizing daily operational logs.
+                    Designed and developed internal superapp with user authentication, CRUD (Create,
+                    Read, Update, Delete) operations for company data, and a dashboard for
+                    monitoring and summarizing daily operational logs.
                   </ListItem>
                   <ListItem>
-                    Engineered Python bots automating tedious internal processes such as sending of recruitment emails
-                    and creation of Asana tasks, resulting in weekly time savings of 8-10 hours for the HR team.
+                    Engineered Python bots automating tedious internal processes such as sending of
+                    recruitment emails and creation of Asana tasks, resulting in weekly time savings
+                    of 8-10 hours for the HR team.
                   </ListItem>
                   <ListItem>
-                    Collaborated with cross-functional teams to gather product requirements and user feedback.
+                    Collaborated with cross-functional teams to gather product requirements and user
+                    feedback.
                   </ListItem>
                   <ListItem>
                     Maintained codebase by investigating and solving user-reported bugs.
                   </ListItem>
                 </UnorderedList>
-                {["Django", "Python", "MySQL", "AWS", "TypeScript/JavaScript", "HTML/CSS", "PHP", "Git", "Figma", "WordPress"].map(
-                  (skill) => <SkillTag>{skill}</SkillTag>
-                )}
+                {[
+                  'Django',
+                  'Python',
+                  'MySQL',
+                  'AWS',
+                  'TypeScript/JavaScript',
+                  'HTML/CSS',
+                  'PHP',
+                  'Git',
+                  'Figma',
+                  'WordPress',
+                ].map((skill) => (
+                  <SkillTag>{skill}</SkillTag>
+                ))}
               </JobExperienceItem>
             </TabPanel>
             <TabPanel>
@@ -70,26 +105,34 @@ export default function Experience() {
               >
                 <UnorderedList>
                   <ListItem>
-                    Analyzed user data in Python to identify key insights for demographics and behavior on newly
-                    launched EdTech platform.
+                    Analyzed user data in Python to identify key insights for demographics and
+                    behavior on newly launched EdTech platform.
                   </ListItem>
                   <ListItem>
-                    Designed and executed user testing survey on 680 users to gather feedback and identify bottlenecks in low
-                    purchase conversion of 20%.
+                    Designed and executed user testing survey on 680 users to gather feedback and
+                    identify bottlenecks in low purchase conversion of 20%.
                   </ListItem>
                   <ListItem>
-                    Conducted in-depth competitor research, gathering and analyzing market intelligence to
-                    identify key strengths, weaknesses, opportunities, and threats (SWOT analysis) and presented to
-                    senior management.
+                    Conducted in-depth competitor research, gathering and analyzing market
+                    intelligence to identify key strengths, weaknesses, opportunities, and threats
+                    (SWOT analysis) and presented to senior management.
                   </ListItem>
                   <ListItem>
-                    Identified market opportunity to target key customer segment of 1000+ university students
-                    and led business pitch and communications with external stakeholders.
+                    Identified market opportunity to target key customer segment of 1000+ university
+                    students and led business pitch and communications with external stakeholders.
                   </ListItem>
                 </UnorderedList>
-                {["Python", "Data Analysis", "Data Visualization", "User Research", "Competitor Analysis", "Survey Design", "Market Research"].map(
-                  (skill) => <SkillTag>{skill}</SkillTag>
-                )}
+                {[
+                  'Python',
+                  'Data Analysis',
+                  'Data Visualization',
+                  'User Research',
+                  'Competitor Analysis',
+                  'Survey Design',
+                  'Market Research',
+                ].map((skill) => (
+                  <SkillTag>{skill}</SkillTag>
+                ))}
               </JobExperienceItem>
             </TabPanel>
             <TabPanel>
@@ -100,24 +143,31 @@ export default function Experience() {
               >
                 <UnorderedList>
                   <ListItem>
-                    Implemented world map visualization feature on cartogram-generating website <Link href="https://go-cart.io">
-                      go-cart.io</Link>.
+                    Implemented world map visualization feature on cartogram-generating website{' '}
+                    <Link href='https://go-cart.io'>go-cart.io</Link>.
                   </ListItem>
                   <ListItem>
                     Utilized D3.js to smooth website cartogram transformation animations by 20%.
                   </ListItem>
                   <ListItem>
-                    Wrote and published a topical <Link href="https://journals.sagepub.com/doi/10.1177/0308518X21998356">
-                      research article</Link> and <Link
-                        href="https://perspectivesblog.sagepub.com/blog/research/everybody-is-talking-about-vaccines-but-who-on-earth-gets-them">
-                      blog post</Link> about global vaccination distribution inequality in 2021
-                    with <Link href="https://sage.altmetric.com/details/105472330#score">3 citations and top 11% of
-                      research attention to date</Link>.
+                    Wrote and published a topical{' '}
+                    <Link href='https://journals.sagepub.com/doi/10.1177/0308518X21998356'>
+                      research article
+                    </Link>{' '}
+                    and{' '}
+                    <Link href='https://perspectivesblog.sagepub.com/blog/research/everybody-is-talking-about-vaccines-but-who-on-earth-gets-them'>
+                      blog post
+                    </Link>{' '}
+                    about global vaccination distribution inequality in 2021 with{' '}
+                    <Link href='https://sage.altmetric.com/details/105472330#score'>
+                      3 citations and top 11% of research attention to date
+                    </Link>
+                    .
                   </ListItem>
                 </UnorderedList>
-                {["R", "JavaScript", "D3.js", "Docker", "Linux"].map(
-                  (skill) => <SkillTag>{skill}</SkillTag>
-                )}
+                {['R', 'JavaScript', 'D3.js', 'Docker', 'Linux'].map((skill) => (
+                  <SkillTag>{skill}</SkillTag>
+                ))}
               </JobExperienceItem>
             </TabPanel>
           </TabPanels>

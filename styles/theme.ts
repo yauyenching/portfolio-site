@@ -1,9 +1,9 @@
 // 1. import `extendTheme` function
-import { extendTheme, useColorModeValue } from '@chakra-ui/react';
-import { mode, StyleFunctionProps } from '@chakra-ui/theme-tools';
-import tabsTheme from './tabsTheme';
-import cardTheme from './cardTheme';
-import listTheme from './listTheme';
+import { extendTheme, useColorModeValue } from '@chakra-ui/react'
+import { mode, StyleFunctionProps } from '@chakra-ui/theme-tools'
+import tabsTheme from './tabsTheme'
+import cardTheme from './cardTheme'
+import listTheme from './listTheme'
 
 const colors = {
   brand: {
@@ -16,11 +16,11 @@ const colors = {
     gradient: 'var(--gradient)',
     headerLink: 'var(--text-color-header-link)',
   },
-};
+}
 
 const sizes = {
   contentW: '1000px',
-};
+}
 
 const styles = {
   global: {
@@ -29,13 +29,13 @@ const styles = {
       background: 'brand.bg',
     },
   },
-};
+}
 
 const fonts = {
   heading: `'MADE Tommy Soft', "Trebuchet MS", Helvetica, sans-serif`,
   body: `'Inter', Arial, Helvetica, sans-serif`,
   mono: `'Iosevka', 'Fira Code', 'Fira Mono', 'Roboto Mono', "Courier New", Courier, monospace`,
-};
+}
 
 const theme = extendTheme({
   config: {
@@ -75,7 +75,7 @@ const theme = extendTheme({
           _hover: {
             textDecoration: 'none',
           },
-        }
+        },
       },
     },
     Text: {
@@ -133,6 +133,6 @@ const theme = extendTheme({
       },
     },
   },
-});
+})
 
-export default theme;
+export default theme

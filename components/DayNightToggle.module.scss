@@ -1,12 +1,12 @@
 // dark-mode
-$dark-bg: #1D282C;
-$moon-color: #C8D8D7;
-$moon-shadow: #87A3AD;
-$moon-dimple: #9DB5C1;
+$dark-bg: #1d282c;
+$moon-color: #c8d8d7;
+$moon-shadow: #87a3ad;
+$moon-dimple: #9db5c1;
 
 // light mode
-$light-bg: #1FA1C1;
-$sun-color: #F4C014;
+$light-bg: #1fa1c1;
+$sun-color: #f4c014;
 
 // star Y travel
 $star-base: 20px;
@@ -63,7 +63,10 @@ $cloud2: 49px;
       transition: all 250ms ease-in;
       position: absolute;
       content: '';
-      box-shadow: -20px 0 0 -2px $moon-dimple, -14px 6px 0 -3px $moon-dimple, -9px -1px 0 -3.7px $moon-dimple;
+      box-shadow:
+        -20px 0 0 -2px $moon-dimple,
+        -14px 6px 0 -3px $moon-dimple,
+        -9px -1px 0 -3.7px $moon-dimple;
       left: 22px;
       top: 5px;
       width: 10px;
@@ -225,5 +228,5 @@ $cloud2: 49px;
 
 :export {
   lightBg: $light-bg;
-  darkBg: $dark-bg
+  darkBg: $dark-bg;
 }

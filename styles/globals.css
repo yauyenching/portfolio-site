@@ -5,21 +5,21 @@
 [data-theme='dark'] {
   --background: #12142b;
   --text-color-primary: #b4b9ca;
-  --text-color-title: #E7EBF6;
+  --text-color-title: #e7ebf6;
   --text-color-header-link: hsl(235, 20%, 35%);
   --accent: hsl(14, 100%, 75%);
   --accent-fade: hsla(14, 100%, 75%, 8%);
-  --card-bg: #070B28;
+  --card-bg: #070b28;
   --gradient: linear-gradient(90deg, hsl(14, 100%, 80%) 0%, hsl(0, 47%, 60%) 100%);
 }
 [data-theme='light'] {
-  --background: #F7F0E2;
-  --text-color-primary: #565A91;
-  --text-color-title: #353B81;
+  --background: #f7f0e2;
+  --text-color-primary: #565a91;
+  --text-color-title: #353b81;
   --text-color-header-link: hsl(236, 35%, 75%);
   --accent: hsl(0, 50%, 58%);
   --accent-fade: hsla(0, 50%, 58%, 8%);
-  --card-bg: #FDF7EB;
+  --card-bg: #fdf7eb;
   --gradient: linear-gradient(270deg, hsl(14, 75%, 73%) 0%, hsl(0, 50%, 56%) 100%);
 }
 
@@ -28,7 +28,7 @@ body {
   padding: 0;
   margin: 0;
   color: var(--text-color-primary);
-  font-feature-settings: "ss01", "cv11";
+  font-feature-settings: 'ss01', 'cv11';
 }
 
 a {
@@ -48,7 +48,10 @@ a {
   height: 3px;
   bottom: 1px;
   z-index: 5;
-  transition: left .3s ease, width .3s, opacity .3s;
+  transition:
+    left 0.3s ease,
+    width 0.3s,
+    opacity 0.3s;
   opacity: 0;
 }
 
@@ -79,10 +82,12 @@ a.active {
 }
 
 .line {
-  fill:none;
-  transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
-  stroke-width:5.5;
-  stroke-linecap:round;
+  fill: none;
+  transition:
+    stroke-dasharray 400ms,
+    stroke-dashoffset 400ms;
+  stroke-width: 5.5;
+  stroke-linecap: round;
 }
 
 .ham8 .top {
@@ -98,7 +103,9 @@ a.active {
 .ham8 .bottom {
   stroke-dasharray: 40 85;
   transform-origin: 50%;
-  transition: transform 400ms, stroke-dashoffset 400ms;
+  transition:
+    transform 400ms,
+    stroke-dashoffset 400ms;
 }
 
 .ham8.active .top {
