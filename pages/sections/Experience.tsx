@@ -149,7 +149,7 @@ export default function Experience() {
                   <ListItem>
                     Utilized D3.js to smooth website cartogram transformation animations by 20%.
                   </ListItem>
-                  <ListItem>
+                  {/* <ListItem>
                     Wrote and published a topical{' '}
                     <Link href='https://journals.sagepub.com/doi/10.1177/0308518X21998356'>
                       research article
@@ -163,7 +163,7 @@ export default function Experience() {
                       3 citations and top 11% of research attention to date
                     </Link>
                     .
-                  </ListItem>
+                  </ListItem> */}
                 </UnorderedList>
                 {['R', 'JavaScript', 'D3.js', 'Docker', 'Linux'].map((skill) => (
                   <SkillTag>{skill}</SkillTag>

@@ -1,4 +1,4 @@
-import { Flex, Heading, Text, Button, Box, useBreakpointValue } from '@chakra-ui/react'
+import { Flex, Heading, Text, Button, Box, useBreakpointValue, Link } from '@chakra-ui/react'
 import SectionHeading from 'components/SectionHeading'
 
 export default function Contact() {
@@ -15,14 +15,21 @@ export default function Contact() {
         </Text>
         <Text>Whether you want to work together, or say hi, my inbox is always open! ☺️👋🏻</Text>
       </Box>
-      <Button variant='gradient' mt={50} mb={30} p='25px 30px' fontSize='lg'>
-        <Box as='span' letterSpacing='0.02em'>
+      <Link
+        variant='gradient'
+        mt={50}
+        mb={30}
+        p='15px 30px'
+        fontSize='lg'
+        href='mailto:yauyenching@proton.me'
+      >
+        <Text as='span' letterSpacing='0.02em'>
           Say Hello
-        </Box>
-      </Button>
+        </Text>
+      </Link>
       <Flex fontSize='2xl' columnGap={15} color='brand.title'>
-        <i className='fa-brands fa-github'></i>
-        <i className='fa-brands fa-linkedin'></i>
+        <Link href='https://github.com/yauyenching'><i className='fa-brands fa-github'></i></Link>
+        <Link href='https://www.linkedin.com/in/yau-yen-ching'><i className='fa-brands fa-linkedin'></i></Link>
       </Flex>
     </Flex>
   )
