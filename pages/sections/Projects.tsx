@@ -66,7 +66,7 @@ export default function Projects() {
                     {!downloadLink ? (
                       downloads
                     ) : (
-                      <Link variant='stats' href={downloadLink}>
+                      <Link variant='noULine' href={downloadLink}>
                         <i className='fa-solid fa-download' style={{ marginRight: '5px' }} />
                         {downloads}
                       </Link>

@@ -70,10 +70,28 @@ const theme = extendTheme({
             textDecoration: 'none',
           },
         },
-        stats: {
+        noULine: {
           textDecoration: 'none',
           _hover: {
             textDecoration: 'none',
+          },
+        },
+        gradient: {
+          fontFamily: 'MADE Tommy Soft',
+          fontWeight: 500,
+          border: '3px solid',
+          borderRadius: '10px',
+          borderColor: 'transparent',
+          background: `linear-gradient(var(--chakra-colors-brand-bg), var(--chakra-colors-brand-bg)) padding-box,
+          var(--chakra-colors-brand-gradient) border-box`,
+          textDecoration: 'none',
+          _hover: {
+            textDecoration: 'none',
+          },
+          '> *': {
+            background: 'brand.gradient',
+            backgroundClip: 'text',
+            textFillColor: 'transparent',
           },
         },
       },
