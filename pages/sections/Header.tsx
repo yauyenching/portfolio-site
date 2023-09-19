@@ -93,6 +93,7 @@ export default function Header({
       <Link
         id={`header-link-${id}`}
         variant='header'
+        tabIndex={0}
         onClick={(_) => scrollToSection(id)}
         onMouseOver={(e) => (!mobile ? addOverlay(e.target as HTMLAnchorElement) : null)}
         onMouseLeave={(e) => (!mobile ? removeOverlay(e.target as HTMLAnchorElement) : null)}
@@ -143,6 +144,7 @@ export default function Header({
               fontSize='lg'
               justifyContent='center'
               alignItems='center'
+              tabIndex={0}
             >
               <Text as='span' color='white'>
                 yc
@@ -162,7 +164,6 @@ export default function Header({
               onMouseOver={(_) => setHovering(true)}
               onMouseLeave={(_) => setHovering(false)}
             >
-              <Box id='overlay' ref={overlayRef} />
               {/* DONE: Find how use inner text for params */}
               {/* https://stackoverflow.com/questions/32248427/this-props-children-selecting-innerhtml */}
               {SECTIONS.map((s, i) => (
@@ -170,6 +171,7 @@ export default function Header({
                   {s}
                 </HeaderLink>
               ))}
+              <Box id='overlay' ref={overlayRef} />
             </Flex>
           </Show>
           {/* https://daily-dev-tips.com/posts/creating-day-night-css-only-toggle-switch/ */}

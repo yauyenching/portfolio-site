@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import { useColorMode, Flex, Stack, Text, Box, useBreakpointValue } from '@chakra-ui/react'
+import { useColorMode, Flex, Stack, Text, Box, useBreakpointValue, Link, Button } from '@chakra-ui/react'
 import Header from './sections/Header'
 import { useRef, useState, useEffect, ReactNode } from 'react'
 import dynamic from 'next/dynamic'

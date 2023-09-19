@@ -1,5 +1,5 @@
 import React from 'react'
-import { Flex } from '@chakra-ui/react'
+import { Box } from '@chakra-ui/react'
 import { colorModeProps } from './props'
 import styles from './DayNightToggle.module.scss'
 import NightSparkle from 'public/assets/night_sparkle'
@@ -13,8 +13,8 @@ export default function DayNightToggle({ colorMode, toggleColorMode }: colorMode
     colorMode === 'light' ? styles['cloudVisible' + index] : styles.invisible
 
   return (
-    <div onClick={toggleColorMode} className={`${styles.toggle} ${colorModeStyle}`}>
-      <div className={styles.toggleCircle} />
+    <Box onClick={toggleColorMode} className={`${styles.toggle} ${colorModeStyle}`} tabIndex={0}>
+      <Box className={styles.toggleCircle} />
       <NightSparkle className={lightModeVisibility(1)} width={9} height={10} left={8} top={14} />
       <NightSparkle
         className={lightModeVisibility(2)}
@@ -32,6 +32,6 @@ export default function DayNightToggle({ colorMode, toggleColorMode }: colorMode
       />
       <DayCloud className={darkModeVisibility(1)} left={34} top={16} />
       <DayCloud className={darkModeVisibility(2)} left={49} top={8} />
-    </div>
+    </Box>
   )
 }

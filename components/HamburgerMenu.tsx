@@ -10,7 +10,7 @@ export default function HamburgerMenu({
   isOpen,
 }: WithRequired<UseDisclosureProps, 'onOpen'>) {
   return (
-    <Box stroke='brand.body'>
+    <Box stroke='brand.body' tabIndex={0}>
       <svg
         className={'ham hamRotate ham8'.concat(isOpen ? ' active' : '')}
         viewBox='0 0 100 100'

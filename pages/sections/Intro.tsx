@@ -88,17 +88,16 @@ export default function Intro() {
           fontSize='sm'
           lineHeight='2.25em'
           letterSpacing='0.025em'
+          sx={{ columns: 2 }}
         >
-          <SimpleGrid columns={2}>
-            <ListItem>TypeScript / JavaScript</ListItem>
-            <ListItem>React.js</ListItem>
-            <ListItem>Python</ListItem>
-            <ListItem>Django</ListItem>
-            <ListItem>MySQL</ListItem>
-            <ListItem>AWS</ListItem>
-            <ListItem>R</ListItem>
-            <ListItem>Java</ListItem>
-          </SimpleGrid>
+          <ListItem>TypeScript / JavaScript</ListItem>
+          <ListItem>React.js</ListItem>
+          <ListItem>Python</ListItem>
+          <ListItem>Django</ListItem>
+          <ListItem>MySQL</ListItem>
+          <ListItem>AWS</ListItem>
+          <ListItem>R</ListItem>
+          <ListItem>Java</ListItem>
         </UnorderedList>
         {/* TODO: Maybe? Add Let's connect as button/link to Contact section. Maybe below pfp */}
       </Box>
