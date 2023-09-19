@@ -10,17 +10,30 @@ import {
   Button,
 } from '@chakra-ui/react'
 import Image from 'next/image'
+import { Suspense } from 'react'
+import { Skeleton, SkeletonCircle, SkeletonText } from '@chakra-ui/react'
 
 // TODO: Make Intro height 100vh and make bio center
 export default function Intro() {
   const profilePicSize = useBreakpointValue({ base: 175, sm: 200, md: 225 })
   const headingSize = useBreakpointValue({ base: '4xl', sm: '5xl', md: '6xl' })
 
+  function IntroSkeleton() {
+    return (
+      <Box w='100%' display='inline-block'>
+        <SkeletonCircle size={String(profilePicSize)} />
+        <SkeletonText mt='4' noOfLines={10} spacing='4' skeletonHeight='2.5' />
+      </Box>
+    )
+  }
+
+  // return <IntroSkeleton />
+
   return (
     <Flex direction={{ base: 'column', md: 'row-reverse' }} columnGap={50}>
       <Flex justifyContent={{ base: 'center', md: 'right' }}>
         <Image
-          src='/profile_pic.jpg'
+          src='/profile_pic.webp'
           alt='test'
           width={profilePicSize}
           height={profilePicSize}

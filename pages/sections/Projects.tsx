@@ -119,7 +119,7 @@ export default function Projects() {
         columnGap={15}
       >
         <ProjectsCard
-          imageFileName='s3_pattern_recategorizer.png'
+          imageFileName='s3_pattern_recategorizer.webp'
           projectTitle='Sims 3 Pattern Recategorizer Tool'
           techStack={['Python']}
           githubLink='https://github.com/yauyenching/sims-3-pattern-recategorizer'
@@ -130,7 +130,7 @@ export default function Projects() {
           content in-game.
         </ProjectsCard>
         <ProjectsCard
-          imageFileName='dorm_temp_dashboard.png'
+          imageFileName='dorm_temp_dashboard.webp'
           projectTitle='Dorm Temperature Monitoring Dashboard'
           techStack={['Typescript', 'React.js', 'SASS', 'Meteor.js']}
           githubLink='https://github.com/yauyenching/dorm-temp-dashboard'
@@ -140,7 +140,7 @@ export default function Projects() {
           responsive design, data filters, and a pannable and zoomable time graph.
         </ProjectsCard>
         <ProjectsCard
-          imageFileName='wordle_tele_bot.png'
+          imageFileName='wordle_tele_bot.webp'
           projectTitle='Wordle Leaderboard Telegram Bot'
           techStack={['Python', 'MongoDB']}
           githubLink='https://github.com/yauyenching/wordle-tele-bot'
@@ -150,7 +150,7 @@ export default function Projects() {
           display leaderboards in group chats for social play.
         </ProjectsCard>
         <ProjectsCard
-          imageFileName='bandung_word_cloud.png'
+          imageFileName='bandung_word_cloud.webp'
           projectTitle='Bandung Bulletins Interactive Word Cloud'
           techStack={['R']}
           githubLink='https://github.com/yauyenching/bandung-bulletins'
@@ -161,7 +161,7 @@ export default function Projects() {
           Asian-African Conference bulletins.
         </ProjectsCard>
         <ProjectsCard
-          imageFileName='thermostat_radial_slider.png'
+          imageFileName='thermostat_radial_slider.webp'
           projectTitle='Thermostat Radial Slider'
           techStack={['React.js']}
           githubLink='https://github.com/yauyenching/thermostat-radial-slider'

@@ -64,17 +64,17 @@ export default function Designs() {
       >
         <DesignsCard
           designTitle='Homemates'
-          imageFileName='homemates.png'
+          imageFileName='homemates.webp'
           designUrl='https://www.figma.com/file/SiCr4yrw7WhOUSBh3RhHIm/Homemates?type=design&node-id=0%3A1&mode=design&t=gnMJPFg2cfc5GlHD-1'
         />
         <DesignsCard
           designTitle='Gifter'
-          imageFileName='gifter.png'
+          imageFileName='gifter.webp'
           designUrl='https://www.figma.com/file/RIeiFbqwmBOgpTVfYF5FVc/Gifter?type=design&node-id=0%3A1&mode=design&t=M3PWNWI0O3Dh93TR-1'
         />
         <DesignsCard
           designTitle='2020 W3Schools Redesign'
-          imageFileName='w3schools.png'
+          imageFileName='w3schools.webp'
           designUrl='https://www.figma.com/file/T0LQIRS5dnq46NPDM6Zi28/W3Schools-Redesign-Mockup?type=design&node-id=0%3A1&mode=design&t=RH7syUsmJefAKOuy-1'
         />
       </Grid>

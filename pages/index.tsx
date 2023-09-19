@@ -2,13 +2,15 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import { useColorMode, Flex, Stack, Text, Box, useBreakpointValue } from '@chakra-ui/react'
 import Header from './sections/Header'
-import Intro from './sections/Intro'
-import Experience from './sections/Experience'
-import Projects from './sections/Projects'
-import Designs from './sections/Designs'
-import Features from './sections/Features'
-import Contact from './sections/Contact'
 import { useRef, useState, useEffect } from 'react'
+import dynamic from 'next/dynamic'
+
+const Intro = dynamic(() => import('./sections/Intro'), { loading: () => <p>Loading...</p>})
+const Experience = dynamic(() => import('./sections/Experience'), { loading: () => <p>Loading...</p>})
+const Projects = dynamic(() => import('./sections/Projects'), { loading: () => <p>Loading...</p>})
+const Designs = dynamic(() => import('./sections/Designs'), { loading: () => <p>Loading...</p>})
+const Features = dynamic(() => import('./sections/Features'), { loading: () => <p>Loading...</p>})
+const Contact = dynamic(() => import('./sections/Contact'), { loading: () => <p>Loading...</p>})
 
 const Home: NextPage = () => {
   const { colorMode, toggleColorMode } = useColorMode()

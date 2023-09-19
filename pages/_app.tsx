@@ -8,7 +8,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ChakraBaseProvider theme={theme} resetCSS={false}>
       <Component {...pageProps} />
-      <Script src='https://kit.fontawesome.com/c0cc8a8286.js' crossOrigin='anonymous' />
+      <Script async src='https://kit.fontawesome.com/c0cc8a8286.js' crossOrigin='anonymous' />
     </ChakraBaseProvider>
   )
 }
