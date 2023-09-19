@@ -15,6 +15,7 @@ import SectionHeading from 'components/SectionHeading'
 import SkillTag from 'components/SkillTag'
 import Image from 'next/image'
 import { PropsWithChildren } from 'react'
+import { v4 as uuidv4 } from 'uuid'
 
 export default function Projects() {
   interface ProjectsCardProp {
@@ -90,8 +91,8 @@ export default function Projects() {
           </CardBody>
           <CardFooter>
             <Box mb='5px'>
-              {techStack.map((skill) => (
-                <SkillTag>{skill}</SkillTag>
+              {techStack.map((skill, i) => (
+                <SkillTag key={uuidv4()}>{skill}</SkillTag>
               ))}
             </Box>
             <Link href={githubLink} pr={externalLink && 7.5} fontSize='xl'>

@@ -16,18 +16,21 @@ import {
 import SectionHeading from 'components/SectionHeading'
 import SkillTag from 'components/SkillTag'
 import { PropsWithChildren } from 'react'
+import { v4 as uuidv4 } from 'uuid'
 
 export default function Experience() {
   interface JobExperienceItemProps {
     jobTitle: string
     company: string
     employmentDateRange: string
+    skills: string[]
   }
 
   function JobExperienceItem({
     jobTitle,
     company,
     employmentDateRange,
+    skills,
     children,
   }: PropsWithChildren<JobExperienceItemProps>) {
     return (
@@ -39,7 +42,12 @@ export default function Experience() {
         <Heading as='h3' variant='subtitle' fontSize='md'>
           {employmentDateRange}
         </Heading>
-        <Box textAlign='left'>{children}</Box>
+        <Box textAlign='left'>
+          {children}
+          {skills.map((skill, i) => (
+            <SkillTag key={uuidv4()}>{skill}</SkillTag>
+          ))}
+        </Box>
       </Box>
     )
   }
@@ -61,6 +69,18 @@ export default function Experience() {
                 jobTitle='Junior Software Developer'
                 company='Koru Partners'
                 employmentDateRange='Feb 2023 - July 2023'
+                skills={[
+                  'Django',
+                  'Python',
+                  'MySQL',
+                  'AWS',
+                  'TypeScript/JavaScript',
+                  'HTML/CSS',
+                  'PHP',
+                  'Git',
+                  'Figma',
+                  'WordPress',
+                ]}
               >
                 <UnorderedList>
                   <ListItem>
@@ -81,20 +101,6 @@ export default function Experience() {
                     Maintained codebase by investigating and solving user-reported bugs.
                   </ListItem>
                 </UnorderedList>
-                {[
-                  'Django',
-                  'Python',
-                  'MySQL',
-                  'AWS',
-                  'TypeScript/JavaScript',
-                  'HTML/CSS',
-                  'PHP',
-                  'Git',
-                  'Figma',
-                  'WordPress',
-                ].map((skill) => (
-                  <SkillTag>{skill}</SkillTag>
-                ))}
               </JobExperienceItem>
             </TabPanel>
             <TabPanel>
@@ -102,6 +108,15 @@ export default function Experience() {
                 jobTitle='Product Analyst Intern'
                 company='AirAsia'
                 employmentDateRange='June 2021 - Sep 2021'
+                skills={[
+                  'Python',
+                  'Data Analysis',
+                  'Data Visualization',
+                  'User Research',
+                  'Competitor Analysis',
+                  'Survey Design',
+                  'Market Research',
+                ]}
               >
                 <UnorderedList>
                   <ListItem>
@@ -122,17 +137,6 @@ export default function Experience() {
                     students and led business pitch and communications with external stakeholders.
                   </ListItem>
                 </UnorderedList>
-                {[
-                  'Python',
-                  'Data Analysis',
-                  'Data Visualization',
-                  'User Research',
-                  'Competitor Analysis',
-                  'Survey Design',
-                  'Market Research',
-                ].map((skill) => (
-                  <SkillTag>{skill}</SkillTag>
-                ))}
               </JobExperienceItem>
             </TabPanel>
             <TabPanel>
@@ -140,6 +144,7 @@ export default function Experience() {
                 jobTitle='Computational Research Assistant'
                 company='Yale-NUS College'
                 employmentDateRange='May 2020 - Apr 2021'
+                skills={['R', 'JavaScript', 'D3.js', 'Docker', 'Linux']}
               >
                 <UnorderedList>
                   <ListItem>
@@ -165,9 +170,6 @@ export default function Experience() {
                     .
                   </ListItem> */}
                 </UnorderedList>
-                {['R', 'JavaScript', 'D3.js', 'Docker', 'Linux'].map((skill) => (
-                  <SkillTag>{skill}</SkillTag>
-                ))}
               </JobExperienceItem>
             </TabPanel>
           </TabPanels>

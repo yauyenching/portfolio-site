@@ -2,7 +2,7 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import { useColorMode, Flex, Stack, Text, Box, useBreakpointValue } from '@chakra-ui/react'
 import Header from './sections/Header'
-import { useRef, useState, useEffect } from 'react'
+import { useRef, useState, useEffect, ReactNode } from 'react'
 import dynamic from 'next/dynamic'
 
 const Intro = dynamic(() => import('./sections/Intro'), { loading: () => <p>Loading...</p>})
@@ -12,19 +12,25 @@ const Designs = dynamic(() => import('./sections/Designs'), { loading: () => <p>
 const Features = dynamic(() => import('./sections/Features'), { loading: () => <p>Loading...</p>})
 const Contact = dynamic(() => import('./sections/Contact'), { loading: () => <p>Loading...</p>})
 
+interface section {
+  sectionId: number
+  sectionComponent: ReactNode
+}
+
 const Home: NextPage = () => {
   const { colorMode, toggleColorMode } = useColorMode()
   const observerRef = useRef<IntersectionObserver | null>(null)
   const [activeSection, setActiveSection] = useState<number>(0)
   const [hovering, setHovering] = useState<boolean>(false)
+  const paddingTopBreakpointVals = useBreakpointValue({ base: '125px', md: '0px' })
 
-  const SECTION_COMPONENTS = [
-    <Intro />,
-    <Experience />,
-    <Projects />,
-    <Designs />,
-    <Features />,
-    <Contact />,
+  const SECTIONS: section[] = [
+    {sectionId: 0, sectionComponent: <Intro />},
+    {sectionId: 1, sectionComponent: <Experience />},
+    {sectionId: 2, sectionComponent: <Projects />},
+    {sectionId: 3, sectionComponent: <Designs />},
+    {sectionId: 4, sectionComponent: <Features />},
+    {sectionId: 5, sectionComponent: <Contact />},
   ]
 
   useEffect(() => {
@@ -55,11 +61,6 @@ const Home: NextPage = () => {
     }
   }, [activeSection, hovering])
 
-  // useEffect(() => {
-  //   const activeLink = document.getElementById(`header-link-${activeSection}`);
-  //   activeLink?.classList.add('active');
-  // }, [activeSection])
-
   // TODO: Add smooth scrolling animation
 
   return (
@@ -88,22 +89,22 @@ const Home: NextPage = () => {
             padding={{ base: '1.5em 27.5px 5em', md: '7.5em 27.5px' }}
             spacing={{ base: 0, md: 125 }}
           >
-            {SECTION_COMPONENTS.map((sectionComponent, i) => {
+            {SECTIONS.map((section, i) => {
               const elem = (
                 <section
-                  key={i}
+                  key={section.sectionId}
                   id={`section-${i}`}
                   style={{
                     width: '100%',
                     maxWidth: 'var(--chakra-sizes-contentW)',
                     minHeight: '65vh',
-                    paddingTop: i !== 0 ? useBreakpointValue({ base: '125px', md: '0px' }) : '0px',
+                    paddingTop: i !== 0 ? paddingTopBreakpointVals : '0px',
                     display: 'flex',
                     // alignItems: 'center',
                     justifyContent: 'center',
                   }}
                 >
-                  {sectionComponent}
+                  {section.sectionComponent}
                 </section>
               )
               return elem

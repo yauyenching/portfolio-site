@@ -56,7 +56,7 @@ export default function Intro() {
             m={0}
           >
             {/* TODO: Add name gradient hover and startup animation */}
-            Hi, I'm&nbsp;
+            Hi, I&apos;m&nbsp;
             <Box display='inline-block'>
               <Heading as='span' variant='gradient' fontSize={headingSize} lineHeight='1em'>
                 Yau Yen Ching

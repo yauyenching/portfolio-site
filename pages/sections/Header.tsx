@@ -15,6 +15,7 @@ import { colorModeProps } from 'components/props'
 import DayNightToggle from 'components/DayNightToggle'
 import HamburgerMenu from 'components/HamburgerMenu'
 import { PropsWithChildren, useEffect, useRef } from 'react'
+import { v4 as uuidv4 } from 'uuid'
 
 interface HeaderProps extends colorModeProps {
   activeSection: number
@@ -86,7 +87,7 @@ export default function Header({
           overlayRef.current!.classList.remove('active')
         }
       }
-    }, [activeSection])
+    }, [mobile])
 
     return (
       <Link
@@ -128,7 +129,7 @@ export default function Header({
               </Show>
             </Box>
             {/* logo */}
-            <Box
+            <Flex
               onClick={(_) => scrollToSection(0)}
               cursor='pointer'
               h='40px'
@@ -140,16 +141,16 @@ export default function Header({
               fontFamily='heading'
               fontWeight={500}
               fontSize='lg'
+              justifyContent='center'
+              alignItems='center'
             >
-              <Box position='absolute' left='6px' top='4px'>
-                <Text as='span' color='white'>
-                  yc
-                </Text>
-                <Text as='span' color='#FFA68A'>
-                  .
-                </Text>
-              </Box>
-            </Box>
+              <Text as='span' color='white'>
+                yc
+              </Text>
+              <Text as='span' color='#FFA68A'>
+                .
+              </Text>
+            </Flex>
           </HStack>
           <Show above='md'>
             <Flex
@@ -180,7 +181,7 @@ export default function Header({
           <Flex background='brand.bg' py='12.5px' h='95px' mt={50} justifyContent='center'>
             <SimpleGrid columns={3} w='100%' maxW='650px' px={{ base: 25, sm: 75 }}>
               {SECTIONS.map((s, i) => (
-                <HeaderLink key={i} id={i + 1} mobile={true}>
+                <HeaderLink key={uuidv4()} id={i + 1} mobile={true}>
                   {s}
                 </HeaderLink>
               ))}
