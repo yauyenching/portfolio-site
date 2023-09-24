@@ -1,6 +1,6 @@
 @import url('https://rsms.me/inter/inter.css');
-@import url('/public/fonts/webfont-iosevka-26.2.0/iosevka.css');
-@import url('/public/fonts/made_tommy_soft/made_tommy_soft.css');
+@import url('public/fonts/webfont-iosevka-26.2.0/iosevka.css');
+@import url('public/fonts/made_tommy_soft/made_tommy_soft.css');
 
 [data-theme='dark'] {
   --background: #12142b;
