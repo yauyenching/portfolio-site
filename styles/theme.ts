@@ -34,7 +34,7 @@ const styles = {
 const fonts = {
   heading: `'MADE Tommy Soft', "Trebuchet MS", Helvetica, sans-serif`,
   body: `'Inter', Arial, Helvetica, sans-serif`,
-  mono: `'Iosevka', 'Fira Code', 'Fira Mono', 'Roboto Mono', "Courier New", Courier, monospace`,
+  mono: `'Iosevka Web', 'Fira Code', 'Fira Mono', 'Roboto Mono', "Courier New", Courier, monospace`,
 }
 
 const theme = extendTheme({

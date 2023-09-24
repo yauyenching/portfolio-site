@@ -40,7 +40,7 @@ const Home: NextPage = () => {
         if (entry.isIntersecting && entry.intersectionRatio <= 0.45) {
           if (!hovering) {
             setActiveSection(entryId)
-            console.log('active: ' + entryId + ', intersectionRatio: ' + entry.intersectionRatio)
+            // console.log('active: ' + entryId + ', intersectionRatio: ' + entry.intersectionRatio)
           }
         }
       },
