@@ -35,12 +35,15 @@ export default function Intro() {
         <Image
           src='/profile_pic.webp'
           alt='test'
-          width={profilePicSize}
-          height={profilePicSize}
+          width={0}
+          height={0}
+          sizes="100vw"
           style={{
             borderRadius: '50%',
             // boxShadow: '0px 6px 30px 0px rgba(0, 0, 0, 0.08)',
             marginBottom: 5,
+            height: profilePicSize,
+            width: profilePicSize
           }}
         />
       </Flex>

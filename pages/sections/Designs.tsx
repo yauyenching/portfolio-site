@@ -1,8 +1,10 @@
-import { Box, Heading, Flex, Grid, GridItem, Button, Link } from '@chakra-ui/react'
+import { Box, Heading, Flex, Grid, GridItem, Button, Link, useColorModeValue } from '@chakra-ui/react'
 import SectionHeading from 'components/SectionHeading'
 import Image from 'next/image'
 
 export default function Designs() {
+  const cardOpacity = useColorModeValue(0.65, 0.6)
+
   interface DesignsCardProp {
     designTitle: string
     imageFileName: string
@@ -31,7 +33,7 @@ export default function Designs() {
             width={0}
             height={0}
             sizes='100vw'
-            style={{ width: '100%', height: '100%', opacity: 0.6, objectFit: 'cover' }}
+            style={{ width: '100%', height: '100%', opacity: cardOpacity, objectFit: 'cover' }}
           />
           {/* <Box
             // w={475} h={275}
