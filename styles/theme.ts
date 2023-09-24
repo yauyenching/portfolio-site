@@ -10,11 +10,11 @@ const colors = {
     bg: 'var(--background)',
     body: 'var(--text-color-primary)',
     title: 'var(--text-color-title)',
+    titleMuted: 'var(--text-color-title-muted)',
     accent: 'var(--accent)',
     accentFade: 'var(--accent-fade)',
     card: 'var(--card-bg)',
     gradient: 'var(--gradient)',
-    headerLink: 'var(--text-color-header-link)',
   },
 }
 
@@ -39,8 +39,8 @@ const fonts = {
 
 const theme = extendTheme({
   config: {
-    initialColorMode: 'dark',
-    useSystemColorMode: true,
+    initialColorMode: 'light',
+    useSystemColorMode: false,
   },
   fonts: fonts,
   colors: colors,
@@ -64,7 +64,7 @@ const theme = extendTheme({
           textTransform: 'uppercase',
           fontFamily: 'heading',
           padding: '7.5px 0 0',
-          color: 'brand.headerLink',
+          color: 'brand.titleMuted',
           _hover: {
             color: 'brand.title',
             textDecoration: 'none',

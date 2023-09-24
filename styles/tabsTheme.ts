@@ -14,11 +14,12 @@ const baseStyle = definePartsStyle({
     textTransform: 'uppercase',
     letterSpacing: '0.025em',
     textAlign: 'left',
-    opacity: 0.5,
     _selected: {
       color: 'brand.title',
-      opacity: 1,
     },
+  },
+  tablist: {
+    color: 'brand.titleMuted'
   },
   tabpanel: {
     padding: '10px 25px',

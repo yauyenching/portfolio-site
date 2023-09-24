@@ -1,7 +1,8 @@
 import { PropsWithChildren } from 'react'
-import { Box } from '@chakra-ui/react'
+import { Box, useColorModeValue } from '@chakra-ui/react'
 
 export default function SkillTag({ children }: PropsWithChildren) {
+
   return (
     <Box
       display='inline-block'
@@ -16,7 +17,6 @@ export default function SkillTag({ children }: PropsWithChildren) {
       p='5px 10px'
       mr='5px'
       my='2.5px'
-      opacity={0.85}
     >
       {children}
     </Box>
