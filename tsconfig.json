@@ -23,6 +23,6 @@
     "custom.d.ts",
     "public/assets/night_sparkle.tsx",
     "components/HamburgerMenu.tsx"
-  ],
+, "public/service-worker.js"  ],
   "exclude": ["node_modules"]
 }
