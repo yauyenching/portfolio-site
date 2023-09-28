@@ -95,14 +95,16 @@ export default function Projects() {
                 <SkillTag key={uuidv4()}>{skill}</SkillTag>
               ))}
             </Box>
-            <Link href={githubLink} pr={externalLink && 7.5} fontSize='xl'>
-              <i className='fa-brands fa-github' />
-            </Link>
-            {externalLink && (
-              <Link href={externalLink} fontSize='xl'>
-                <i className='fa-solid fa-arrow-up-right-from-square' />
+            <Box color='brand.title'>
+              <Link href={githubLink} pr={externalLink && 7.5} fontSize='xl'>
+                <i className='fa-brands fa-github' />
               </Link>
-            )}
+              {externalLink && (
+                <Link href={externalLink} fontSize='xl'>
+                  <i className='fa-solid fa-arrow-up-right-from-square' />
+                </Link>
+              )}
+            </Box>
           </CardFooter>
         </Card>
       </GridItem>

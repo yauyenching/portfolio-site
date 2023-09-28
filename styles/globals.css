@@ -15,7 +15,7 @@
 [data-theme='light'] {
   --background: hsl(40, 60%, 95%);
   --text-color-primary: hsl(236, 28%, 44%);
-  --text-color-title: hsl(235, 48%, 32%);
+  --text-color-title: hsl(235, 48%, 34%);
   --text-color-title-muted: hsl(237, 22%, 52%);
   --accent: hsl(0, 45%, 48%);
   --accent-fade: hsla(0, 40%, 54%, 8%);

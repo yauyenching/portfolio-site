@@ -19,10 +19,10 @@ const baseStyle = definePartsStyle({
     },
   },
   tablist: {
-    color: 'brand.titleMuted'
+    color: 'brand.titleMuted',
   },
   tabpanel: {
-    padding: '10px 25px',
+    padding: { base: '10px', sm: '10px 25px' },
   },
 })
 

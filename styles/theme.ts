@@ -39,8 +39,8 @@ const fonts = {
 
 const theme = extendTheme({
   config: {
-    initialColorMode: 'light',
-    useSystemColorMode: false,
+    initialColorMode: 'dark',
+    useSystemColorMode: true,
   },
   fonts: fonts,
   colors: colors,
