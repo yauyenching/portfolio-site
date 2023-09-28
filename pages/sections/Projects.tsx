@@ -10,6 +10,8 @@ import {
   Grid,
   GridItem,
   Link,
+  LinkOverlay,
+  LinkBox,
 } from '@chakra-ui/react'
 import SectionHeading from 'components/SectionHeading'
 import SkillTag from 'components/SkillTag'
@@ -42,71 +44,73 @@ export default function Projects() {
   }: PropsWithChildren<ProjectsCardProp>) {
     return (
       <GridItem>
-        <Card size='sm' overflow='hidden'>
-          <CardHeader>
-            <Image
-              src={`/previews/${imageFileName}`}
-              width={0}
-              height={0}
-              sizes='100vw'
-              style={{ width: '100%', height: '170px', objectFit: 'cover' }}
-              alt={`${projectTitle} ui preview`}
-            />
-            <Heading as='h2' size='sm' m='0 25px' textAlign='center'>
-              {projectTitle}
-            </Heading>
-          </CardHeader>
-          <CardBody textAlign='left' position='relative'>
-            <Text as='span' fontSize='sm'>
-              {children}
-            </Text>
-            {(downloads || githubStars) && (
-              <Text textAlign='left' fontSize='sm' mb={0}>
-                {downloads && (
-                  <>
-                    {!downloadLink ? (
-                      downloads
-                    ) : (
-                      <Link variant='noULine' href={downloadLink}>
-                        <i className='fa-solid fa-download' style={{ marginRight: '5px' }} />
-                        {downloads}
-                      </Link>
-                    )}
-                  </>
-                )}
-                {githubStars && (
-                  <>
-                    <i
-                      className='fa-solid fa-star'
-                      style={{
-                        marginRight: '5px',
-                        marginLeft: downloads ? 15 : 0,
-                      }}
-                    />
-                    {githubStars}
-                  </>
-                )}
+        <LinkBox>
+          <Card size='sm' overflow='hidden'>
+            <CardHeader>
+              <Image
+                src={`/previews/${imageFileName}`}
+                width={0}
+                height={0}
+                sizes='100vw'
+                style={{ width: '100%', height: '170px', objectFit: 'cover' }}
+                alt={`${projectTitle} ui preview`}
+              />
+              <Heading as='h2' size='sm' m='0 25px' textAlign='center'>
+                <LinkOverlay href={githubLink}>{projectTitle}</LinkOverlay>
+              </Heading>
+            </CardHeader>
+            <CardBody textAlign='left' position='relative'>
+              <Text as='span' fontSize='sm'>
+                {children}
               </Text>
-            )}
-          </CardBody>
-          <CardFooter>
-            <Box mb='5px'>
-              {techStack.map((skill, i) => (
-                <SkillTag key={uuidv4()}>{skill}</SkillTag>
-              ))}
-            </Box>
-            <Box color='brand.title'>
-              <Link href={githubLink} pr={externalLink && 7.5} fontSize='xl'>
-                <i className='fa-brands fa-github' />
-              </Link>
-              {externalLink && (
-                <Link href={externalLink} fontSize='xl'>
-                  <i className='fa-solid fa-arrow-up-right-from-square' />
-                </Link>
+              {(downloads || githubStars) && (
+                <Text textAlign='left' fontSize='sm' mb={0}>
+                  {downloads && (
+                    <>
+                      {!downloadLink ? (
+                        downloads
+                      ) : (
+                        <Link variant='noULine' href={downloadLink}>
+                          <i className='fa-solid fa-download' style={{ marginRight: '5px' }} />
+                          {downloads}
+                        </Link>
+                      )}
+                    </>
+                  )}
+                  {githubStars && (
+                    <>
+                      <i
+                        className='fa-solid fa-star'
+                        style={{
+                          marginRight: '5px',
+                          marginLeft: downloads ? 15 : 0,
+                        }}
+                      />
+                      {githubStars}
+                    </>
+                  )}
+                </Text>
               )}
-            </Box>
-          </CardFooter>
-        </Card>
+            </CardBody>
+            <CardFooter>
+              <Box mb='5px'>
+                {techStack.map((skill, i) => (
+                  <SkillTag key={uuidv4()}>{skill}</SkillTag>
+                ))}
+              </Box>
+              <Box color='brand.title'>
+                <Link href={githubLink} pr={externalLink && 7.5} fontSize='xl'>
+                  <i className='fa-brands fa-github' />
+                </Link>
+                {externalLink && (
+                  <Link href={externalLink} fontSize='xl'>
+                    <i className='fa-solid fa-arrow-up-right-from-square' />
+                  </Link>
+                )}
+              </Box>
+            </CardFooter>
+          </Card>
+        </LinkBox>
       </GridItem>
     )
   }
