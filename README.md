@@ -31,6 +31,10 @@ I always found that a 1-page resume could never fit everything I wanted to say a
 - Responsive design (fits all viewport sizes including desktop, tablet, mobile)
 - Sliding navigation link highlight based on current section in viewport using Intersection Observer API
 
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/yauyenching/portfolio-site/blob/main/LICENSE) file for details. This means you can fork this repo and use this code for your own personal/commerical uses, but please provide attribution!
+
 ## ⚙️ Building this Project
 
 1. First, run
@@ -72,10 +76,6 @@ The following is a list of features to implement:
 - [ ] Accessibility: Link aria labels
 - [ ] Optimization: preload fonts and imges
 - [ ] [optional] Scroll animations (must be performant)
-
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](https://github.com/yauyenching/portfolio-site/blob/main/LICENSE) file for details. This means you can fork this repo and use this code for your own personal/commerical uses, but please provide attribution!
 
 ## 🙌🏻 Acknowledgements
 
