@@ -1,34 +1,82 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<div align="center">
+  <img alt="Logo" src="public/icons/favicon.png" width="100" />
+</div>
+<h1 align="center">yauyc.com Personal Portfolio</h1>
+<p align="center">
+  <a href="https://app.netlify.com/sites/yauyc/deploys"><img src="https://api.netlify.com/api/v1/badges/acadf828-1fcf-4691-90d4-ae5e428d825a/deploy-status"></a>
+  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB">
+  <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white">
+  <img src="https://img.shields.io/badge/Chakra--UI-319795?style=for-the-badge&logo=chakra-ui&logoColor=white">
+  <img src="https://img.shields.io/badge/next%20js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white">
+  <img src="https://img.shields.io/badge/License-MIT-informational?style=for-the-badge">
+</p>
+My personal portfolio site coded in React.js and TypeScript. Built with Chakra UI and Next.js, and hosted with Netlify.
 
-## Getting Started
+## 💡 Motivation
 
-First, run the development server:
+I always found that a 1-page resume could never fit everything I wanted to say about myself. So I wanted to build a portfolio site, so that I had full freedom over the presentation of my narrative. I also saw it as a great way to exercise my design and technical chops!
 
-```bash
-npm run dev
-# or
-yarn dev
+## ✨ Preview
+
+<div align="center">
+  <div align="center" style="display:block;">
+    <img src="public/previews/portfolio.webp">
+  </div>
+  <h3>🔗 Check out the live site at <a href="https://yauyc.com">yauyc.com</a></h3>
+</div>
+
+## ⭐ Features
+
+- Light and dark mode toggle (follows system default)
+- Responsive design (fits all viewport sizes including desktop, tablet, mobile)
+- Sliding navigation link highlight based on current section in viewport using Intersection Observer API
+
+## ⚙️ Building this Project
+
+1. First, run
+    ```
+    npm install
+    ```
+    to install project dependencies.
+
+2. Then, run the development server:
+    ```bash
+    npm run dev
+    # or
+    yarn dev
+    ```
+
+3. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result. You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+
+## 📖 Documentation
+
+### 📂 File Structure
+
+```
+components/                     # React components
+pages/
+    sections/                   # component for each site section
+    index.tsx                   # root React element
+public/                         # static assets
+styles/                         # global styles and component theming
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🤔 Future
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+The following is a list of features to implement:
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+- [ ] Design cards overhaul: redesign cards and add description text
+- [ ] Design cards overhaul: add Modal content for each project
+- [ ] Hover animations (drop shadows, buttons, [optional] gradient text)
+- [ ] Link tooltips
+- [ ] Accessibility: Link aria labels
+- [ ] Optimization: preload fonts and imges
+- [ ] [optional] Scroll animations (must be performant)
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## 📝 License
 
-## Learn More
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/yauyenching/portfolio-site/blob/main/LICENSE) file for details. This means you can fork this repo and use this code for your own personal/commerical uses, but please provide attribution!
 
-To learn more about Next.js, take a look at the following resources:
+## 🙌🏻 Acknowledgements
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Thank you to the [Brittany Chiang](brittanychiang.com/), [Leonard Tng](leonardtng.com/), and [Hana Nabilah](https://raihanahnabilah.github.io/) whose personal sites I referenced when designing my site.
