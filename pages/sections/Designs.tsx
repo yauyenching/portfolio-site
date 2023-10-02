@@ -79,6 +79,11 @@ export default function Designs() {
           imageFileName='w3schools.webp'
           designUrl='https://www.figma.com/file/T0LQIRS5dnq46NPDM6Zi28/W3Schools-Redesign-Mockup?type=design&node-id=0%3A1&mode=design&t=RH7syUsmJefAKOuy-1'
         />
+        <DesignsCard
+          designTitle='Personal Portfolio Site'
+          imageFileName='portfolio.webp'
+          designUrl='https://www.figma.com/file/BxtLbe77wnL79j2MCXd7v6/Personal-Portfolio?type=design&node-id=0%3A1&mode=design&t=tiS1haV32dUR1HtT-1'
+        />
       </Grid>
     </Box>
   )
