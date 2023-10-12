@@ -6,16 +6,15 @@ const { definePartsStyle, defineMultiStyleConfig } = createMultiStyleConfigHelpe
 const baseStyle = definePartsStyle({
   // define the part you're going to style
   container: {
-    backgroundColor: 'brand.card',
-    padding: '0 0 20px',
+    maxWidth: '100%',
     boxShadow: '0px 6px 30px 0px rgba(0, 0, 0, 0.08)',
+    padding: '0 0 20px',
   },
   header: {
     padding: '0 0 2px',
   },
   body: {
     padding: '2px 20px 0',
-    marginBottom: '15px',
   },
   footer: {
     padding: '2px 20px 0',
@@ -27,35 +26,24 @@ const baseStyle = definePartsStyle({
 const sizes = {
   sm: definePartsStyle({
     container: {
+      backgroundColor: 'brand.card',
       borderRadius: '20px',
-      maxWidth: '100%',
+      overflow: 'hidden',
       minHeight: { base: 'fit-content', sm: '450px', md: '500px' },
     },
+    body: {
+      marginBottom: '15px',
+    },
   }),
+  md: definePartsStyle({
+    container: {
+      backgroundColor: 'brand.card',
+      minHeight: { base: 'fit-content', sm: '400px' },
+      borderRadius: '20px',
+      overflow: 'hidden',
+    },
+  })
 }
-
-// const variants = {
-//   definePartsStyle({
-//   // define the part you're going to style
-//   container: {
-//     backgroundColor: 'brand.card',
-//     padding: '0 0 25px',
-//     boxShadow: '0px 6px 30px 0px rgba(0, 0, 0, 0.08)'
-//   },
-//   header: {
-//     padding: '0 0 2px',
-//   },
-//   body: {
-//     padding: '2px 25px 0',
-//   },
-//   footer: {
-//     padding: '2px 25px 0',
-//     justifyContent: "center",
-//     display: 'flex',
-//     columnGap: '5px'
-//   }
-// })
-// }
 
 const cardTheme = defineMultiStyleConfig({ baseStyle, sizes })
 export default cardTheme
