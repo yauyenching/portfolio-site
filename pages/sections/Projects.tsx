@@ -59,7 +59,7 @@ export default function Projects() {
                 <LinkOverlay href={githubLink}>{projectTitle}</LinkOverlay>
               </Heading>
             </CardHeader>
-            <CardBody textAlign='left' position='relative'>
+            <CardBody>
               <Text as='span' fontSize='sm'>
                 {children}
               </Text>
