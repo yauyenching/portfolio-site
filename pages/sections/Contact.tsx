@@ -19,7 +19,7 @@ export default function Contact() {
         </Box>
         <Link
           as={motion.a}
-          whileHover={{ scale: 1.1 }}
+          whileHover={{ scale: 1.1, transition: { duration: 0.25 } }}
           // whileInView={{ scale: [1.05, 1], transition: { duration: 0.5, repeat: Infinity, repeatType: 'mirror' } }}
           variant='gradient'
           mt={50}
