@@ -12,12 +12,14 @@ import {
   Link,
   LinkOverlay,
   LinkBox,
+  useColorModeValue,
 } from '@chakra-ui/react'
 import SectionHeading from 'components/SectionHeading'
 import SkillTag from 'components/SkillTag'
 import Image from 'next/image'
 import { PropsWithChildren } from 'react'
 import { v4 as uuidv4 } from 'uuid'
+import { motion } from 'framer-motion'
 
 export default function Projects() {
   interface ProjectsCardProp {
@@ -42,10 +44,21 @@ export default function Projects() {
     githubStars,
     children,
   }: PropsWithChildren<ProjectsCardProp>) {
+    const cardBoxShadow = useColorModeValue('rgba(0, 0, 0, 0.1)', 'rgba(0, 0, 0, 0.25)')
+
     return (
       <GridItem>
         <LinkBox>
-          <Card size='sm' overflow='hidden'>
+          <Card
+            as={motion.div}
+            size='sm'
+            overflow='hidden'
+            whileHover={{
+              scale: 1.035,
+              boxShadow: `0px 6px 36px 8px ${cardBoxShadow}`,
+              transition: { duration: 0.25, ease: 'easeInOut' },
+            }}
+          >
             <CardHeader>
               <Image
                 src={`/previews/${imageFileName}`}

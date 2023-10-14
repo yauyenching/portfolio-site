@@ -17,10 +17,11 @@ import {
 import SectionHeading from 'components/SectionHeading'
 import Image from 'next/image'
 import { PropsWithChildren } from 'react'
+import { motion } from 'framer-motion'
 
 export default function Designs() {
-  const cardOpacity = useColorModeValue(0.65, 0.6)
-
+  // const cardOpacity = useColorModeValue(0.65, 0.6)
+  
   interface DesignsCardProp {
     designTitle: string
     imageFileName: string
@@ -33,10 +34,17 @@ export default function Designs() {
     designLink,
     children,
   }: PropsWithChildren<DesignsCardProp>) {
+    const cardBoxShadow = useColorModeValue('rgba(0, 0, 0, 0.1)', 'rgba(0, 0, 0, 0.25)')
+
     return (
       <GridItem>
         <LinkBox>
-          <Card size='md'>
+          <Card
+            size='md'
+            as={motion.div}
+            whileHover={{ scale: 1.035, boxShadow: `0px 6px 36px 8px ${cardBoxShadow}`,
+            transition: { duration: 0.25, ease: 'easeInOut' }, }}
+          >
             <CardHeader>
               <Image
                 src={`/previews/${imageFileName}`}

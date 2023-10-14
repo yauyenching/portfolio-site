@@ -1,6 +1,16 @@
-import { Box, Stack, Heading, Text, Link, LinkBox, LinkOverlay } from '@chakra-ui/react'
+import {
+  Box,
+  Stack,
+  Heading,
+  Text,
+  Link,
+  LinkBox,
+  LinkOverlay,
+  useColorModeValue,
+} from '@chakra-ui/react'
 import SectionHeading from 'components/SectionHeading'
 import { PropsWithChildren } from 'react'
+import { motion } from 'framer-motion'
 
 export default function Features() {
   interface FeaturesCardProps {
@@ -17,13 +27,18 @@ export default function Features() {
     featureUrl,
     children,
   }: PropsWithChildren<FeaturesCardProps>) {
+    const cardBoxShadow = useColorModeValue('rgba(0, 0, 0, 0.1)', 'rgba(0, 0, 0, 0.25)')
+
     return (
       <LinkBox
+        as={motion.div}
         w='100%'
         backgroundColor='brand.card'
         borderRadius={20}
         padding={25}
         boxShadow='0px 6px 30px 0px rgba(0, 0, 0, 0.08)'
+        whileHover={{ scale: 1.035, boxShadow: `0px 6px 36px 8px ${cardBoxShadow}`,
+        transition: { duration: 0.25, ease: 'easeInOut' }, }}
       >
         <Heading fontSize='lg' mt={0} mb={2.5}>
           <LinkOverlay href={featureUrl}>“{featureTitle}”</LinkOverlay>

@@ -7,7 +7,7 @@
   --text-color-primary: #b4b9ca;
   --text-color-title: #e7ebf6;
   --text-color-title-muted: hsl(235, 18%, 56%);
-  --accent: #ff9d80;
+  --accent: rgb(255, 157, 128);
   --accent-fade: hsla(14, 100%, 75%, 8%);
   --card-bg: #070b28;
   --gradient: linear-gradient(90deg, hsl(14, 100%, 80%) 0%, hsl(0, 47%, 60%) 100%);
@@ -17,7 +17,7 @@
   --text-color-primary: hsl(236, 28%, 44%);
   --text-color-title: hsl(235, 48%, 34%);
   --text-color-title-muted: hsl(237, 22%, 52%);
-  --accent: hsl(0, 45%, 48%);
+  --accent: rgb(177, 67, 67);
   --accent-fade: hsla(0, 40%, 54%, 8%);
   --card-bg: hsl(40, 82%, 96%);
   --gradient: linear-gradient(270deg, hsl(14, 68%, 70%) 0%, hsl(0, 40%, 54%) 100%);

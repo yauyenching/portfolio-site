@@ -1,5 +1,6 @@
 import { Flex, Heading, Text, Button, Box, useBreakpointValue, Link } from '@chakra-ui/react'
 import SectionHeading from 'components/SectionHeading'
+import { motion } from 'framer-motion'
 
 export default function Contact() {
   const headingSize = useBreakpointValue({ base: '5xl', md: '6xl' })
@@ -17,6 +18,9 @@ export default function Contact() {
           <Text>Whether you want to work together, or say hi, my inbox is always open! ☺️👋🏻</Text>
         </Box>
         <Link
+          as={motion.a}
+          whileHover={{ scale: 1.1 }}
+          // whileInView={{ scale: [1.05, 1], transition: { duration: 0.5, repeat: Infinity, repeatType: 'mirror' } }}
           variant='gradient'
           mt={50}
           mb={30}
