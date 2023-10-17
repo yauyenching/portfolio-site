@@ -9,8 +9,9 @@ const baseStyle = definePartsStyle({
   tab: {
     justifyContent: 'left', // change the font weight
     fontFamily: 'heading',
+    color: 'brand.titleMuted',
     background: 'none',
-    border: 'none',
+    borderStyle: { base: 'none none solid none', sm: 'none none none solid' },
     textTransform: 'uppercase',
     letterSpacing: '0.025em',
     textAlign: 'left',
