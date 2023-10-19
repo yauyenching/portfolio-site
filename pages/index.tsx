@@ -80,7 +80,7 @@ const Home: NextPage = () => {
         <title>Yau Yen Ching</title>
         <meta
           name='description'
-          content='Yau Yen Ching is a software engineer and aspiring product manager based in Singapore.She enjoys building user-first products that solve real user needs through empathy, thoughtful design, and data-driven insights.'
+          content='Yau Yen Ching is a software engineer and aspiring product manager based in Singapore. She enjoys building user-first products that solve real user needs through empathy, thoughtful design, and data-driven insights.'
         />
         <link rel='icon' href='/icons/favicon.svg' type='image/svg+xml' />
         <link rel="manifest" href="/manifest.json" />
