@@ -13,6 +13,8 @@ import {
   LinkOverlay,
   LinkBox,
   useColorModeValue,
+  HStack,
+  Stack,
 } from '@chakra-ui/react'
 import SectionHeading from 'components/SectionHeading'
 import SkillTag from 'components/SkillTag'
@@ -20,6 +22,8 @@ import Image from 'next/image'
 import { PropsWithChildren } from 'react'
 import { v4 as uuidv4 } from 'uuid'
 import { motion } from 'framer-motion'
+import GitHubIcon from 'public/assets/GitHubIcon'
+import ExternalLink from 'public/assets/ExternalLink'
 
 export default function Projects() {
   interface ProjectsCardProp {
@@ -111,16 +115,16 @@ export default function Projects() {
                   <SkillTag key={uuidv4()}>{skill}</SkillTag>
                 ))}
               </Box>
-              <Box color='brand.title'>
-                <Link href={githubLink} pr={externalLink && 7.5} fontSize='xl'>
-                  <i className='fa-brands fa-github' />
+              <HStack color='brand.title' justify='center' spacing='0.25rem'>
+                <Link href={githubLink}>
+                  <GitHubIcon boxSize='1.5rem' />
                 </Link>
                 {externalLink && (
-                  <Link href={externalLink} fontSize='xl'>
-                    <i className='fa-solid fa-arrow-up-right-from-square' />
+                  <Link href={externalLink}>
+                    <ExternalLink boxSize='1.35rem' />
                   </Link>
                 )}
-              </Box>
+              </HStack>
             </CardFooter>
           </Card>
         </LinkBox>

@@ -1,6 +1,8 @@
-import { Flex, Heading, Text, Button, Box, useBreakpointValue, Link } from '@chakra-ui/react'
+import { Flex, Heading, Text, Button, Box, useBreakpointValue, Link, HStack } from '@chakra-ui/react'
 import SectionHeading from 'components/SectionHeading'
 import { motion } from 'framer-motion'
+import GitHubIcon from 'public/assets/GitHubIcon'
+import LinkedInIcon from 'public/assets/LinkedInIcon'
 
 export default function Contact() {
   const headingSize = useBreakpointValue({ base: '5xl', md: '6xl' })
@@ -32,14 +34,14 @@ export default function Contact() {
             Say Hello
           </Text>
         </Link>
-        <Flex fontSize='2xl' columnGap={15} color='brand.title'>
+        <HStack fontSize='2xl' spacing='0.8rem' color='brand.title'>
           <Link href='https://github.com/yauyenching'>
-            <i className='fa-brands fa-github'></i>
+            <GitHubIcon boxSize='1.25em' />
           </Link>
           <Link href='https://www.linkedin.com/in/yau-yen-ching'>
-            <i className='fa-brands fa-linkedin'></i>
+            <LinkedInIcon boxSize='1.25em' />
           </Link>
-        </Flex>
+        </HStack>
       </Flex>
     </Box>
   )
