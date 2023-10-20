@@ -40,7 +40,7 @@ const fonts = {
 const theme = extendTheme({
   config: {
     initialColorMode: 'dark',
-    useSystemColorMode: true,
+    useSystemColorMode: false,
   },
   fonts: fonts,
   colors: colors,
@@ -77,7 +77,7 @@ const theme = extendTheme({
           },
         },
         gradient: {
-          fontFamily: 'MADE Tommy Soft',
+          fontFamily: 'heading',
           fontWeight: 500,
           border: '3px solid',
           borderRadius: '10px',
@@ -107,6 +107,11 @@ const theme = extendTheme({
       },
     },
     Button: {
+      baseStyle: {
+        color: 'brand.body',
+        fontFamily: 'body',
+        cursor: 'pointer',
+      },
       variants: {
         gradient: {
           fontFamily: 'MADE Tommy Soft',

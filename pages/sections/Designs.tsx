@@ -13,15 +13,29 @@ import {
   CardBody,
   LinkOverlay,
   LinkBox,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
+  useDisclosure,
+  CardFooter,
+  HStack,
 } from '@chakra-ui/react'
+import { createIcon } from '@chakra-ui/react'
 import SectionHeading from 'components/SectionHeading'
 import Image from 'next/image'
 import { PropsWithChildren } from 'react'
 import { motion } from 'framer-motion'
+import PresentationPlay from 'public/assets/PresentationPlay'
+import FigmaIcon from 'public/assets/FigmaIcon'
 
 export default function Designs() {
+  const { isOpen, onOpen, onClose } = useDisclosure()
   // const cardOpacity = useColorModeValue(0.65, 0.6)
-  
+
   interface DesignsCardProp {
     designTitle: string
     imageFileName: string
@@ -42,8 +56,11 @@ export default function Designs() {
           <Card
             size='md'
             as={motion.div}
-            whileHover={{ scale: 1.035, boxShadow: `0px 6px 36px 8px ${cardBoxShadow}`,
-            transition: { duration: 0.25, ease: 'easeInOut' }, }}
+            whileHover={{
+              scale: 1.035,
+              boxShadow: `0px 6px 36px 8px ${cardBoxShadow}`,
+              transition: { duration: 0.25, ease: 'easeInOut' },
+            }}
           >
             <CardHeader>
               <Image
@@ -63,6 +80,27 @@ export default function Designs() {
                 {children}
               </Text>
             </CardBody>
+            <CardFooter>
+              <HStack spacing='0.25rem'>
+                <Button
+                  border='none'
+                  fontSize='sm'
+                  color='brand.title'
+                  _hover={{
+                    color: 'brand.accent',
+                  }}
+                  sx={{ fontFeatureSettings: `'ss01', 'cv11'` }}
+                >
+                  Read More
+                </Button>
+                <Link href='#' color='brand.title'>
+                  <FigmaIcon boxSize='1.35em' />
+                </Link>
+                <Link href='#' color='brand.title'>
+                  <PresentationPlay boxSize='1.35em' />
+                </Link>
+              </HStack>
+            </CardFooter>
           </Card>
         </LinkBox>
       </GridItem>

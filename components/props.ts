@@ -5,6 +5,8 @@ export type colorModeProps = {
 
 export type SVGProps = {
   className: string
+  color: string
+  size: string
   width: number
   height: number
   left: number

@@ -42,6 +42,10 @@ const sizes = {
       borderRadius: '20px',
       overflow: 'hidden',
     },
+    footer: {
+      marginTop: '10px',
+      textAlign: 'left',
+    },
   })
 }
 
