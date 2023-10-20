@@ -27,7 +27,7 @@ import {
 import { createIcon } from '@chakra-ui/react'
 import SectionHeading from 'components/SectionHeading'
 import Image from 'next/image'
-import { PropsWithChildren } from 'react'
+import { PropsWithChildren, useRef } from 'react'
 import { motion } from 'framer-motion'
 import PresentationPlay from 'public/assets/PresentationPlay'
 import FigmaIcon from 'public/assets/FigmaIcon'
@@ -49,11 +49,22 @@ export default function Designs() {
     children,
   }: PropsWithChildren<DesignsCardProp>) {
     const cardBoxShadow = useColorModeValue('rgba(0, 0, 0, 0.1)', 'rgba(0, 0, 0, 0.25)')
+    const defaultBtnStyle = useColorModeValue('hsla(210, 38%, 88%, 0.3)', 'whiteAlpha.200')
+    const hoverBtnStyle = useColorModeValue('hsla(210, 18%, 78%, 0.35)', 'whiteAlpha.300')
+
+    const motionVariants = {
+      enlarge: {
+        scale: 1.15,
+        paddingRight: '1px',
+        transition: { duration: 0.15, ease: 'easeOut' }
+      }
+    }
 
     return (
       <GridItem>
         <LinkBox>
           <Card
+            role='group'
             size='md'
             as={motion.div}
             whileHover={{
@@ -81,26 +92,45 @@ export default function Designs() {
               </Text>
             </CardBody>
             <CardFooter>
-              <HStack spacing='0.25rem'>
+              <HStack spacing='0.25rem' flexDir='row-reverse' float='left'>
+                <Link
+                  as={motion.a}
+                  variants={motionVariants}
+                  whileHover='enlarge'
+                  className='hyperlink'
+                  href='#'
+                  color='brand.title'
+                >
+                  <PresentationPlay boxSize='1.45em' />
+                </Link>
+                <Link
+                  as={motion.a}
+                  variants={motionVariants}
+                  whileHover='enlarge'
+                  className='hyperlink'
+                  href='#'
+                  color='brand.title'
+                >
+                  <FigmaIcon boxSize='1.45em' />
+                </Link>
                 <Button
-                  background={useColorModeValue('hsla(210, 38%, 88%, 0.3)', 'whiteAlpha.200')}
+                  background={defaultBtnStyle}
                   border='none'
                   fontSize='sm'
                   color='brand.title'
-                  _hover={{
+                  _groupHover={{
                     // color: 'brand.accent',
-                    background: useColorModeValue('hsla(210, 18%, 78%, 0.35)', 'whiteAlpha.300')
+                    background: hoverBtnStyle,
                   }}
-                  sx={{ fontFeatureSettings: `'ss01', 'cv11'` }}
+                  sx={{
+                    fontFeatureSettings: `'ss01', 'cv11'`,
+                    '.hyperlink:hover ~ &': {
+                      background: defaultBtnStyle,
+                    },
+                  }}
                 >
                   Read More
                 </Button>
-                <Link href='#' color='brand.title'>
-                  <FigmaIcon boxSize='1.35em' />
-                </Link>
-                <Link href='#' color='brand.title'>
-                  <PresentationPlay boxSize='1.35em' />
-                </Link>
               </HStack>
             </CardFooter>
           </Card>

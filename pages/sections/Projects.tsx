@@ -55,6 +55,7 @@ export default function Projects() {
         <LinkBox>
           <Card
             as={motion.div}
+            role='group'
             size='sm'
             overflow='hidden'
             whileHover={{
@@ -115,15 +116,26 @@ export default function Projects() {
                   <SkillTag key={uuidv4()}>{skill}</SkillTag>
                 ))}
               </Box>
-              <HStack color='brand.title' justify='center' spacing='0.25rem'>
-                <Link href={githubLink}>
-                  <GitHubIcon boxSize='1.5rem' />
-                </Link>
+              <HStack color='brand.title' justify='center' spacing='0.5rem' flexDir='row-reverse'>
                 {externalLink && (
-                  <Link href={externalLink}>
-                    <ExternalLink boxSize='1.35rem' />
+                  <Link
+                    className='hyperlink'
+                    href={externalLink}
+                  >
+                    <ExternalLink boxSize='1.7em' />
                   </Link>
                 )}
+                <Link
+                  href={githubLink}
+                  _groupHover={{ color: 'brand.accent' }}
+                  sx={{
+                    '.hyperlink:hover ~ &': {
+                      color: 'brand.title',
+                    },
+                  }}
+                >
+                  <GitHubIcon boxSize='1.8em' />
+                </Link>
               </HStack>
             </CardFooter>
           </Card>
