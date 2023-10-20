@@ -28,7 +28,7 @@ export default function Contact() {
           mb={30}
           p='15px 30px'
           fontSize='lg'
-          href='mailto:yauyenching@proton.me'
+          href='mailto:yenching@yauyc.com'
         >
           <Text as='span' letterSpacing='0.02em'>
             Say Hello
