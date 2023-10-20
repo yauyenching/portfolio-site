@@ -83,11 +83,13 @@ export default function Designs() {
             <CardFooter>
               <HStack spacing='0.25rem'>
                 <Button
+                  background={useColorModeValue('hsla(210, 38%, 88%, 0.3)', 'whiteAlpha.200')}
                   border='none'
                   fontSize='sm'
                   color='brand.title'
                   _hover={{
-                    color: 'brand.accent',
+                    // color: 'brand.accent',
+                    background: useColorModeValue('hsla(210, 18%, 78%, 0.35)', 'whiteAlpha.300')
                   }}
                   sx={{ fontFeatureSettings: `'ss01', 'cv11'` }}
                 >
