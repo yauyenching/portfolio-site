@@ -1,6 +1,6 @@
 import { createIcon } from '@chakra-ui/react'
 
-// converted from Figma of https://hugeicons.pro/
+// converted from 'github' of https://boxicons.com/
 const LinkedInIcon = createIcon({
   displayName: 'LinkedInIcon',
   viewBox: '0 0 24 24',

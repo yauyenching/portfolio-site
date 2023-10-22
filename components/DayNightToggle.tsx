@@ -2,8 +2,8 @@ import React from 'react'
 import { Box } from '@chakra-ui/react'
 import { colorModeProps } from './props'
 import styles from './DayNightToggle.module.scss'
-import NightSparkle from 'public/assets/night_sparkle'
-import DayCloud from 'public/assets/cloud'
+import NightSparkle from 'public/assets/NightSparkle'
+import DayCloud from 'public/assets/Cloud'
 
 export default function DayNightToggle({ colorMode, toggleColorMode }: colorModeProps) {
   const colorModeStyle: string = colorMode === 'dark' ? styles.dark : styles.light

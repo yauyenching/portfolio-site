@@ -49,8 +49,8 @@ export default function Designs() {
     children,
   }: PropsWithChildren<DesignsCardProp>) {
     const cardBoxShadow = useColorModeValue('rgba(0, 0, 0, 0.1)', 'rgba(0, 0, 0, 0.25)')
-    const defaultBtnStyle = useColorModeValue('hsla(210, 38%, 88%, 0.3)', 'whiteAlpha.200')
-    const hoverBtnStyle = useColorModeValue('hsla(210, 18%, 78%, 0.35)', 'whiteAlpha.300')
+    const defaultBtnStyle = useColorModeValue('blackAlpha.50', 'whiteAlpha.200')
+    const hoverBtnStyle = useColorModeValue('blackAlpha.200', 'whiteAlpha.300')
 
     const motionVariants = {
       enlarge: {

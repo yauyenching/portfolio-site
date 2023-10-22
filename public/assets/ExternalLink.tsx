@@ -1,6 +1,6 @@
 import { createIcon } from '@chakra-ui/react'
 
-// converted from Presentation-02 of https://hugeicons.pro/
+// converted from 'link-square-01' of https://hugeicons.pro/
 const ExternalLink = createIcon({
   displayName: 'ExternalLink',
   viewBox: '0 0 24 24',
@@ -8,9 +8,9 @@ const ExternalLink = createIcon({
     <path
       d='M11.1002 3C7.45057 3.00657 5.53942 3.09617 4.31806 4.31754C3 5.63559 3 7.75698 3 11.9997C3 16.2425 3 18.3639 4.31806 19.6819C5.63611 21 7.7575 21 12.0003 21C16.243 21 18.3644 21 19.6825 19.6819C20.9038 18.4606 20.9934 16.5494 21 12.8998'
       stroke='currentColor'
-      stroke-width='2'
-      stroke-linecap='round'
-      stroke-linejoin='round'
+      strokeWidth='2 '
+      strokeLinecap='round'
+      strokeLinejoin='round'
       fill='none'
     />,
     <path
