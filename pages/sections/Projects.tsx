@@ -118,10 +118,7 @@ export default function Projects() {
               </Box>
               <HStack color='brand.title' justify='center' spacing='0.5rem' flexDir='row-reverse'>
                 {externalLink && (
-                  <Link
-                    className='hyperlink'
-                    href={externalLink}
-                  >
+                  <Link className='hyperlink' href={externalLink}>
                     <ExternalLink boxSize='1.7em' />
                   </Link>
                 )}

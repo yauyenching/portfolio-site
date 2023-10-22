@@ -1,40 +1,29 @@
 import {
   Box,
-  Heading,
-  Flex,
+  Button,
+  Card,
+  CardBody,
+  CardFooter,
+  CardHeader,
   Grid,
   GridItem,
-  Text,
-  Button,
   Link,
-  useColorModeValue,
-  Card,
-  CardHeader,
-  CardBody,
-  LinkOverlay,
-  LinkBox,
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalFooter,
-  ModalBody,
-  ModalCloseButton,
-  useDisclosure,
-  CardFooter,
   HStack,
+  Heading,
+  Text,
+  useColorModeValue,
+  useDisclosure,
 } from '@chakra-ui/react'
-import { createIcon } from '@chakra-ui/react'
 import SectionHeading from 'components/SectionHeading'
-import Image from 'next/image'
-import { PropsWithChildren, useRef } from 'react'
 import { motion } from 'framer-motion'
-import PresentationPlay from 'public/assets/PresentationPlay'
+import Image from 'next/image'
 import FigmaIcon from 'public/assets/FigmaIcon'
+import PresentationPlay from 'public/assets/PresentationPlay'
+import { PropsWithChildren } from 'react'
+import ExampleModal from 'pages/designModals/ExampleModal'
 
 export default function Designs() {
   const { isOpen, onOpen, onClose } = useDisclosure()
-  // const cardOpacity = useColorModeValue(0.65, 0.6)
 
   interface DesignsCardProp {
     designTitle: string
@@ -56,13 +45,13 @@ export default function Designs() {
       enlarge: {
         scale: 1.15,
         paddingRight: '1px',
-        transition: { duration: 0.15, ease: 'easeOut' }
-      }
+        transition: { duration: 0.15, ease: 'easeOut' },
+      },
     }
 
     return (
-      <GridItem>
-        <LinkBox>
+      <>
+        <GridItem>
           <Card
             role='group'
             size='md'
@@ -72,6 +61,7 @@ export default function Designs() {
               boxShadow: `0px 6px 36px 8px ${cardBoxShadow}`,
               transition: { duration: 0.25, ease: 'easeInOut' },
             }}
+            onClick={onOpen}
           >
             <CardHeader>
               <Image
@@ -83,7 +73,7 @@ export default function Designs() {
                 style={{ width: '100%', height: '275px', objectFit: 'cover' }}
               />
               <Heading as='h2' fontSize='lg' color='brand.title' my='7.5px' textAlign='center'>
-                <LinkOverlay href={designLink}>{designTitle}</LinkOverlay>
+                {designTitle}
               </Heading>
             </CardHeader>
             <CardBody>
@@ -128,14 +118,15 @@ export default function Designs() {
                       background: defaultBtnStyle,
                     },
                   }}
+                  // onClick={onOpen}
                 >
                   Read More
                 </Button>
               </HStack>
             </CardFooter>
           </Card>
-        </LinkBox>
-      </GridItem>
+        </GridItem>
+      </>
     )
   }
 
@@ -182,6 +173,7 @@ export default function Designs() {
           The hi-fidelity prototype for my personal portfolio site.
         </DesignsCard>
       </Grid>
+      <ExampleModal isOpen={isOpen} onClose={onClose} />
     </Box>
   )
 }

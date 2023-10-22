@@ -5,7 +5,15 @@ const FigmaIcon = createIcon({
   displayName: 'FigmaIcon',
   viewBox: '0 0 24 24',
   path: [
-    <circle cx='15' cy='12' r='3' stroke='currentColor' stroke-width='1.8' stroke-linejoin='round' fill='none' />,
+    <circle
+      cx='15'
+      cy='12'
+      r='3'
+      stroke='currentColor'
+      strokeWidth='1.8'
+      strokeLinejoin='round'
+      fill='none'
+    />,
     <path
       d='M9 21C10.6569 21 12 19.6569 12 18V15H9C7.34315 15 6 16.3431 6 18C6 19.6569 7.34315 21 9 21Z'
       stroke='currentColor'

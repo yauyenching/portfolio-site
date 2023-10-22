@@ -9,6 +9,7 @@ const baseStyle = definePartsStyle({
     maxWidth: '100%',
     boxShadow: '0px 6px 30px 0px rgba(0, 0, 0, 0.08)',
     padding: '0 0 20px',
+    cursor: 'pointer',
   },
   header: {
     padding: '0 0 2px',
