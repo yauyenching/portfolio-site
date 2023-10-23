@@ -13,6 +13,7 @@ import {
   Text,
   useColorModeValue,
   useDisclosure,
+  UseDisclosureProps,
 } from '@chakra-ui/react'
 import SectionHeading from 'components/SectionHeading'
 import { motion } from 'framer-motion'
@@ -20,12 +21,25 @@ import Image from 'next/image'
 import FigmaIcon from 'public/assets/FigmaIcon'
 import PresentationPlay from 'public/assets/PresentationPlay'
 import { PropsWithChildren } from 'react'
-import { CardModal } from 'components/CardModal'
+import HomematesModal from 'pages/designModals/HomematesModal'
+import GifterModal from 'pages/designModals/GifterModal'
+import W3SchoolsModal from 'pages/designModals/W3SchoolsModal'
 
 export default function Designs() {
-  const { isOpen, onOpen, onClose } = useDisclosure()
+  // states for modals
+  const {
+    isOpen: HomematesIsOpen,
+    onOpen: HomematesOnOpen,
+    onClose: HomematesOnClose,
+  } = useDisclosure()
+  const { isOpen: GifterIsOpen, onOpen: GifterOnOpen, onClose: GifterOnClose } = useDisclosure()
+  const {
+    isOpen: W3SchoolsIsOpen,
+    onOpen: W3SchoolsOnOpen,
+    onClose: W3SchoolsOnClose,
+  } = useDisclosure()
 
-  interface DesignsCardProp {
+  interface DesignsCardProp extends UseDisclosureProps {
     designTitle: string
     imageFileName: string
     designLink: string
@@ -36,6 +50,7 @@ export default function Designs() {
     imageFileName,
     designLink,
     children,
+    onOpen,
   }: PropsWithChildren<DesignsCardProp>) {
     const cardHoverBoxShadow = useColorModeValue('rgba(0, 0, 0, 0.1)', 'rgba(0, 0, 0, 0.25)')
     const defaultBtnStyle = useColorModeValue('blackAlpha.50', 'whiteAlpha.200')
@@ -100,29 +115,30 @@ export default function Designs() {
                   variants={motionVariants}
                   whileHover='enlarge'
                   className='hyperlink'
-                  href='#'
+                  href={designLink}
                   color='brand.title'
                 >
                   <FigmaIcon boxSize='1.45em' />
                 </Link>
-                <Button
-                  bg={defaultBtnStyle}
-                  fontSize='sm'
-                  color='brand.title'
-                  _groupHover={{
-                    // color: 'brand.accent',
-                    background: hoverBtnStyle,
-                  }}
-                  sx={{
-                    fontFeatureSettings: `'ss01', 'cv11'`,
-                    '.hyperlink:hover ~ &': {
-                      background: defaultBtnStyle,
-                    },
-                  }}
-                  // onClick={onOpen}
-                >
-                  Read More
-                </Button>
+                {onOpen && (
+                  <Button
+                    bg={defaultBtnStyle}
+                    fontSize='sm'
+                    color='brand.title'
+                    _groupHover={{
+                      background: hoverBtnStyle,
+                    }}
+                    sx={{
+                      fontFeatureSettings: `'ss01', 'cv11'`,
+                      '.hyperlink:hover ~ &': {
+                        background: defaultBtnStyle,
+                      },
+                    }}
+                    onClick={onOpen}
+                  >
+                    Read More
+                  </Button>
+                )}
               </HStack>
             </CardFooter>
           </Card>
@@ -147,6 +163,7 @@ export default function Designs() {
           designTitle='Homemates'
           imageFileName='homemates.webp'
           designLink='https://www.figma.com/file/SiCr4yrw7WhOUSBh3RhHIm/Homemates?type=design&node-id=0%3A1&mode=design&t=gnMJPFg2cfc5GlHD-1'
+          onOpen={HomematesOnOpen}
         >
           A platform to find your ideal roommate using matches in living habits, interests, and
           lifestyle! Features a shared calendar, notes, and task system between roommates.
@@ -155,6 +172,7 @@ export default function Designs() {
           designTitle='Gifter'
           imageFileName='gifter.webp'
           designLink='https://www.figma.com/file/RIeiFbqwmBOgpTVfYF5FVc/Gifter?type=design&node-id=0%3A1&mode=design&t=M3PWNWI0O3Dh93TR-1'
+          onOpen={GifterOnOpen}
         >
           A personalized gift recommendation website for tracking upcoming birthdays and
           brainstorming gift ideas.
@@ -163,6 +181,7 @@ export default function Designs() {
           designTitle='W3Schools Redesign'
           imageFileName='w3schools.webp'
           designLink='https://www.figma.com/file/T0LQIRS5dnq46NPDM6Zi28/W3Schools-Redesign-Mockup?type=design&node-id=0%3A1&mode=design&t=RH7syUsmJefAKOuy-1'
+          onOpen={W3SchoolsOnOpen}
         >
           A modern redesign of the 2020 W3Schools Homepage, HTML/CSS Course, and About pages.
         </DesignsCard>
@@ -174,7 +193,9 @@ export default function Designs() {
           The hi-fidelity prototype for my personal portfolio site.
         </DesignsCard>
       </Grid>
-      <CardModal isOpen={isOpen} onClose={onClose} />
+      <HomematesModal isOpen={HomematesIsOpen} onClose={HomematesOnClose} />
+      <GifterModal isOpen={GifterIsOpen} onClose={GifterOnClose} />
+      <W3SchoolsModal isOpen={W3SchoolsIsOpen} onClose={W3SchoolsOnClose} />
     </Box>
   )
 }
