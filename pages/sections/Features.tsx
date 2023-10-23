@@ -34,8 +34,8 @@ export default function Features() {
         as={motion.div}
         w='100%'
         backgroundColor='brand.card'
-        borderRadius={20}
-        padding={25}
+        borderRadius='3xl'
+        padding='25px'
         boxShadow='0px 6px 30px 0px rgba(0, 0, 0, 0.08)'
         whileHover={{ scale: 1.035, boxShadow: `0px 6px 36px 8px ${cardBoxShadow}`,
         transition: { duration: 0.25, ease: 'easeInOut' }, }}

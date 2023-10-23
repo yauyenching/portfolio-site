@@ -74,7 +74,7 @@ export default function Projects() {
                 alt={`${projectTitle} ui preview`}
               />
               <Heading as='h2' size='sm' m='0 25px' textAlign='center'>
-                <LinkOverlay href={githubLink}>{projectTitle}</LinkOverlay>
+                <LinkOverlay isExternal href={githubLink}>{projectTitle}</LinkOverlay>
               </Heading>
             </CardHeader>
             <CardBody>
@@ -88,7 +88,7 @@ export default function Projects() {
                       {!downloadLink ? (
                         downloads
                       ) : (
-                        <Link variant='noULine' href={downloadLink}>
+                        <Link isExternal variant='noULine' href={downloadLink}>
                           <i className='fa-solid fa-download' style={{ marginRight: '5px' }} />
                           {downloads}
                         </Link>
@@ -118,11 +118,12 @@ export default function Projects() {
               </Box>
               <HStack color='brand.title' justify='center' spacing='0.5rem' flexDir='row-reverse'>
                 {externalLink && (
-                  <Link className='hyperlink' href={externalLink}>
+                  <Link isExternal className='hyperlink' href={externalLink}>
                     <ExternalLink boxSize='1.7em' />
                   </Link>
                 )}
                 <Link
+                  isExternal
                   href={githubLink}
                   _groupHover={{ color: 'brand.accent' }}
                   sx={{

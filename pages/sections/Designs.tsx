@@ -20,7 +20,7 @@ import Image from 'next/image'
 import FigmaIcon from 'public/assets/FigmaIcon'
 import PresentationPlay from 'public/assets/PresentationPlay'
 import { PropsWithChildren } from 'react'
-import ExampleModal from 'pages/designModals/ExampleModal'
+import { CardModal } from 'components/CardModal'
 
 export default function Designs() {
   const { isOpen, onOpen, onClose } = useDisclosure()
@@ -37,7 +37,7 @@ export default function Designs() {
     designLink,
     children,
   }: PropsWithChildren<DesignsCardProp>) {
-    const cardBoxShadow = useColorModeValue('rgba(0, 0, 0, 0.1)', 'rgba(0, 0, 0, 0.25)')
+    const cardHoverBoxShadow = useColorModeValue('rgba(0, 0, 0, 0.1)', 'rgba(0, 0, 0, 0.25)')
     const defaultBtnStyle = useColorModeValue('blackAlpha.50', 'whiteAlpha.200')
     const hoverBtnStyle = useColorModeValue('blackAlpha.200', 'whiteAlpha.300')
 
@@ -58,7 +58,7 @@ export default function Designs() {
             as={motion.div}
             whileHover={{
               scale: 1.035,
-              boxShadow: `0px 6px 36px 8px ${cardBoxShadow}`,
+              boxShadow: `0px 6px 36px 8px ${cardHoverBoxShadow}`,
               transition: { duration: 0.25, ease: 'easeInOut' },
             }}
             onClick={onOpen}
@@ -84,6 +84,7 @@ export default function Designs() {
             <CardFooter>
               <HStack spacing='0.25rem' flexDir='row-reverse' float='left'>
                 <Link
+                  isExternal
                   as={motion.a}
                   variants={motionVariants}
                   whileHover='enlarge'
@@ -94,6 +95,7 @@ export default function Designs() {
                   <PresentationPlay boxSize='1.45em' />
                 </Link>
                 <Link
+                  isExternal
                   as={motion.a}
                   variants={motionVariants}
                   whileHover='enlarge'
@@ -104,8 +106,7 @@ export default function Designs() {
                   <FigmaIcon boxSize='1.45em' />
                 </Link>
                 <Button
-                  background={defaultBtnStyle}
-                  border='none'
+                  bg={defaultBtnStyle}
                   fontSize='sm'
                   color='brand.title'
                   _groupHover={{
@@ -173,7 +174,7 @@ export default function Designs() {
           The hi-fidelity prototype for my personal portfolio site.
         </DesignsCard>
       </Grid>
-      <ExampleModal isOpen={isOpen} onClose={onClose} />
+      <CardModal isOpen={isOpen} onClose={onClose} />
     </Box>
   )
 }

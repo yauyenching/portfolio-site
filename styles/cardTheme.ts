@@ -28,7 +28,7 @@ const sizes = {
   sm: definePartsStyle({
     container: {
       backgroundColor: 'brand.card',
-      borderRadius: '20px',
+      borderRadius: '3xl',
       overflow: 'hidden',
       minHeight: { base: 'fit-content', sm: '450px', md: '500px' },
     },
@@ -40,7 +40,7 @@ const sizes = {
     container: {
       backgroundColor: 'brand.card',
       minHeight: { base: 'fit-content', sm: '400px' },
-      borderRadius: '20px',
+      borderRadius: '3xl',
       overflow: 'hidden',
     },
     footer: {

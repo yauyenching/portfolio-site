@@ -100,6 +100,7 @@ export default function Experience() {
     <Box>
       <SectionHeading sectionId={1} sectionTitle='Experience' />
       <Tabs
+        variant='unstyled'
         orientation={useBreakpointValue({ base: 'horizontal', sm: 'vertical' })}
         isLazy
         pos='relative'

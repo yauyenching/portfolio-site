@@ -13,7 +13,7 @@ export default function SkillTag({ children }: PropsWithChildren) {
       whiteSpace='break-spaces'
       letterSpacing='0.025em'
       bg='brand.accentFade'
-      borderRadius='25px'
+      borderRadius='2xl'
       p='5px 10px'
       mr='5px'
       my='2.5px'
