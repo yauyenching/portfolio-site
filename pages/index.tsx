@@ -19,9 +19,7 @@ const Experience = dynamic(() => import('./sections/Experience'), {
   loading: () => <p>Loading...</p>,
 })
 const Projects = dynamic(() => import('./sections/Projects'), { loading: () => <p>Loading...</p> })
-const Designs = dynamic(() => import('./sections/Designs').then((module) => module.Designs), {
-  loading: () => <p>Loading...</p>,
-})
+const Designs = dynamic(() => import('./sections/Designs'), { loading: () => <p>Loading...</p> })
 const Features = dynamic(() => import('./sections/Features'), { loading: () => <p>Loading...</p> })
 const Contact = dynamic(() => import('./sections/Contact'), { loading: () => <p>Loading...</p> })
 
