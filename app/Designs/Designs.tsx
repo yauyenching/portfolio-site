@@ -25,12 +25,21 @@ import PresentationPlay from 'public/assets/PresentationPlay'
 import GitHubIcon from 'public/assets/GitHubIcon'
 import { PropsWithChildren, ReactNode } from 'react'
 import { DESIGN_METADATA, DesignMetadataType } from 'app/Designs/designMetadata'
+import dynamic from 'next/dynamic'
 
 // Import Design Modals
-import HomematesModal from 'app/Designs/designModals/HomematesModal'
-import GifterModal from 'app/Designs/designModals/GifterModal'
-import W3SchoolsModal from 'app/Designs/designModals/W3SchoolsModal'
-import PortfolioModal from 'app/Designs/designModals/PortfolioModal'
+const HomematesModal = dynamic(() => import('app/Designs/designModals/HomematesModal'), {
+  loading: () => <p>Loading...</p>,
+})
+const GifterModal = dynamic(() => import('app/Designs/designModals/GifterModal'), {
+  loading: () => <p>Loading...</p>,
+})
+const W3SchoolsModal = dynamic(() => import('app/Designs/designModals/W3SchoolsModal'), {
+  loading: () => <p>Loading...</p>,
+})
+const PortfolioModal = dynamic(() => import('app/Designs/designModals/PortfolioModal'), {
+  loading: () => <p>Loading...</p>,
+})
 
 const { homemates, gifter, w3schools, portfolio } = DESIGN_METADATA
 
@@ -91,7 +100,7 @@ export default function Designs() {
     const cardHoverBoxShadow = useColorModeValue('rgba(0, 0, 0, 0.1)', 'rgba(0, 0, 0, 0.25)')
     const defaultBtnStyle = useColorModeValue('blackAlpha.50', 'whiteAlpha.200')
     const hoverBtnStyle = useColorModeValue('blackAlpha.200', 'whiteAlpha.300')
-    const iconSize = '1.45em'
+    const iconSize = '1.55em'
 
     return (
       <>
@@ -127,35 +136,19 @@ export default function Designs() {
               </Text>
             </CardBody>
             <CardFooter>
-              <HStack spacing='0.25rem' flexDir='row-reverse' float='left'>
-                <DesignCardLink href={prototypeLink} icon={<FigmaIcon boxSize={iconSize} />} />
-                <DesignCardLink
-                  href={presentationLink}
-                  icon={<PresentationPlay boxSize={iconSize} />}
-                />
-                {githubLink && (
-                  <DesignCardLink href={githubLink} icon={<GitHubIcon boxSize='1.6em' />} />
-                )}
-                {onOpen && (
-                  <Button
-                    bg={defaultBtnStyle}
-                    fontSize='sm'
-                    color='brand.title'
-                    _groupHover={{
-                      background: hoverBtnStyle,
-                    }}
-                    sx={{
-                      fontFeatureSettings: `'ss01', 'cv11'`,
-                      '.hyperlink:hover ~ &': {
-                        background: defaultBtnStyle,
-                      },
-                    }}
-                    onClick={onOpen}
-                  >
-                    Read More
-                  </Button>
-                )}
-              </HStack>
+              {onOpen && (
+                <Button
+                  bg={defaultBtnStyle}
+                  fontSize='sm'
+                  color='brand.title'
+                  _groupHover={{
+                    background: hoverBtnStyle,
+                  }}
+                  onClick={onOpen}
+                >
+                  Read More
+                </Button>
+              )}
             </CardFooter>
           </Card>
         </GridItem>

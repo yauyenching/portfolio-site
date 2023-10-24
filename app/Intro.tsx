@@ -1,22 +1,24 @@
+'use client'
+
 import {
   Box,
   Flex,
-  Text,
   Heading,
-  UnorderedList,
   ListItem,
-  SimpleGrid,
+  SkeletonCircle,
+  SkeletonText,
+  Text,
+  UnorderedList,
   useBreakpointValue,
-  Button,
 } from '@chakra-ui/react'
 import Image from 'next/image'
-import { Suspense } from 'react'
-import { Skeleton, SkeletonCircle, SkeletonText } from '@chakra-ui/react'
+import { useState } from 'react'
 
 // TODO: Make Intro height 100vh and make bio center
 export default function Intro() {
-  const profilePicSize = useBreakpointValue({ base: 175, sm: 200, md: 225 })
-  const headingSize = useBreakpointValue({ base: '4xl', sm: '5xl', md: '6xl' })
+  const profilePicSize = useBreakpointValue({ base: 175, sm: 200, md: 225 }, { fallback: 'md' })
+  const headingSize = useBreakpointValue({ base: '4xl', sm: '5xl', md: '6xl' }, { fallback: 'md' })
+  const [loading, setLoading] = useState(true)
 
   function IntroSkeleton() {
     return (
@@ -27,11 +29,20 @@ export default function Intro() {
     )
   }
 
-  // return <IntroSkeleton />
+  // return <IntroSkeleton />\
+
+  const displayImgStyle = {
+    display: loading ? 'none' : undefined,
+  }
+
+  const loadingImgStyle = {
+    display: loading ? undefined : 'none',
+  }
 
   return (
-    <Flex direction={{ base: 'column', md: 'row-reverse' }} columnGap={50}>
+    <Flex direction={{ base: 'column', md: 'row-reverse' }} columnGap={50} justify='left'>
       <Flex justifyContent={{ base: 'center', md: 'right' }}>
+        {loading && <SkeletonCircle size={String(profilePicSize)} />}
         <Image
           src='/profile_pic.webp'
           alt='Photo of Yau Yen Ching'
@@ -41,7 +52,10 @@ export default function Intro() {
             borderRadius: '50%',
             // boxShadow: '0px 6px 30px 0px rgba(0, 0, 0, 0.08)',
             marginBottom: 5,
+            display: loading ? 'none' : 'block',
           }}
+          onLoad={() => setLoading(false)}
+          priority
         />
       </Flex>
       <Box w={{ base: '100%', md: '80%' }}>

@@ -116,10 +116,10 @@ export default function Projects() {
                   <SkillTag key={uuidv4()}>{skill}</SkillTag>
                 ))}
               </Box>
-              <HStack color='brand.title' justify='center' spacing='0.5rem' flexDir='row-reverse'>
+              <HStack color='brand.title' justify='center' spacing={2.5} flexDir='row-reverse'>
                 {externalLink && (
                   <Link isExternal className='hyperlink' href={externalLink}>
-                    <ExternalLink boxSize='1.7em' />
+                    <ExternalLink boxSize='1.8em' />
                   </Link>
                 )}
                 <Link

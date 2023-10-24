@@ -1,11 +1,4 @@
-import {
-  Flex,
-  Link,
-  Stack,
-  Text,
-  useBreakpointValue,
-  useColorMode
-} from '@chakra-ui/react'
+import { Flex, Link, Stack, Text, useBreakpointValue, useColorMode } from '@chakra-ui/react'
 import type { NextPage } from 'next'
 import dynamic from 'next/dynamic'
 import Head from 'next/head'
@@ -17,7 +10,9 @@ const Experience = dynamic(() => import('../app/Experience'), {
   loading: () => <p>Loading...</p>,
 })
 const Projects = dynamic(() => import('../app/Projects'), { loading: () => <p>Loading...</p> })
-const Designs = dynamic(() => import('../app/Designs/Designs'), { loading: () => <p>Loading...</p> })
+const Designs = dynamic(() => import('../app/Designs/Designs'), {
+  loading: () => <p>Loading...</p>,
+})
 const Features = dynamic(() => import('../app/Features'), { loading: () => <p>Loading...</p> })
 const Contact = dynamic(() => import('../app/Contact'), { loading: () => <p>Loading...</p> })
 
@@ -81,9 +76,12 @@ const Home: NextPage = () => {
           content='Yau Yen Ching is a software engineer and aspiring product manager based in Singapore. She enjoys building user-first products that solve real user needs through empathy, thoughtful design, and data-driven insights.'
         />
         <link rel='icon' href='/icons/favicon.svg' type='image/svg+xml' />
+        <link rel='apple-touch-icon' href='/icons/ios/192.png' />
         <link rel='manifest' href='/manifest.json' />
         <meta name='theme-color' media='(prefers-color-scheme: light)' content='#faf5eb' />
         <meta name='theme-color' media='(prefers-color-scheme: dark)' content='#12142b' />
+        <link rel="preconnect" href="https://rsms.me/" />
+        <link rel="preload" href="https://rsms.me/inter/inter.css" as="style"/>
       </Head>
 
       <main>
@@ -100,7 +98,7 @@ const Home: NextPage = () => {
             w='100%'
             display='flex'
             alignItems='center'
-            justifyContent='center'
+            // justifyContent='center'
             padding={{ base: '1.5em 27.5px 5em', md: '7.5em 27.5px 5em' }}
             spacing={{ base: 0, md: 125 }}
           >
