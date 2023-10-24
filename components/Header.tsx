@@ -11,13 +11,14 @@ import {
   useDisclosure,
   useBreakpointValue,
 } from '@chakra-ui/react'
-import { colorModeProps } from 'components/props'
-import DayNightToggle from 'components/DayNightToggle'
-import HamburgerMenu from 'components/HamburgerMenu'
+import DayNightToggle from 'components/header/DayNightToggle'
+import HamburgerMenu from 'components/header/HamburgerMenu'
 import { PropsWithChildren, useEffect, useRef } from 'react'
 import { v4 as uuidv4 } from 'uuid'
 
-interface HeaderProps extends colorModeProps {
+interface HeaderProps {
+  colorMode: string
+  toggleColorMode: () => void
   activeSection: number
   setActiveSection: (_: number) => void
   hovering: boolean

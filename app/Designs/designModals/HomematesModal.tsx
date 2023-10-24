@@ -1,6 +1,6 @@
 import { CardModal, FeaturePreview, ModalSubHeading } from 'components/CardModal'
 import { UseDisclosureProps, Text } from '@chakra-ui/react'
-import { DESIGN_METADATA as designs } from 'components/designMetadata'
+import { DESIGN_METADATA as designs } from 'app/Designs/designMetadata'
 import Image from 'next/image'
 import { v4 as uuidv4 } from 'uuid'
 

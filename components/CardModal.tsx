@@ -22,7 +22,7 @@ import FigmaIcon from 'public/assets/FigmaIcon'
 import GitHubIcon from 'public/assets/GitHubIcon'
 import PresentationPlay from 'public/assets/PresentationPlay'
 import { PropsWithChildren, ReactNode } from 'react'
-import { DesignMetadata } from 'components/designMetadata'
+import { DesignMetadata } from 'app/Designs/designMetadata'
 import Video from 'public/assets/Video'
 
 export interface CardModalProps extends Required<Pick<UseDisclosureProps, 'isOpen' | 'onClose'>> {

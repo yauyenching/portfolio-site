@@ -23,13 +23,13 @@ import FigmaIcon from 'public/assets/FigmaIcon'
 import PresentationPlay from 'public/assets/PresentationPlay'
 import GitHubIcon from 'public/assets/GitHubIcon'
 import { PropsWithChildren, ReactNode } from 'react'
-import { DESIGN_METADATA, DesignMetadata } from 'components/designMetadata'
+import { DESIGN_METADATA, DesignMetadata } from 'app/Designs/designMetadata'
 
 // Import Design Modals
-import HomematesModal from 'pages/designModals/HomematesModal'
-import GifterModal from 'pages/designModals/GifterModal'
-import W3SchoolsModal from 'pages/designModals/W3SchoolsModal'
-import PortfolioModal from 'pages/designModals/PortfolioModal'
+import HomematesModal from 'app/Designs/designModals/HomematesModal'
+import GifterModal from 'app/Designs/designModals/GifterModal'
+import W3SchoolsModal from 'app/Designs/designModals/W3SchoolsModal'
+import PortfolioModal from 'app/Designs/designModals/PortfolioModal'
 
 const { homemates, gifter, w3schools, portfolio } = DESIGN_METADATA
 

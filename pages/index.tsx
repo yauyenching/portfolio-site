@@ -1,27 +1,25 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
 import {
-  useColorMode,
   Flex,
+  Link,
   Stack,
   Text,
-  Box,
   useBreakpointValue,
-  Link,
-  Button,
+  useColorMode
 } from '@chakra-ui/react'
-import Header from './sections/Header'
-import { useRef, useState, useEffect, ReactNode } from 'react'
+import type { NextPage } from 'next'
 import dynamic from 'next/dynamic'
+import Head from 'next/head'
+import { ReactNode, useEffect, useRef, useState } from 'react'
+import Header from '../components/Header'
 
-const Intro = dynamic(() => import('./sections/Intro'), { loading: () => <p>Loading...</p> })
-const Experience = dynamic(() => import('./sections/Experience'), {
+const Intro = dynamic(() => import('../app/Intro'), { loading: () => <p>Loading...</p> })
+const Experience = dynamic(() => import('../app/Experience'), {
   loading: () => <p>Loading...</p>,
 })
-const Projects = dynamic(() => import('./sections/Projects'), { loading: () => <p>Loading...</p> })
-const Designs = dynamic(() => import('./sections/Designs'), { loading: () => <p>Loading...</p> })
-const Features = dynamic(() => import('./sections/Features'), { loading: () => <p>Loading...</p> })
-const Contact = dynamic(() => import('./sections/Contact'), { loading: () => <p>Loading...</p> })
+const Projects = dynamic(() => import('../app/Projects'), { loading: () => <p>Loading...</p> })
+const Designs = dynamic(() => import('../app/Designs/Designs'), { loading: () => <p>Loading...</p> })
+const Features = dynamic(() => import('../app/Features'), { loading: () => <p>Loading...</p> })
+const Contact = dynamic(() => import('../app/Contact'), { loading: () => <p>Loading...</p> })
 
 interface section {
   sectionId: number
