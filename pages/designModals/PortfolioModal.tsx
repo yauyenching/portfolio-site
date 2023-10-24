@@ -3,19 +3,15 @@ import { UseDisclosureProps, Text } from '@chakra-ui/react'
 import { DESIGN_METADATA as designs } from 'pages/sections/Designs'
 import Image from 'next/image'
 
-export default function W3SchoolsModal({
+export default function PortfolioModal({
   isOpen,
   onClose,
 }: Required<Pick<UseDisclosureProps, 'isOpen' | 'onClose'>>) {
-  const disclaimer =
-    'Disclaimer: the case study was originally written as part of my university coursework.'
-
   return (
     <CardModal
       isOpen={isOpen}
       onClose={onClose}
-      metadata={designs.w3schools}
-      caseStudyDisclaimer={disclaimer}
+      metadata={designs.portfolio}
       background={'🚧 Under Construction'}
     >
       🚧 Under Construction

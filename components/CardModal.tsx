@@ -17,18 +17,17 @@ import {
   useBreakpointValue,
   LinkProps,
 } from '@chakra-ui/react'
-import Image from 'next/image'
 import Download from 'public/assets/Download'
 import FigmaIcon from 'public/assets/FigmaIcon'
+import GitHubIcon from 'public/assets/GitHubIcon'
 import PresentationPlay from 'public/assets/PresentationPlay'
 import { PropsWithChildren, ReactNode } from 'react'
+import { DesignMetadata } from 'pages/sections/Designs'
+import Video from 'public/assets/Video'
 
 export interface CardModalProps extends Required<Pick<UseDisclosureProps, 'isOpen' | 'onClose'>> {
-  designTitle: string
+  metadata: DesignMetadata
   background: ReactNode
-  prototypeLink: string
-  presentationLink: string
-  caseStudyFileName?: string
   caseStudyDisclaimer?: string
 }
 
@@ -75,18 +74,25 @@ export function FeaturePreview({ caption, images }: FeaturePreviewProps) {
 }
 
 export function CardModal({
+  metadata,
   isOpen,
   onClose,
-  designTitle,
-  caseStudyFileName,
-  prototypeLink,
-  presentationLink,
   caseStudyDisclaimer,
   background,
   children,
 }: PropsWithChildren<CardModalProps>) {
   const defaultBtnStyle = useColorModeValue('blackAlpha.50', 'whiteAlpha.200')
   const hoverBtnStyle = useColorModeValue('blackAlpha.200', 'whiteAlpha.300')
+
+  const {
+    designTitle,
+    caseStudy,
+    caseStudyIsLink,
+    prototypeLink,
+    presentationLink,
+    githubLink,
+    demoLink,
+  } = metadata
 
   function ModalLink({ children, href, isExternal }: PropsWithChildren<LinkProps>) {
     return (
@@ -111,7 +117,7 @@ export function CardModal({
       onClose={onClose}
       size={{ base: 'full', md: '3xl', lg: '4xl' }}
       allowPinchZoom
-      scrollBehavior={useBreakpointValue({ base: 'inside', sm: 'outside' })}
+      scrollBehavior={useBreakpointValue({ base: 'inside', lg: 'outside' })}
     >
       <ModalOverlay />
       <ModalContent>
@@ -124,18 +130,35 @@ export function CardModal({
             flexWrap='wrap'
             direction={{ base: 'column', sm: 'row' }}
           >
-            {caseStudyFileName && <ModalLink href={`case studies/${caseStudyFileName}`}>
-              <Download mr={1.5} boxSize='18px' />
-              Case Study
-            </ModalLink>}
-            <ModalLink href={presentationLink}>
+            {caseStudy && (
+              <ModalLink
+                isExternal={caseStudyIsLink}
+                href={caseStudyIsLink ? caseStudy : `case studies/${caseStudy}`}
+              >
+                <Download mr={1.5} boxSize='18px' />
+                Case Study
+              </ModalLink>
+            )}
+            {githubLink && (
+              <ModalLink isExternal href={githubLink}>
+                <GitHubIcon mr={1.5} boxSize='20px' />
+                Code & Documentation
+              </ModalLink>
+            )}
+            <ModalLink isExternal href={presentationLink}>
               <PresentationPlay mr={1.5} boxSize='18px' />
               Figma Interactive Prototype
             </ModalLink>
-            <ModalLink href={prototypeLink}>
+            <ModalLink isExternal href={prototypeLink}>
               <FigmaIcon mr={1.5} boxSize='18px' />
               Figma Wireframes
             </ModalLink>
+            {demoLink && (
+              <ModalLink isExternal href={demoLink}>
+                <Video mr={1.5} boxSize='18px' />
+                Video Demo
+              </ModalLink>
+            )}
           </Flex>
           <Text fontSize='xs' fontStyle='italic'>
             {caseStudyDisclaimer}

@@ -1,6 +1,6 @@
 import { createIcon } from '@chakra-ui/react'
 
-// converted from Presentation-02 of https://hugeicons.pro/
+// converted from presentation-02 of https://hugeicons.pro/
 const PresentationPlay = createIcon({
   displayName: 'PresentationPlay',
   viewBox: '0 0 24 24',

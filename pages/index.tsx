@@ -19,7 +19,9 @@ const Experience = dynamic(() => import('./sections/Experience'), {
   loading: () => <p>Loading...</p>,
 })
 const Projects = dynamic(() => import('./sections/Projects'), { loading: () => <p>Loading...</p> })
-const Designs = dynamic(() => import('./sections/Designs'), { loading: () => <p>Loading...</p> })
+const Designs = dynamic(() => import('./sections/Designs').then((module) => module.Designs), {
+  loading: () => <p>Loading...</p>,
+})
 const Features = dynamic(() => import('./sections/Features'), { loading: () => <p>Loading...</p> })
 const Contact = dynamic(() => import('./sections/Contact'), { loading: () => <p>Loading...</p> })
 
@@ -83,9 +85,9 @@ const Home: NextPage = () => {
           content='Yau Yen Ching is a software engineer and aspiring product manager based in Singapore. She enjoys building user-first products that solve real user needs through empathy, thoughtful design, and data-driven insights.'
         />
         <link rel='icon' href='/icons/favicon.svg' type='image/svg+xml' />
-        <link rel="manifest" href="/manifest.json" />
-        <meta name="theme-color" media="(prefers-color-scheme: light)" content="#faf5eb" />
-        <meta name="theme-color" media="(prefers-color-scheme: dark)"  content="#12142b" />
+        <link rel='manifest' href='/manifest.json' />
+        <meta name='theme-color' media='(prefers-color-scheme: light)' content='#faf5eb' />
+        <meta name='theme-color' media='(prefers-color-scheme: dark)' content='#12142b' />
       </Head>
 
       <main>
@@ -103,7 +105,7 @@ const Home: NextPage = () => {
             display='flex'
             alignItems='center'
             justifyContent='center'
-            padding={{ base: '1.5em 27.5px 5em', md: '7.5em 27.5px' }}
+            padding={{ base: '1.5em 27.5px 5em', md: '7.5em 27.5px 5em' }}
             spacing={{ base: 0, md: 125 }}
           >
             {SECTIONS.map((section, i) => {
@@ -136,11 +138,24 @@ const Home: NextPage = () => {
           textAlign='center'
           display='flex'
           justifyContent='center'
-          fontSize='xs'
+          fontSize='sm'
           background='brand.bg'
           pb='2.5em'
+          color='brand.titleMuted'
         >
-          Designed and built by Yau Yen Ching
+          Designed and coded by Yau Yen Ching. Built with&nbsp;
+          <Link variant='footer' href='https://nextjs.org/'>
+            Next.js
+          </Link>
+          &nbsp;and&nbsp;
+          <Link variant='footer' href='https://chakra-ui.com/'>
+            Chakra UI
+          </Link>
+          , deployed with&nbsp;
+          <Link variant='footer' href='https://netlify.com/'>
+            Netlify
+          </Link>
+          .
         </Text>
       </footer>
     </>

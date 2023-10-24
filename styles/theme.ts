@@ -69,6 +69,13 @@ const baseComponents: Record<string, StyleConfig> = {
           textDecoration: 'none',
         },
       },
+      footer: {
+        textDecoration: 'none',
+        color: 'brand.body',
+        _hover: {
+          textDecoration: 'none',
+        },
+      },
       gradient: {
         fontFamily: 'heading',
         fontWeight: 500,

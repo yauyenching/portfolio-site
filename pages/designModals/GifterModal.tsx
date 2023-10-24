@@ -1,5 +1,6 @@
 import { CardModal, FeaturePreview, ModalSubHeading } from 'components/CardModal'
 import { UseDisclosureProps, Text } from '@chakra-ui/react'
+import { DESIGN_METADATA as designs } from 'pages/sections/Designs'
 import Image from 'next/image'
 
 export default function GifterModal({
@@ -10,9 +11,7 @@ export default function GifterModal({
     <CardModal
       isOpen={isOpen}
       onClose={onClose}
-      designTitle='Gifter'
-      prototypeLink='#'
-      presentationLink='#'
+      metadata={designs.gifter}
       background={'🚧 Under Construction'}
     >
       🚧 Under Construction

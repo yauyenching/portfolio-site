@@ -1,5 +1,6 @@
 import { CardModal, FeaturePreview, ModalSubHeading } from 'components/CardModal'
 import { UseDisclosureProps, Text } from '@chakra-ui/react'
+import { DESIGN_METADATA as designs } from 'pages/sections/Designs'
 import Image from 'next/image'
 
 export default function HomematesModal({
@@ -28,10 +29,7 @@ export default function HomematesModal({
     <CardModal
       isOpen={isOpen}
       onClose={onClose}
-      designTitle='Homemates'
-      caseStudyFileName='Yau Yen Ching_Case Study_Homemates.pdf'
-      prototypeLink='https://www.figma.com/file/SiCr4yrw7WhOUSBh3RhHIm/Homemates?type=design&node-id=0%3A1&mode=design&t=gnMJPFg2cfc5GlHD-1'
-      presentationLink='https://www.figma.com/proto/SiCr4yrw7WhOUSBh3RhHIm/Homemates?node-id=1%3A38&viewport=-186%2C113%2C0.38197198510169983&scaling=scale-down'
+      metadata={designs.homemates}
       background={background}
       caseStudyDisclaimer={disclaimer}
     >
