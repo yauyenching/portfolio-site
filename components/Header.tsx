@@ -10,15 +10,14 @@ import {
   SimpleGrid,
   useDisclosure,
   useBreakpointValue,
+  ColorModeContextType,
 } from '@chakra-ui/react'
 import DayNightToggle from 'components/header/DayNightToggle'
 import HamburgerMenu from 'components/header/HamburgerMenu'
 import { PropsWithChildren, useEffect, useRef } from 'react'
 import { v4 as uuidv4 } from 'uuid'
 
-interface HeaderProps {
-  colorMode: string
-  toggleColorMode: () => void
+interface HeaderProps extends Pick<ColorModeContextType, 'colorMode' | 'toggleColorMode'> {
   activeSection: number
   setActiveSection: (_: number) => void
   hovering: boolean

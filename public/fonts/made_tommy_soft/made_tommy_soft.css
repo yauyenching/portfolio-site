@@ -1,20 +1,32 @@
 @font-face {
   font-family: 'MADE Tommy Soft';
+  font-display: swap;
   font-weight: 400;
+  font-stretch: normal;
   font-style: normal;
-  src: url('./otf/MADE Tommy Soft Regular PERSONAL USE.otf') format('opentype');
+  src: 
+    url('./woff2/MADE Tommy Soft Regular PERSONAL USE.woff2') format('woff2'),
+    url('./otf/MADE Tommy Soft Regular PERSONAL USE.otf') format('opentype');
 }
 
 @font-face {
   font-family: 'MADE Tommy Soft';
+  font-display: swap;
   font-weight: 500;
+  font-stretch: normal;
   font-style: normal;
-  src: url('./otf/MADE Tommy Soft Medium PERSONAL USE.otf') format('opentype');
+  src: 
+    url('./woff2/MADE Tommy Soft Medium PERSONAL USE.woff2') format('woff2'),
+    url('./otf/MADE Tommy Soft Medium PERSONAL USE.otf') format('opentype');
 }
 
 @font-face {
   font-family: 'MADE Tommy Soft';
+  font-display: swap;
   font-weight: 300;
+  font-stretch: normal;
   font-style: normal;
-  src: url('./otf/MADE Tommy Soft Light PERSONAL USE.otf') format('opentype');
+  src:
+    url('./woff2/MADE Tommy Soft Light PERSONAL USE.woff2') format('woff2'),
+    url('./otf/MADE Tommy Soft Light PERSONAL USE.otf') format('opentype');
 }

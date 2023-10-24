@@ -1,11 +1,13 @@
 import React from 'react'
-import { Box } from '@chakra-ui/react'
-import { colorModeProps } from '../props'
+import { Box, ColorModeContextType } from '@chakra-ui/react'
 import styles from './DayNightToggle.module.scss'
 import NightSparkle from 'public/assets/NightSparkle'
-import DayCloud from 'public/assets/Cloud'
+import DayCloud from 'public/assets/DayCloud'
 
-export default function DayNightToggle({ colorMode, toggleColorMode }: colorModeProps) {
+export default function DayNightToggle({
+  colorMode,
+  toggleColorMode,
+}: Pick<ColorModeContextType, 'colorMode' | 'toggleColorMode'>) {
   const colorModeStyle: string = colorMode === 'dark' ? styles.dark : styles.light
   const lightModeVisibility = (index: number) =>
     colorMode === 'dark' ? styles['starVisible' + index] : styles.invisible

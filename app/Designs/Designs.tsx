@@ -15,6 +15,7 @@ import {
   useDisclosure,
   UseDisclosureProps,
   LinkProps,
+  Spinner,
 } from '@chakra-ui/react'
 import SectionHeading from 'components/SectionHeading'
 import { motion } from 'framer-motion'
@@ -23,7 +24,7 @@ import FigmaIcon from 'public/assets/FigmaIcon'
 import PresentationPlay from 'public/assets/PresentationPlay'
 import GitHubIcon from 'public/assets/GitHubIcon'
 import { PropsWithChildren, ReactNode } from 'react'
-import { DESIGN_METADATA, DesignMetadata } from 'app/Designs/designMetadata'
+import { DESIGN_METADATA, DesignMetadataType } from 'app/Designs/designMetadata'
 
 // Import Design Modals
 import HomematesModal from 'app/Designs/designModals/HomematesModal'
@@ -65,7 +66,7 @@ export default function Designs() {
   }
 
   interface DesignsCardProp extends UseDisclosureProps {
-    metadata: DesignMetadata
+    metadata: DesignMetadataType
   }
 
   function DesignCardLink({ icon, href }: DesignCardLinkProps) {
@@ -132,7 +133,9 @@ export default function Designs() {
                   href={presentationLink}
                   icon={<PresentationPlay boxSize={iconSize} />}
                 />
-                {githubLink && <DesignCardLink href={githubLink} icon={<GitHubIcon boxSize='1.6em' />} />}
+                {githubLink && (
+                  <DesignCardLink href={githubLink} icon={<GitHubIcon boxSize='1.6em' />} />
+                )}
                 {onOpen && (
                   <Button
                     bg={defaultBtnStyle}

@@ -1,6 +1,6 @@
-import { SVGProps } from '../../components/props'
+import { DayNightSVGProps } from './dayNightProps'
 
-const NightSparkle = ({ className, width, height, left, top }: Partial<SVGProps>) => {
+const NightSparkle = ({ className, width, height, left, top }: DayNightSVGProps) => {
   return (
     <svg
       className={className}

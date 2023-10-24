@@ -1,4 +1,4 @@
-export type DesignMetadata = {
+export type DesignMetadataType = {
   designTitle: string
   prototypeLink: string
   presentationLink: string
@@ -9,7 +9,7 @@ export type DesignMetadata = {
   demoLink?: string
 }
 
-export const DESIGN_METADATA: Record<string, DesignMetadata> = {
+export const DESIGN_METADATA: Record<string, DesignMetadataType> = {
   homemates: {
     designTitle: 'Homemates',
     imageFileName: 'homemates.webp',

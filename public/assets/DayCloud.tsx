@@ -1,6 +1,6 @@
-import { SVGProps } from '../../components/props'
+import { DayNightSVGProps } from './dayNightProps'
 
-const DayCloud = ({ className, left, top }: Partial<SVGProps>) => {
+const DayCloud = ({ className, left, top }: DayNightSVGProps) => {
   return (
     <svg
       className={className}

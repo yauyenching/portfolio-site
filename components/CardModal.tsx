@@ -22,11 +22,11 @@ import FigmaIcon from 'public/assets/FigmaIcon'
 import GitHubIcon from 'public/assets/GitHubIcon'
 import PresentationPlay from 'public/assets/PresentationPlay'
 import { PropsWithChildren, ReactNode } from 'react'
-import { DesignMetadata } from 'app/Designs/designMetadata'
+import { DesignMetadataType } from 'app/Designs/designMetadata'
 import Video from 'public/assets/Video'
 
 export interface CardModalProps extends Required<Pick<UseDisclosureProps, 'isOpen' | 'onClose'>> {
-  metadata: DesignMetadata
+  metadata: DesignMetadataType
   background: ReactNode
   caseStudyDisclaimer?: string
 }
