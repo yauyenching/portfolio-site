@@ -28,18 +28,10 @@ import { DESIGN_METADATA, DesignMetadataType } from 'app/Designs/designMetadata'
 import dynamic from 'next/dynamic'
 
 // Import Design Modals
-const HomematesModal = dynamic(() => import('app/Designs/designModals/HomematesModal'), {
-  loading: () => <p>Loading...</p>,
-})
-const GifterModal = dynamic(() => import('app/Designs/designModals/GifterModal'), {
-  loading: () => <p>Loading...</p>,
-})
-const W3SchoolsModal = dynamic(() => import('app/Designs/designModals/W3SchoolsModal'), {
-  loading: () => <p>Loading...</p>,
-})
-const PortfolioModal = dynamic(() => import('app/Designs/designModals/PortfolioModal'), {
-  loading: () => <p>Loading...</p>,
-})
+import HomematesModal from 'app/Designs/designModals/HomematesModal'
+import GifterModal from 'app/Designs/designModals/GifterModal'
+import W3SchoolsModal from 'app/Designs/designModals/W3SchoolsModal'
+import PortfolioModal from 'app/Designs/designModals/PortfolioModal'
 
 const { homemates, gifter, w3schools, portfolio } = DESIGN_METADATA
 

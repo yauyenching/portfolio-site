@@ -41,21 +41,21 @@ export default function HomematesModal({
         images={[
           <Image
             key={uuidv4()}
-            src='/previews/homemates/roommate matching.webp'
+            src='/previews/homemates/roommate_matching.webp'
             alt='Design of roommate matching feature'
             width={250}
             height={486.87}
           />,
           <Image
             key={uuidv4()}
-            src='/previews/homemates/roommate description.webp'
+            src='/previews/homemates/roommate_description.webp'
             alt='test'
             width={250}
             height={486.87}
           />,
           <Image
             key={uuidv4()}
-            src='/previews/homemates/roommate message.webp'
+            src='/previews/homemates/roommate_message.webp'
             alt='test'
             width={250}
             height={486.87}
@@ -74,14 +74,14 @@ export default function HomematesModal({
           />,
           <Image
             key={uuidv4()}
-            src='/previews/homemates/filters - living habits.webp'
+            src='/previews/homemates/filters_living_habits.webp'
             alt='test'
             width={250}
             height={486.87}
           />,
           <Image
             key={uuidv4()}
-            src='/previews/homemates/filters - interests.webp'
+            src='/previews/homemates/filters_interests.webp'
             alt='test'
             width={250}
             height={486.87}
@@ -100,7 +100,7 @@ export default function HomematesModal({
           />,
           <Image
             key={uuidv4()}
-            src='/previews/homemates/messages - chat.webp'
+            src='/previews/homemates/messages_chat.webp'
             alt='test'
             width={250}
             height={486.87}
@@ -114,21 +114,21 @@ export default function HomematesModal({
         images={[
           <Image
             key={uuidv4()}
-            src='/previews/homemates/room description - a.webp'
+            src='/previews/homemates/room_description_a.webp'
             alt='test'
             width={250}
             height={486.87}
           />,
           <Image
             key={uuidv4()}
-            src='/previews/homemates/room description - b.webp'
+            src='/previews/homemates/room_description_b.webp'
             alt='test'
             width={250}
             height={486.87}
           />,
           <Image
             key={uuidv4()}
-            src='/previews/homemates/room filters.webp'
+            src='/previews/homemates/room_filters.webp'
             alt='test'
             width={250}
             height={486.87}
@@ -142,28 +142,28 @@ export default function HomematesModal({
         images={[
           <Image
             key={uuidv4()}
-            src='/previews/homemates/homemail - feed.webp'
+            src='/previews/homemates/homemail_feed.webp'
             alt='test'
             width={250}
             height={486.87}
           />,
           <Image
             key={uuidv4()}
-            src='/previews/homemates/homemail - tasks.webp'
+            src='/previews/homemates/homemail_tasks.webp'
             alt='test'
             width={250}
             height={486.87}
           />,
           <Image
             key={uuidv4()}
-            src='/previews/homemates/homemail - notes.webp'
+            src='/previews/homemates/homemail_notes.webp'
             alt='test'
             width={250}
             height={486.87}
           />,
           <Image
             key={uuidv4()}
-            src='/previews/homemates/homemail - calendar.webp'
+            src='/previews/homemates/homemail_calendar.webp'
             alt='test'
             width={250}
             height={486.87}
