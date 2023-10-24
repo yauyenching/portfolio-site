@@ -34,7 +34,7 @@ export default function Intro() {
       <Flex justifyContent={{ base: 'center', md: 'right' }}>
         <Image
           src='/profile_pic.webp'
-          alt='test'
+          alt='Photo of Yau Yen Ching'
           width={profilePicSize}
           height={profilePicSize}
           style={{

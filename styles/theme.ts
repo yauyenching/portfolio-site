@@ -114,8 +114,8 @@ const baseComponents: Record<string, StyleConfig> = {
       background: mode('blackAlpha.100', 'whiteAlpha.200')(props),
       border: 'none',
       _hover: {
-        background: mode('blackAlpha.200', 'whiteAlpha.300')(props)
-      }
+        background: mode('blackAlpha.200', 'whiteAlpha.300')(props),
+      },
     }),
     variants: {
       gradient: {
@@ -176,7 +176,7 @@ const theme = extendTheme({
     Card: cardTheme,
     List: listTheme,
     Modal: modalTheme,
-    ...baseComponents
+    ...baseComponents,
   },
 })
 
