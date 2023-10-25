@@ -128,13 +128,11 @@ const Home: NextPage = () => {
 
       <footer>
         <Text
-          as='span'
           textAlign='center'
-          display='flex'
-          justifyContent='center'
           fontSize='sm'
           background='brand.bg'
           pb='2.5em'
+          m={0}
           color='brand.titleMuted'
         >
           Designed and coded by Yau Yen Ching. Built with&nbsp;

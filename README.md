@@ -69,12 +69,17 @@ styles/                         # global styles and component theming
 
 The following is a list of features to implement:
 
-- [ ] Design cards overhaul: redesign cards and add description text
+- [x] Design cards overhaul: redesign cards and add description text
 - [ ] Design cards overhaul: add Modal content for each project
-- [ ] Hover animations (drop shadows, buttons, [optional] gradient text)
+- [ ] Hover animations
+  - [x] Drop shadows
+  - [x] Buttons
+  - [ ] [optional] Gradient text
 - [ ] Link tooltips
 - [ ] Accessibility: Link aria labels
-- [ ] Optimization: preload fonts and imges
+- [ ] Optimization: preload fonts and images
+  - [x] Preload fonts
+  - [] Images
 - [ ] [optional] Scroll animations (must be performant)
 
 ## 🙌🏻 Acknowledgements
