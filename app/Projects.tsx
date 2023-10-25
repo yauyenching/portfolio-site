@@ -28,6 +28,7 @@ import ExternalLink from 'public/assets/ExternalLink'
 export default function Projects() {
   interface ProjectsCardProp {
     imageFileName: string
+    imageAlt: string
     projectTitle: string
     techStack: string[]
     githubLink: string
@@ -39,6 +40,7 @@ export default function Projects() {
 
   function ProjectsCard({
     imageFileName,
+    imageAlt,
     projectTitle,
     techStack,
     githubLink,
@@ -71,10 +73,12 @@ export default function Projects() {
                 height={0}
                 sizes='100vw'
                 style={{ width: '100%', height: '170px', objectFit: 'cover' }}
-                alt={`${projectTitle} ui preview`}
+                alt={imageAlt}
               />
               <Heading as='h2' size='sm' m='0 25px' textAlign='center'>
-                <LinkOverlay isExternal href={githubLink}>{projectTitle}</LinkOverlay>
+                <LinkOverlay isExternal href={githubLink}>
+                  {projectTitle}
+                </LinkOverlay>
               </Heading>
             </CardHeader>
             <CardBody>
@@ -154,6 +158,7 @@ export default function Projects() {
       >
         <ProjectsCard
           imageFileName='s3_pattern_recategorizer.webp'
+          imageAlt='Preview of Sims 3 Pattern Recategorizer GUI with light and dark mode. Shows options to set source and destination folder, app settings, and progress bar.'
           projectTitle='Sims 3 Pattern Recategorizer Tool'
           techStack={['Python']}
           githubLink='https://github.com/yauyenching/sims-3-pattern-recategorizer'
@@ -165,6 +170,7 @@ export default function Projects() {
         </ProjectsCard>
         <ProjectsCard
           imageFileName='dorm_temp_dashboard.webp'
+          imageAlt='Preview of Dorm Temperature Monitoring Dashboard responsive UI design on desktop and mobile. Shows a time series graph and a floorplan, along with settings to set time range and sample granularity.'
           projectTitle='Dorm Temperature Monitoring Dashboard'
           techStack={['Typescript', 'React.js', 'SASS', 'Meteor.js']}
           githubLink='https://github.com/yauyenching/dorm-temp-dashboard'
@@ -175,6 +181,7 @@ export default function Projects() {
         </ProjectsCard>
         <ProjectsCard
           imageFileName='wordle_tele_bot.webp'
+          imageAlt='Screenshot of Wordle Leaderboard Telegram Bot on Telegram UI. Shows user inputting wordle results, and the bot displaying a leaderboard with data for Name, no. of Games, Streak, and Score Average.'
           projectTitle='Wordle Leaderboard Telegram Bot'
           techStack={['Python', 'MongoDB']}
           githubLink='https://github.com/yauyenching/wordle-tele-bot'
@@ -185,6 +192,7 @@ export default function Projects() {
         </ProjectsCard>
         <ProjectsCard
           imageFileName='bandung_word_cloud.webp'
+          imageAlt='Screenshot of Bandung Bulletings Word Cloud web page. Shows a word cloud along with a side bar with content filter settings.'
           projectTitle='Bandung Bulletins Interactive Word Cloud'
           techStack={['R']}
           githubLink='https://github.com/yauyenching/bandung-bulletins'
@@ -196,6 +204,7 @@ export default function Projects() {
         </ProjectsCard>
         <ProjectsCard
           imageFileName='thermostat_radial_slider.webp'
+          imageAlt='Screenshot of the Thermostat Radial Slider UI. Shows a thermostat UI component with a radial thumb along the track. Has goal temperature and current temperature readings in the dial. Below the thermostat, therre is a slider to set current temperature.'
           projectTitle='Thermostat Radial Slider'
           techStack={['React.js']}
           githubLink='https://github.com/yauyenching/thermostat-radial-slider'

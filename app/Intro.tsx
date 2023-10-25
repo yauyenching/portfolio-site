@@ -45,7 +45,7 @@ export default function Intro() {
         {loading && <SkeletonCircle size={String(profilePicSize)} />}
         <Image
           src='/profile_pic.webp'
-          alt='Photo of Yau Yen Ching'
+          alt='Headshot of Yau Yen Ching, an Asian young adult female.'
           width={profilePicSize}
           height={profilePicSize}
           style={{

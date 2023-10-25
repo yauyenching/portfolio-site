@@ -112,7 +112,7 @@ export default function Designs() {
             <CardHeader>
               <Image
                 src={`/previews/${imageFileName}`}
-                alt={`Picture preview of ${designTitle} design`}
+                alt={`Banner preview of ${designTitle} design`}
                 width={0}
                 height={0}
                 sizes='100vw'
