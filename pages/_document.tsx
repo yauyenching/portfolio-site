@@ -7,10 +7,12 @@ export default class Document extends NextDocument {
     return (
       <Html lang='en'>
         <Head>
+          <link rel='preconnect' href='https://rsms.me/' />
         </Head>
         <body>
           <ColorModeScript initialColorMode={theme.config.initialColorMode} />
           <Main />
+          <link rel='stylesheet' href='https://rsms.me/inter/inter.css' />
           <NextScript />
         </body>
       </Html>

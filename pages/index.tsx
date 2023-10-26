@@ -80,8 +80,6 @@ const Home: NextPage = () => {
         <link rel='manifest' href='/manifest.json' />
         <meta name='theme-color' media='(prefers-color-scheme: light)' content='#faf5eb' />
         <meta name='theme-color' media='(prefers-color-scheme: dark)' content='#12142b' />
-        <link rel="preconnect" href="https://rsms.me/" />
-        <link rel="preload" href="https://rsms.me/inter/inter.css" as="style"/>
       </Head>
 
       <main>
