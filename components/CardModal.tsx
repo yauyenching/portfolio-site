@@ -24,6 +24,7 @@ import PresentationPlay from 'public/assets/PresentationPlay'
 import { PropsWithChildren, ReactNode } from 'react'
 import { DesignMetadataType } from 'app/Designs/designMetadata'
 import Video from 'public/assets/Video'
+import ExternalLink from 'public/assets/ExternalLink'
 
 export interface CardModalProps extends Required<Pick<UseDisclosureProps, 'isOpen' | 'onClose'>> {
   metadata: DesignMetadataType
@@ -50,12 +51,13 @@ export function ModalSubHeading({ children }: PropsWithChildren) {
 interface FeaturePreviewProps {
   caption: string
   images: ReactNode[]
+  imageGap?: number
 }
 
-export function FeaturePreview({ caption, images }: FeaturePreviewProps) {
+export function FeaturePreview({ caption, images, imageGap }: FeaturePreviewProps) {
   function FeatureCaption({ children }: PropsWithChildren) {
     return (
-      <Text fontSize='md' textAlign='center' fontWeight={400}>
+      <Text fontSize='md' textAlign='center' fontWeight={500}>
         {children}
       </Text>
     )
@@ -64,11 +66,11 @@ export function FeaturePreview({ caption, images }: FeaturePreviewProps) {
   return (
     <>
       <FeatureCaption>{caption}</FeatureCaption>
-      <Box textAlign='center'>
+      <Flex justify='center' rowGap={imageGap} wrap='wrap'>
         {images.map((image) => {
           return image
         })}
-      </Box>
+      </Flex>
     </>
   )
 }
@@ -135,7 +137,11 @@ export function CardModal({
                 isExternal={caseStudyIsLink}
                 href={caseStudyIsLink ? caseStudy : `case studies/${caseStudy}`}
               >
-                <Download mr={1.5} boxSize='18px' />
+                {caseStudyIsLink ? (
+                  <ExternalLink mr={1.5} boxSize='18px' />
+                ) : (
+                  <Download mr={1.5} boxSize='18px' />
+                )}
                 Case Study
               </ModalLink>
             )}
